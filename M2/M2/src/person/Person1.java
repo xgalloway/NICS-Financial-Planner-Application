@@ -1,4 +1,4 @@
-//package edu.gatech.oad.antlab.person;
+package person;
 
 /**
  *  A simple class for person 1
@@ -18,6 +18,7 @@ public class Person1 {
 	 */
   public Person1(String pname) {
     name = pname;
+    
   }
   	/**
 	 * This method should take the string
