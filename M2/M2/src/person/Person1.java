@@ -31,7 +31,6 @@ public class Person1 {
 	 * @return the modified string
 	 */
 	private String calc(String input) {
-	  //Person 1 put your implementation here
 	  String res = input; // set resulting string to the input to allow for manipulation
 	  int current = 0; // set a pointer to the 0th index of the string
 	  String temp = ""; // create a temporary string
