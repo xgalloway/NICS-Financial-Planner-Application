@@ -1,5 +1,7 @@
 package person;
 
+import java.util.Random;
+
 /**
  *  A simple class for person 2
  *  returns their name and a
