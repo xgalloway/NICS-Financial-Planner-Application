@@ -17,6 +17,7 @@ public class Person5 {
 	 * @param pname the person's real name
 	 */
   public Person5(String pname) {
+	pname = "Zaccheus Stewart";
     name = pname;
   }
   	/**
@@ -29,9 +30,19 @@ public class Person5 {
 	 * @param input the string to be modified
 	 * @return the modified string
 	 */
-	private String calc(String input) {
-	  //Person 5 put your implementation here
-	  return null;
+	private String calc(String input) {	
+		for(int j=0; j<2; j++)
+		{
+			char a = input.charAt(0);
+	        
+			int i;
+	        for(i = 0; i < input.length()-1; i++)
+	        {
+	            input.replace(input.charAt(i), input.charAt(i+1));
+	            input.replace(input.charAt(i), a);
+	        }
+	    }    
+		return input;
 	}
 	
 	/**
