@@ -5,7 +5,6 @@ package person;
  *  returns their name and a
  *  modified string 
  *  
- *  PLEASE WORK GODDAMMITTTT
  *  
  *  @author Nigel
  *  @version 1.1
@@ -32,9 +31,11 @@ public class Person4 {
      * @return the modified string
      */
     private String calc(String input) {
-      
-      //Person 1 put your implementation here
-      return null;
+      char[] inputArray = input.toCharArray(); 
+      for (int ndx = 0; ndx < input.length(); ndx++){
+    	  inputArray[ndx] = ++inputArray[ndx];
+      }
+      return new String(inputArray);
     }
     
     /**
@@ -50,8 +51,8 @@ public class Person4 {
     }
     
     public static void main(String[] args){
-    	Person4 per = new Person4("Nigel");
-    	System.out.println("ooo");
+    	String s = "Nigel";
+    	Person4 per = new Person4(s);
     	
     }
 
