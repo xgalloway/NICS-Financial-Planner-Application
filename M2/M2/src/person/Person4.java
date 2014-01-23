@@ -5,6 +5,8 @@ package person;
  *  returns their name and a
  *  modified string 
  *  
+ *  PLEASE WORK GODDAMMITTTT
+ *  
  *  @author Nigel
  *  @version 1.1
  */
