@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Test: Test
+T: 1.0
+Main-Class: git.NICS-Financial-Planner.M2.M2.src.pkg1.AntLabMain
+Class-Path: git/NICS-Financial-Planner/M2/M2/lib/resources.jar
+

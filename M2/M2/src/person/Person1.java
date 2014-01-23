@@ -1,11 +1,11 @@
-//package edu.gatech.oad.antlab.person;
+package person;
 
 /**
  *  A simple class for person 1
  *  returns their name and a
  *  modified string 
  *  
- *  @author Bob YAHHHHHHHHHHHH
+ *  @author Bob 
  *  @version 1.1
  */
 public class Person1 {
@@ -18,6 +18,7 @@ public class Person1 {
 	 */
   public Person1(String pname) {
     name = pname;
+    
   }
   	/**
 	 * This method should take the string
@@ -30,8 +31,19 @@ public class Person1 {
 	 * @return the modified string
 	 */
 	private String calc(String input) {
-	  //Person 1 put your implementation here
-	  return null;
+	  String res = input; // set resulting string to the input to allow for manipulation
+	  int current = 0; // set a pointer to the 0th index of the string
+	  String temp = ""; // create a temporary string
+	  while(current < input.length()){ // as long as the pointer doesn't point beyond the string
+		  temp += input.charAt(current); // add the character at the pointer's position to the temporary string
+		  current++; // move the pointer to the next position
+		  res = input.substring(current); // get rid of the character at the zeroth index
+		  if(current == 2){ // when pointer exceeds the second position break out of the loop
+			  break;
+		  }
+	  }
+	  res += temp; // concatenate the resulting string the temporary string of length 2
+	  return res;
 	}
 	
 	/**
@@ -44,6 +56,10 @@ public class Person1 {
 	 */
 	public String toString(String input) {
 	  return name + calc(input);
+	}
+	public static void main(String[] args){
+		Person1 x = new Person1("Xavier ");
+		System.out.println(x.toString("gtg123b"));
 	}
 
 }

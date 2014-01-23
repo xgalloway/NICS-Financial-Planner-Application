@@ -1,4 +1,4 @@
-package edu.gatech.oad.antlab.person;
+package person;
 /**
  *  A simple class for person 3
  *  returns their name and a
@@ -17,7 +17,7 @@ public class Person3 {
 	 * @param pname the person's real name
 	 */
 	public Person3(String pname){
-		name = mica;
+		name = pname;
 	}
 
 	/**
@@ -45,5 +45,6 @@ public class Person3 {
 		//Person 3 put your implementation here
 		if(input.length() == 0)
 			return input.charAt(input.length() - 1) + calc(input.substring(0,input.length()-1));
+		return input;
 	}
 }

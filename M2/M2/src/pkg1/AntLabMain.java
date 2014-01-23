@@ -1,11 +1,10 @@
-package edu.gatech.oad.antlab.pkg1;
+package pkg1;
 
 
 import person.Person5;
 import edu.cs2335.antlab.pkg3.*;
-import edu.gatech.oad.antlab.person.*;
-import edu.gatech.oad.antlab.pkg2.*;
-
+import person.*;
+import pkg2.*;
 
 /**
  * CS2335 Ant Lab
