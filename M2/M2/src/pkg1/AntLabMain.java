@@ -1,6 +1,10 @@
 package pkg1;
 
 
+import edu.cs2335.antlab.pkg3.*;
+import person.*;
+import pkg2.*;
+
 /**
  * CS2335 Ant Lab
  *

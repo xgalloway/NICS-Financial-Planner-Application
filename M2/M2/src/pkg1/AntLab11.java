@@ -1,7 +1,6 @@
 package pkg1;
 
 
-
 /** 
  * CS2340 Ant Lab
  *
