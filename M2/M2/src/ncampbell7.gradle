@@ -1,0 +1,13 @@
+defaultTasks 'jar', 'compileJava', 'compileTest', 'javadoc', 'clean'
+apply plugin : 'java'
+apply plugin : 'eclipse'
+
+sourceCompatability = 1.6
+version = '1.0'
+jar {
+	manifest {
+		attributes 'Test': 'Test', 'Nigel': version, 'Main-Class' : 'git.NICS-Financial-Planner.M2.M2.src.pkg1.AntLabMain', 'Class-Path' : 'git/NICS-Financial-Planner/M2/M2/lib/resources.jar'
+	}
+}
+
+dependencies { compile files('lib/resources.jar') }
