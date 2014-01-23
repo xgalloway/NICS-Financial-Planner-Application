@@ -32,6 +32,7 @@ public class Person4 {
      * @return the modified string
      */
     private String calc(String input) {
+      
       //Person 1 put your implementation here
       return null;
     }
@@ -46,6 +47,12 @@ public class Person4 {
      */
     public String toString(String input) {
       return name + calc(input);
+    }
+    
+    public static void main(String[] args){
+    	Person4 per = new Person4("Nigel");
+    	System.out.println("ooo");
+    	
     }
 
 }
