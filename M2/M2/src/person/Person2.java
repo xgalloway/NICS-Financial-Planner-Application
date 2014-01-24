@@ -1,5 +1,6 @@
 package person;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 /**
@@ -7,7 +8,7 @@ import java.util.Random;
  *  returns their name and a
  *  modified string 
  *
- * @author Bob
+ * @author Brent Satterwhite
  * @version 1.1
  */
 public class Person2 {
@@ -32,8 +33,18 @@ public class Person2 {
 	 * @return the modified string
 	 */
 	private String calc(String input) {
-	  //Person 2 put your implementation here
-	  return null;
+		ArrayList letters = new ArrayList();
+	  for (int i = 0; i < input.length(); ++i) {
+		  letters.add(input.charAt(i));
+	  }
+	  
+	  String output = "";
+	  Random rand = new Random();
+	  while (letters.size() > 0) {
+		  int index = rand.nextInt(letters.size());
+		  output = output + letters.remove(index);
+	  }
+	  return output;
 	}
 	/**
 	 * Return a string rep of this object
@@ -46,4 +57,5 @@ public class Person2 {
 	public String toString(String input) {
 	  return name + calc(input);
 	}
+
 }
