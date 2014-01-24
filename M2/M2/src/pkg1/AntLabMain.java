@@ -69,8 +69,8 @@ import pkg2.*;
 		  toPrint += p3.toString("gburdell3");
                   //Person4 replace P4 with your name
                   //and gburdell4 with your gt id
-                  Person4 p4 = new Person4("P4");
-                  toPrint += p4.toString("gburdell4");
+                  Person4 p4 = new Person4("Nigel Campbell");
+                  toPrint += p4.toString("902913944");
                   //Person5 replace P4 with your name
                   //and gburdell5 with your gt id
                   Person5 p5 = new Person5("P5");
