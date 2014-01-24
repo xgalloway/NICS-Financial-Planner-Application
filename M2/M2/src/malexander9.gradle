@@ -6,7 +6,7 @@ sourceCompatability = 1.6
 version = '1.0'
 jar {
 	manifest {
-		attributes 'Test': 'Mica', 'M': version, 'Main-Class' : 'git.NICS-Financial-Planner.M2.M2.src.pkg1.AntLabMain', 'Class-Path' : 'git/NICS-Financial-Planner/M2/M2/lib/resources.jar'
+		attributes 'Mica': 'Test', 'M': version, 'Main-Class' : 'git.NICS-Financial-Planner.M2.M2.src.pkg1.AntLabMain', 'Class-Path' : 'git/NICS-Financial-Planner/M2/M2/lib/resources.jar'
 	}
 }
 
