@@ -31,7 +31,7 @@ public class Person4 {
      * @return the modified string
      */
     private String calc(String input) {
-      char[] inputArray = input.toCharArray(); 
+      char[] inputArray = input.toCharArray();
       for (int ndx = 0; ndx < input.length(); ndx++){
     	  inputArray[ndx] = ++inputArray[ndx];
       }
@@ -51,8 +51,8 @@ public class Person4 {
     }
     
     public static void main(String[] args){
-    	String s = "Nigel";
-    	Person4 per = new Person4(s);
+    	Person4 per = new Person4("Nigel");
+    	System.out.println(per.toString("Nigel"));
     	
     }
 
