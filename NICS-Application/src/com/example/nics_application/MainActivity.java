@@ -10,7 +10,7 @@ import android.view.View.*;
 
 public class MainActivity extends Activity implements OnClickListener{
 
-	Button button;
+	Button logInButton;
 	EditText user;
 	EditText pass;
 	
@@ -23,11 +23,11 @@ public class MainActivity extends Activity implements OnClickListener{
 	}
 	
 	public void addListenerOnButton(){
-		button = (Button) findViewById(R.id.button1);
+		logInButton = (Button) findViewById(R.id.button1);
 		//String userString = user.getText().toString();
 		//String passString = pass.getText().toString();
 		
-		button.setOnClickListener(this);
+		logInButton.setOnClickListener(this);
 	}
 	
 	@Override
