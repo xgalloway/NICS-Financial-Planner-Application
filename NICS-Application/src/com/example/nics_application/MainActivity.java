@@ -32,7 +32,7 @@ public class MainActivity extends Activity implements OnClickListener{
 	
 	@Override
 	public void onClick(View v){				
-		Intent i = new Intent(this,LogInActivity.class);
+		Intent i = new Intent(this, LogInActivity.class);
 		startActivity(i);
 		
 	}

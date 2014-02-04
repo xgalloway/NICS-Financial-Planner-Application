@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.nics_application.LogIn"
+            android:name="com.example.nics_application.LogInActivity"
             android:label="@string/title_activity_log_in" >
         </activity>
     </application>
