@@ -6,10 +6,12 @@ import android.view.Menu;
 
 public class LogInActivity extends Activity {
 
+	private LogInController loginController;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_log_in);
+		loginController = new LogInController("user", "pass");
 	}
 
 	@Override
