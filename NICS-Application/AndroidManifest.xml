@@ -26,6 +26,10 @@
             android:name="com.example.nics_application.LogInActivity"
             android:label="@string/title_activity_log_in" >
         </activity>
+        <activity
+            android:name="com.example.nics_application.AccountViewActivity"
+            android:label="@string/title_activity_account_view" >
+        </activity>
     </application>
 
 </manifest>

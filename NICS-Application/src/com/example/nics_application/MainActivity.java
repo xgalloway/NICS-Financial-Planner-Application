@@ -11,8 +11,7 @@ import android.view.View.*;
 public class MainActivity extends Activity implements OnClickListener{
 
 	Button logInButton;
-	EditText user;
-	EditText pass;
+	
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -24,9 +23,6 @@ public class MainActivity extends Activity implements OnClickListener{
 	
 	public void addListenerOnButton(){
 		logInButton = (Button) findViewById(R.id.button1);
-		//String userString = user.getText().toString();
-		//String passString = pass.getText().toString();
-		
 		logInButton.setOnClickListener(this);
 	}
 	
@@ -34,7 +30,6 @@ public class MainActivity extends Activity implements OnClickListener{
 	public void onClick(View v){				
 		Intent i = new Intent(this, LogInActivity.class);
 		startActivity(i);
-		
 	}
 	
 
