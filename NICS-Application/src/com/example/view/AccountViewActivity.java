@@ -1,4 +1,7 @@
-package com.example.nics_application;
+package com.example.view;
+import com.example.nics_application.R;
+import com.example.nics_application.R.layout;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;

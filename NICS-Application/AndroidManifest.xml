@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.example.nics_application.MainActivity"
+            android:name="com.example.model.activities.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,11 +23,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.nics_application.LogInActivity"
+            android:name="com.example.model.activities.LogInActivity"
             android:label="@string/title_activity_log_in" >
         </activity>
         <activity
-            android:name="com.example.nics_application.AccountViewActivity"
+            android:name="com.example.view.AccountViewActivity"
             android:label="@string/title_activity_account_view" >
         </activity>
     </application>
