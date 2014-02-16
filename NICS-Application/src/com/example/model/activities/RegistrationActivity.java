@@ -1,33 +1,98 @@
 package com.example.model.activities;
 
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Parcel;
+import android.os.Parcelable;
+import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.EditText;
 
+import com.example.model.UserModel;
+import com.example.nics_application.R;
+import com.example.presenter.LogInViewPresenter;
+import com.example.presenter.RegistrationViewPresenter;
 import com.example.view.ClickListener;
 import com.example.view.RegistrationView;
 
-public class RegistrationActivity implements RegistrationView, OnClickListener {
 
-	public RegistrationActivity() {
-		// TODO Auto-generated constructor stub
+public class RegistrationActivity extends Activity implements RegistrationView, OnClickListener {
+
+	Button enterButton;
+	EditText usernameEditText;
+	EditText passwordEditText;
+	
+	private ClickListener listener;
+	RegistrationViewPresenter presenter;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_registration);
+		
+		presenter = new RegistrationViewPresenter(this, new UserModel());
+		initiateEditTextsAndButtons();
+	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.log_in, menu);
+		return true;
 	}
 
 	@Override
 	public void onClick(View v) {
-		// TODO Auto-generated method stub
+		presenter.onClick(v);
 
 	}
 
+	public void initiateEditTextsAndButtons() {
+		enterButton = (Button)findViewById(R.id.enterButton);
+		enterButton.setOnClickListener(this);
+		usernameEditText = (EditText) findViewById(R.id.usernameEditText);
+		passwordEditText = (EditText) findViewById(R.id.passEditText);
+		
+	}
+	
 	@Override
 	public void acceptRegistration() {
-		// TODO Auto-generated method stub
+		Intent i = new Intent(this, LogInActivity.class);
+		startActivity(i);
 
 	}
 
 	@Override
-	public void addSearchRequestNotifyCallback(ClickListener listener) {
-		// TODO Auto-generated method stub
-
+	public void addSearchRequestNotifyCallback(ClickListener lsnr) {
+		listener = lsnr;
 	}
 
+	public String getUsername() {
+		return usernameEditText.getText().toString();
+	}
+	
+	public String getPassword() {
+		return passwordEditText.getText().toString();
+	}
+	
+	@Override
+	public void displayAlertDialog() {
+		AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+		alertDialog.setTitle("Registration Failure");
+		alertDialog.setMessage("User under this name already exists. Please choose a different name");
+		alertDialog.setNeutralButton("OK", new DialogInterface.OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				dialog.cancel();
+			}
+		});
+		alertDialog.show();
+		
+	}
+	
 }

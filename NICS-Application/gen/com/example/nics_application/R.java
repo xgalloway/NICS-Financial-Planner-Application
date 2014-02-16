@@ -24,9 +24,11 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f08000a;
+        public static final int action_settings=0x7f08000c;
+        public static final int activity_registration=0x7f08000a;
         public static final int enterButton=0x7f080004;
         public static final int loginButton=0x7f080008;
+        public static final int passEditText=0x7f08000b;
         public static final int passwordEditText=0x7f080002;
         public static final int textView1=0x7f080000;
         public static final int textView2=0x7f080003;
@@ -52,6 +54,7 @@ public final class R {
         public static final int hello_world=0x7f050002;
         public static final int title_activity_account_view=0x7f050004;
         public static final int title_activity_log_in=0x7f050003;
+        public static final int title_activity_registration=0x7f050005;
     }
     public static final class style {
         /** 
