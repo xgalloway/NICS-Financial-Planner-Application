@@ -30,6 +30,10 @@
             android:name="com.example.view.AccountViewActivity"
             android:label="@string/title_activity_account_view" >
         </activity>
+        <activity
+            android:name="com.example.model.activities.RegistrationActivity"
+            android:label="@string/title_activity_registration" >
+        </activity>
     </application>
 
 </manifest>

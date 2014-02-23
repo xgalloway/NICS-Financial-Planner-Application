@@ -1,16 +1,17 @@
 package com.example.model;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
 public class UserModel implements Model {
 	private final String TAG = "UserModel";
-	private Map<String, User> users;
-	
-	public UserModel() {
-		this.users = new HashMap<String, User>();
+	private static Map<String, User> users = new HashMap<String, User>();
+	static {
 		users.put("admin", new User("admin", "pass123"));
+	}
+	public UserModel() {
 	}
 	
 	@Override
@@ -49,5 +50,17 @@ public class UserModel implements Model {
 		users.put(name, new User(name, password));
 		
 	}
+
+//	@Override
+//	public void mergeModel(Model m) {
+//		ArrayList<User> list = new ArrayList<User>(m.getUsers());
+//		for (int i = 0; i < m.getUsers().size(); ++i) {
+//			User u = (User) list.get(i);
+//			if (getUserByUsername(u.getUsername()) == null) {
+//				addUser(u.getUsername(), u.getPassword());
+//			}
+//		}
+//		
+//	}
 
 }

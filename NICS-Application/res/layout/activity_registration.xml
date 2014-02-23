@@ -10,44 +10,46 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingBottom="5dp"
-        android:paddingLeft="75dp"
-        android:text="Log In"
+        android:paddingLeft="25dp"
+        android:text="Register Account"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#ffffff" />
 
+    
+
     <EditText
-        android:id="@+id/usernameEditText"
+         android:id="@+id/usernameEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#ffffff"
         android:ems="10"
         android:hint="Username"
         android:inputType="textPersonName" />
-
+    
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <EditText
-        android:id="@+id/passwordEditText"
+        android:id="@+id/passEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#ffffff"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword" />
-
+    
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/textView1"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingBottom="50dp" />
+        android:layout_height="wrap_content" 
+        android:paddingBottom="50dp"/>
 
     <Button
         android:id="@+id/enterButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter" />
+        android:text="Register" />
 
 </LinearLayout>

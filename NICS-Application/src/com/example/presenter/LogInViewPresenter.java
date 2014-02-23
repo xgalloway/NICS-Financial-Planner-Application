@@ -10,7 +10,7 @@ import com.example.view.LogInView;
 public class LogInViewPresenter implements ClickListener {
 	
 	private LogInView view;
-	private Model model;
+	private final Model model;
 
 	public LogInViewPresenter(LogInView v, Model m) {
 		this.view = v;
