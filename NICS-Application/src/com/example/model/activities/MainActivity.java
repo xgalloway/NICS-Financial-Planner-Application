@@ -1,20 +1,17 @@
 package com.example.model.activities;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 
 import com.example.nics_application.R;
 import com.example.presenter.WelcomeViewPresenter;
 import com.example.view.ClickListener;
 import com.example.view.WelcomeView;
-import android.os.Bundle;
-import android.app.Activity;
-import android.content.Intent;
-import android.view.Menu;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.*;
-import android.view.View.*;
 
 public class MainActivity extends Activity implements WelcomeView, OnClickListener {
 
@@ -38,7 +35,6 @@ public class MainActivity extends Activity implements WelcomeView, OnClickListen
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}

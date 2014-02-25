@@ -34,6 +34,10 @@
             android:name="com.example.model.activities.RegistrationActivity"
             android:label="@string/title_activity_registration" >
         </activity>
+        <activity
+            android:name="com.example.model.activities.AccountSetupActivity"
+            android:label="@string/title_activity_account_setup" >
+        </activity>
     </application>
 
 </manifest>

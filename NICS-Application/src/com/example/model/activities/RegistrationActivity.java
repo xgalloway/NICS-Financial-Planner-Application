@@ -5,8 +5,6 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -15,7 +13,6 @@ import android.widget.EditText;
 
 import com.example.model.UserModel;
 import com.example.nics_application.R;
-import com.example.presenter.LogInViewPresenter;
 import com.example.presenter.RegistrationViewPresenter;
 import com.example.view.ClickListener;
 import com.example.view.RegistrationView;
@@ -41,7 +38,6 @@ public class RegistrationActivity extends Activity implements RegistrationView, 
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.log_in, menu);
 		return true;
 	}

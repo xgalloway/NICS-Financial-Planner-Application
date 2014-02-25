@@ -2,6 +2,7 @@ package com.example.presenter;
 
 import android.view.View;
 
+
 import com.example.model.Model;
 import com.example.nics_application.R;
 import com.example.view.ClickListener;

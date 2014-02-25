@@ -1,26 +1,23 @@
 package com.example.model.activities;
 
+import android.app.Activity;
+
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.EditText;
+
 import com.example.model.UserModel;
 import com.example.nics_application.R;
-import com.example.nics_application.R.id;
-import com.example.nics_application.R.layout;
-import com.example.nics_application.R.menu;
 import com.example.presenter.LogInViewPresenter;
 import com.example.view.AccountViewActivity;
 import com.example.view.ClickListener;
 import com.example.view.LogInView;
-
-import android.os.Bundle;
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.view.Menu;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.*;
-import android.view.*;
-import android.view.View.*;
 
 public class LogInActivity extends Activity implements LogInView, OnClickListener {
 
