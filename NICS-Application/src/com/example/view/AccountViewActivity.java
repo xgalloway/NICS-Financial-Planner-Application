@@ -1,4 +1,7 @@
 package com.example.view;
+import java.util.ArrayList;
+import java.util.List;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,15 +11,21 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
+import com.example.model.User;
+import com.example.model.UserAccount;
 import com.example.model.activities.AccountSetupActivity;
 import com.example.nics_application.R;
 import com.example.presenter.AccountViewPresenter;
 
 public class AccountViewActivity extends Activity implements AccountView, OnClickListener {
+	
 	private Button addButton;
 	private AccountViewPresenter presenter;
 	private ClickListener listener;
 	
+	public List<User> list = new ArrayList<User>();
+	public User actor;
+	public static int i = 0;
 	
 	
 	@Override
@@ -28,6 +37,7 @@ public class AccountViewActivity extends Activity implements AccountView, OnClic
 		populateListView();
 		
 		presenter = new AccountViewPresenter(this);
+		
 		addButton = (Button) findViewById(R.id.addButton);
 		addButton.setOnClickListener(this);
 		
@@ -49,17 +59,20 @@ public class AccountViewActivity extends Activity implements AccountView, OnClic
 	
 	public void startAdd() {
 		Intent i = new Intent(this, AccountSetupActivity.class);
-		//i.putE
 		startActivity(i);
 	}
 	
 	private void populateListView() {
-		String[] items =  {""};
-		//for
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-				R.layout.item_view,
-				items);
 		ListView list = (ListView) findViewById(R.id.listViewMain);
+		
+		String[] items = {""};
+		List<UserAccount> aList = new ArrayList<UserAccount>();
+		if (aList.size() > 0) {
+			for (int i = 0; i < aList.size(); i++) {
+				items[i] = aList.get(i).getAccountName();
+			}
+		}
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.item_view, items);
 		list.setAdapter(adapter);
 	}
 }	

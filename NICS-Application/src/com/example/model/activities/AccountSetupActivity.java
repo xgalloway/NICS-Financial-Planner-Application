@@ -1,6 +1,5 @@
 package com.example.model.activities;
 import android.app.Activity;
-
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -21,10 +20,9 @@ import com.example.view.ClickListener;
 
 public class AccountSetupActivity extends Activity implements AccountSetupView, OnClickListener {
 	
-	Button createButton;
-	EditText accountNameText;
-	RadioButton checkingButton, savingButton;
-	//User user = new User();
+	private Button createButton;
+	private EditText accountNameText, displayNameText, balanceText, rateText;
+	private String name;
 	
 	private ClickListener listener;
 	AccountSetupPresenter presenter;
@@ -34,14 +32,21 @@ public class AccountSetupActivity extends Activity implements AccountSetupView, 
 		setContentView(R.layout.activity_account_setup);
 		
 		presenter = new AccountSetupPresenter(this, new UserModel());
-		checkingButton = (RadioButton) findViewById(R.id.checkingButton);
-		savingButton = (RadioButton) findViewById(R.id.savingButton);
-		createButton = (Button) findViewById(R.id.createButton);
 		
+		createButton = (Button) findViewById(R.id.createButton);
 		createButton.setOnClickListener(this);
-		checkingButton.setOnClickListener(this);
-		savingButton.setOnClickListener(this);
+		
 		accountNameText = (EditText) findViewById(R.id.accountNameText);
+		//accountNameText.setText(name);
+		
+		displayNameText = (EditText) findViewById(R.id.displayNameText);
+		//displayNameText.setText(name);
+		
+		balanceText = (EditText) findViewById(R.id.balanceText);
+		//balanceText.setText(name);
+		
+		rateText = (EditText) findViewById(R.id.rateText);
+		//rateText.setText(name);
 	}
 
 	@Override
@@ -62,17 +67,10 @@ public class AccountSetupActivity extends Activity implements AccountSetupView, 
 	}
 	
 	@Override
-	public String getType() {
-		String type = "";
-		if(checkingButton.isPressed()){
-			type = "Checking";
-		}
-		else{
-			type = "Saving";
-		}
-		return type;
+	public String getdisplayName() {
+		return displayNameText.getText().toString();
 	}
-
+	
 	@Override
 	public void addSearchRequestNotifyCallback(ClickListener lsr) {
 		listener = lsr;
