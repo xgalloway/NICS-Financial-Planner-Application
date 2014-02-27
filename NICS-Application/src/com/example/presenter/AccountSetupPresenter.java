@@ -32,7 +32,7 @@ public class AccountSetupPresenter implements ClickListener {
 					view.acceptAccount();
 				}
 		}
-
 	}
+	
 
 }
