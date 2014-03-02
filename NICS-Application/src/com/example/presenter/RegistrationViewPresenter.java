@@ -26,13 +26,14 @@ public class RegistrationViewPresenter implements ClickListener {
 			case R.id.enterButton:
 				String username = view.getUsername();
 				String password = view.getPassword();
-				if (model.isValidUser(username)) {
+				if (username.length() < 5 || password.length() < 5) {
+					view.displayAlertDialog2();
+				} else if (model.isValidUser(username)) {
 					view.displayAlertDialog();
 				} else {
-					model.addUser(username, password);
+					model.addUser(username, password.hashCode());
 					view.acceptRegistration();
 				}
-				
 		}
 
 	}

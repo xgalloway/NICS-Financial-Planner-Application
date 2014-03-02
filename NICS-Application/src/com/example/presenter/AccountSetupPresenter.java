@@ -23,13 +23,13 @@ public class AccountSetupPresenter implements ClickListener {
 	public void onClick(View v) {
 		switch (v.getId()) {
 			case R.id.createButton:
-				String account_type = view.getdisplayName();
+				String account_type = view.getDisplayName();
 				String account_name = view.getName();
 				if (model.isValidUser(account_type)) {
-					view.displayAlertDialog();
+					//view.displayAlertDialog();
 				} else {
-					model.addUser(account_type, account_name);
-					view.acceptAccount();
+					//model.addUser(account_type, account_name);
+					//view.acceptAccount();
 				}
 		}
 	}

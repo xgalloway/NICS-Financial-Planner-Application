@@ -91,4 +91,18 @@ public class RegistrationActivity extends Activity implements RegistrationView, 
 		
 	}
 	
+	@Override 
+	public void displayAlertDialog2() {
+		AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+		alertDialog.setTitle("Registration Failure");
+		alertDialog.setMessage("Username or password too short. Must be at least 5 characters.");
+		alertDialog.setNeutralButton("OK", new DialogInterface.OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				dialog.cancel();
+			}
+		});
+		alertDialog.show();
+	}
+	
 }

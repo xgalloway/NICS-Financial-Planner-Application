@@ -15,7 +15,6 @@ import com.example.model.UserModel;
 import com.example.nics_application.R;
 import com.example.presenter.AccountSetupPresenter;
 import com.example.view.AccountSetupView;
-import com.example.view.AccountViewActivity;
 import com.example.view.ClickListener;
 
 public class AccountSetupActivity extends Activity implements AccountSetupView, OnClickListener {
@@ -57,7 +56,7 @@ public class AccountSetupActivity extends Activity implements AccountSetupView, 
 
 	@Override
 	public void acceptAccount() {
-		Intent i = new Intent(this, AccountViewActivity.class);
+		Intent i = new Intent(this, AccountListViewActivity.class);
 		startActivity(i);
 	}
 
@@ -67,7 +66,7 @@ public class AccountSetupActivity extends Activity implements AccountSetupView, 
 	}
 	
 	@Override
-	public String getdisplayName() {
+	public String getDisplayName() {
 		return displayNameText.getText().toString();
 	}
 	

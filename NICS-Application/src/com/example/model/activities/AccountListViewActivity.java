@@ -1,4 +1,4 @@
-package com.example.view;
+package com.example.model.activities;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,30 +13,33 @@ import android.widget.ListView;
 
 import com.example.model.User;
 import com.example.model.UserAccount;
-import com.example.model.activities.AccountSetupActivity;
+import com.example.model.UserModel;
 import com.example.nics_application.R;
+import com.example.presenter.AccountListViewPresenter;
 import com.example.presenter.AccountViewPresenter;
+import com.example.view.AccountListView;
+import com.example.view.AccountView;
+import com.example.view.ClickListener;
 
-public class AccountViewActivity extends Activity implements AccountView, OnClickListener {
+public class AccountListViewActivity extends Activity implements AccountListView, OnClickListener {
 	
 	private Button addButton;
-	private AccountViewPresenter presenter;
+	private AccountListViewPresenter presenter;
 	private ClickListener listener;
 	
 	public List<User> list = new ArrayList<User>();
 	public User actor;
-	public static int i = 0;
+	//public static int i = 0;
 	
 	
 	@Override
-	
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_account_view);
 		
 		populateListView();
 		
-		presenter = new AccountViewPresenter(this);
+		presenter = new AccountListViewPresenter(this, new UserModel());
 		
 		addButton = (Button) findViewById(R.id.addButton);
 		addButton.setOnClickListener(this);
@@ -57,7 +60,7 @@ public class AccountViewActivity extends Activity implements AccountView, OnClic
 	
 	@Override
 	
-	public void startAdd() {
+	public void createAccount() {
 		Intent i = new Intent(this, AccountSetupActivity.class);
 		startActivity(i);
 	}

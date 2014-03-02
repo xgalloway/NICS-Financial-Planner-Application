@@ -15,7 +15,6 @@ import android.widget.EditText;
 import com.example.model.UserModel;
 import com.example.nics_application.R;
 import com.example.presenter.LogInViewPresenter;
-import com.example.view.AccountViewActivity;
 import com.example.view.ClickListener;
 import com.example.view.LogInView;
 
@@ -65,7 +64,7 @@ public class LogInActivity extends Activity implements LogInView, OnClickListene
 	
 	@Override
 	public void acceptLogin() {
-		Intent i = new Intent(this, AccountViewActivity.class);
+		Intent i = new Intent(this, AccountListViewActivity.class);
 		//i.putExtra(user, username);
 		startActivity(i);
 		

@@ -6,4 +6,5 @@ public interface RegistrationView {
 	String getPassword();
 	void addSearchRequestNotifyCallback(ClickListener listener);
 	void displayAlertDialog();
+	void displayAlertDialog2();
 }

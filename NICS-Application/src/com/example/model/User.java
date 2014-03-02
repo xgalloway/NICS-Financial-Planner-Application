@@ -5,11 +5,11 @@ import java.util.List;
 	
 public class User {
 	private String username;
-	private String password;
+	private int password;
 	//private String[] accounts;
 	private List<UserAccount> accounts;
 	
-	public User(String name, String password) {
+	public User(String name, int password) {
 		this.username = name;
 		this.password = password;
 		accounts = new ArrayList<UserAccount>();
@@ -19,7 +19,7 @@ public class User {
 		this.password = password;
 	}*/
 	
-	public String getPassword() {
+	public int getPassword() {
 		return password;
 	}
 	

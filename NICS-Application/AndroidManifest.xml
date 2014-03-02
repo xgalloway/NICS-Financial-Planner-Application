@@ -27,7 +27,11 @@
             android:label="@string/title_activity_log_in" >
         </activity>
         <activity
-            android:name="com.example.view.AccountViewActivity"
+            android:name="com.example.model.activities.AccountListViewActivity"
+            android:label="@string/title_activity_account_list_view" >
+        </activity>
+        <activity
+            android:name="com.example.model.activities.AccountViewActivity"
             android:label="@string/title_activity_account_view" >
         </activity>
         <activity

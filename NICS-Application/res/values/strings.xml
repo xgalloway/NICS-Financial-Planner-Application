@@ -7,4 +7,5 @@
 	<string name="title_activity_account_view">AccountView</string>
 	<string name="title_activity_registration">Registration</string>
 	<string name="title_activity_account_setup">AccountSetup</string>
+	<string name="title_activity_account_list_view">AccountListView</string>
 </resources>

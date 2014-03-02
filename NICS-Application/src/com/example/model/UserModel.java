@@ -9,8 +9,11 @@ public class UserModel implements Model {
 	private final String TAG = "UserModel";
 	private static Map<String, User> users = new HashMap<String, User>();
 	static {
-		users.put("admin", new User("admin", "pass123"));
+		users.put("admin", new User("admin", "pass123".hashCode()));
 	}
+	
+	private static User current;
+	
 	public UserModel() {
 	}
 	
@@ -23,11 +26,12 @@ public class UserModel implements Model {
 		return false;
 	}
 	@Override
-	public boolean acceptCredentials(String name, String password) {
+	public boolean acceptCredentials(String name, int password) {
 		if (isValidUser(name)) {
 			User u = users.get(name);
-			String pass = u.getPassword();
-			if (password.equals(pass)) {
+			int pass = u.getPassword();
+			if (password == pass) {
+				current = u;
 				return true;
 			}
 		}
@@ -46,11 +50,14 @@ public class UserModel implements Model {
 	}
 
 	@Override
-	public void addUser(String name, String password) {
+	public void addUser(String name, int password) {
 		users.put(name, new User(name, password));
 		
 	}
 
+	public void setCurrentUser(User u) {
+		current = u;
+	}
 //	@Override
 //	public void mergeModel(Model m) {
 //		ArrayList<User> list = new ArrayList<User>(m.getUsers());

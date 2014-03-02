@@ -25,7 +25,7 @@ public class LogInViewPresenter implements ClickListener {
 			case R.id.enterButton:
 				String name = view.getUsername();
 				String password = view.getPassword();
-				if (model.acceptCredentials(name, password)) {
+				if (model.acceptCredentials(name, password.hashCode())) {
 					view.acceptLogin();
 				} else {
 					view.displayAlertDialog();
