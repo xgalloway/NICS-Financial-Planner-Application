@@ -23,7 +23,7 @@ public class RegistrationViewPresenter implements ClickListener {
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
-			case R.id.enterButton:
+			case R.id.goButton:
 				String username = view.getUsername();
 				String password = view.getPassword();
 				if (username.length() < 5 || password.length() < 5) {

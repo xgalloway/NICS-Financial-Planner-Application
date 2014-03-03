@@ -29,7 +29,7 @@ public class MainActivity extends Activity implements WelcomeView, OnClickListen
 		
 		logInButton = (Button) findViewById(R.id.loginButton);
 		logInButton.setOnClickListener(this);
-		registerButton = (Button) findViewById(R.id.enterButton);
+		registerButton = (Button) findViewById(R.id.goButton);
 		registerButton.setOnClickListener(this);
 	}
 	

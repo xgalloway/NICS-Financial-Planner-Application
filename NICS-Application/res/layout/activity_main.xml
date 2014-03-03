@@ -26,7 +26,7 @@
         android:textColor="#ffffff" />
 
     <Button
-        android:id="@+id/enterButton"
+        android:id="@+id/goButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:freezesText="false"

@@ -22,7 +22,7 @@ public class LogInViewPresenter implements ClickListener {
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
-			case R.id.enterButton:
+			case R.id.goButton:
 				String name = view.getUsername();
 				String password = view.getPassword();
 				if (model.acceptCredentials(name, password.hashCode())) {

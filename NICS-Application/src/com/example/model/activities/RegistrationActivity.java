@@ -49,10 +49,10 @@ public class RegistrationActivity extends Activity implements RegistrationView, 
 	}
 
 	public void initiateEditTextsAndButtons() {
-		enterButton = (Button)findViewById(R.id.enterButton);
+		enterButton = (Button)findViewById(R.id.goButton);
 		enterButton.setOnClickListener(this);
-		usernameEditText = (EditText) findViewById(R.id.usernameEditText);
-		passwordEditText = (EditText) findViewById(R.id.passEditText);
+		usernameEditText = (EditText) findViewById(R.id.amountEditText);
+		passwordEditText = (EditText) findViewById(R.id.commentEditText);
 		
 	}
 	

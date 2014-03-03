@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:paddingBottom="5dp"
         android:paddingLeft="25dp"
-        android:text="Register Account"
+        android:text="Make Transaction"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#ffffff" />
 
@@ -23,8 +23,8 @@
         android:layout_height="wrap_content"
         android:background="#ffffff"
         android:ems="10"
-        android:hint="Username"
-        android:inputType="textPersonName" />
+        android:hint="Amount"
+        android:inputType="number|numberDecimal" />
 
     <TextView
         android:id="@+id/balanceTextView"
@@ -35,10 +35,11 @@
         android:id="@+id/commentEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="0.30"
         android:background="#ffffff"
         android:ems="10"
-        android:hint="Password"
-        android:inputType="textPassword" />
+        android:hint="Comments"
+        android:inputType="text|textPassword" />
 
     <TextView
         android:id="@+id/balanceTextView"
@@ -50,7 +51,7 @@
         android:id="@+id/goButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Register"
-        android:textColor="#ffffff"  />
+        android:text="Complete Transaction"
+        android:textColor="#ffffff" />
 
 </LinearLayout>

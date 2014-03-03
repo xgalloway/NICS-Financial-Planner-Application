@@ -4,6 +4,12 @@
     android:versionCode="1"
     android:versionName="1.0" >
 
+    
+    <uses-permission 
+        android:name="android.permission.SET_DEBUG_APP">
+        
+    </uses-permission>
+    
     <uses-sdk
         android:minSdkVersion="19"
         android:targetSdkVersion="19" />
@@ -41,6 +47,10 @@
         <activity
             android:name="com.example.model.activities.AccountSetupActivity"
             android:label="@string/title_activity_account_setup" >
+        </activity>
+        <activity
+            android:name="com.example.model.activities.TransactionViewActivity"
+            android:label="@string/title_transaction_view">
         </activity>
     </application>
 

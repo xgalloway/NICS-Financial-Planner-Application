@@ -2,10 +2,10 @@ package com.example.view;
 
 import java.util.Date;
 
-public interface AccountView {
-	void addTransaction();
+public interface TransactionView {
+	void makeTransaction();
 	String getAmount();
 	Date getDate();
+	String getComments();
 	void addSearchRequestNotifyCallback(ClickListener listener);
-	
 }

@@ -45,9 +45,9 @@ public class LogInActivity extends Activity implements LogInView, OnClickListene
 	}
 	
 	public void initiateEditTextsAndButtons() {
-		enterButton = (Button)findViewById(R.id.enterButton);
+		enterButton = (Button)findViewById(R.id.goButton);
 		enterButton.setOnClickListener(this);
-		usernameEditText = (EditText) findViewById(R.id.usernameEditText);
+		usernameEditText = (EditText) findViewById(R.id.amountEditText);
 		passwordEditText = (EditText) findViewById(R.id.passwordEditText);
 		
 	}
@@ -65,7 +65,6 @@ public class LogInActivity extends Activity implements LogInView, OnClickListene
 	@Override
 	public void acceptLogin() {
 		Intent i = new Intent(this, AccountListViewActivity.class);
-		//i.putExtra(user, username);
 		startActivity(i);
 		
 	}

@@ -27,7 +27,7 @@ public class WelcomeViewPresenter implements ClickListener {
 			case R.id.loginButton:
 				view.startLogin();
 				break;
-			case R.id.enterButton:
+			case R.id.goButton:
 				view.startRegistration();
 				break;
 		}

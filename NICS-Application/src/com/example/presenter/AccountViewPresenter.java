@@ -12,19 +12,19 @@ import com.example.view.AccountView;
 public class AccountViewPresenter implements ClickListener {
 	
 	private AccountView view;
-	//private final Model model;
+	private final Model model;
 
-	public AccountViewPresenter(AccountView v/*, Model m*/) {
+	public AccountViewPresenter(AccountView v, Model m) {
 		this.view = v;
-		//this.model = m;
+		this.model = m;
 		view.addSearchRequestNotifyCallback(this);
 	}
 
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()){ 
-			case R.id.addButton:
-				view.startAdd();
+			case R.id.backButton:
+				//view.startAdd();
 				break;
 		}
 	}

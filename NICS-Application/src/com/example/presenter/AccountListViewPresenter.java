@@ -1,10 +1,13 @@
 package com.example.presenter;
 
+import java.util.List;
+
 import android.view.View;
 
 
 
 import com.example.model.Model;
+import com.example.model.UserAccount;
 import com.example.nics_application.R;
 import com.example.view.AccountListView;
 import com.example.view.ClickListener;
@@ -24,10 +27,15 @@ public class AccountListViewPresenter implements ClickListener {
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()){ 
-			case R.id.addButton:
+			case R.id.backButton:
 				view.createAccount();
 				break;
 		}
+	}
+	
+	public void onItemClick(View v, int position) {
+		model.getCurrent().setCurrentAccount(model.getCurrent().getAccounts().get(position));
+		view.viewAccount();
 	}
 
 }

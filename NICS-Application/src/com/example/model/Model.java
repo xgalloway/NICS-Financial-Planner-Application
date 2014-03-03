@@ -9,4 +9,6 @@ public interface Model {
 	//void mergeModel(Model m);
 	User getUserByUsername(final String username);
 	Collection<User> getUsers();
+	User getCurrent();
+	void setCurrentUser(User u);
 }

@@ -58,6 +58,10 @@ public class UserModel implements Model {
 	public void setCurrentUser(User u) {
 		current = u;
 	}
+	
+	public User getCurrent() {
+		return current;
+	}
 //	@Override
 //	public void mergeModel(Model m) {
 //		ArrayList<User> list = new ArrayList<User>(m.getUsers());

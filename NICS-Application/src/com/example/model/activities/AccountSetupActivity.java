@@ -20,6 +20,7 @@ import com.example.view.ClickListener;
 public class AccountSetupActivity extends Activity implements AccountSetupView, OnClickListener {
 	
 	private Button createButton;
+	private Button cancelButton;
 	private EditText accountNameText, displayNameText, balanceText, rateText;
 	private String name;
 	
@@ -32,8 +33,22 @@ public class AccountSetupActivity extends Activity implements AccountSetupView, 
 		
 		presenter = new AccountSetupPresenter(this, new UserModel());
 		
+		initiateButtonsAndEditTexts();
+	}
+
+	@Override
+	public void onClick(View v) {
+		presenter.onClick(v);
+		
+	}
+	
+	@Override
+	public void initiateButtonsAndEditTexts() {
 		createButton = (Button) findViewById(R.id.createButton);
 		createButton.setOnClickListener(this);
+		
+		cancelButton = (Button) findViewById(R.id.cancelButton);
+		cancelButton.setOnClickListener(this);
 		
 		accountNameText = (EditText) findViewById(R.id.accountNameText);
 		//accountNameText.setText(name);
@@ -49,17 +64,12 @@ public class AccountSetupActivity extends Activity implements AccountSetupView, 
 	}
 
 	@Override
-	public void onClick(View v) {
-		presenter.onClick(v);
-		
-	}
-
-	@Override
 	public void acceptAccount() {
 		Intent i = new Intent(this, AccountListViewActivity.class);
 		startActivity(i);
 	}
 
+	
 	@Override
 	public String getName() {
 		return accountNameText.getText().toString();
@@ -78,8 +88,8 @@ public class AccountSetupActivity extends Activity implements AccountSetupView, 
 	@Override
 	public void displayAlertDialog() {
 		AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
-		alertDialog.setTitle("Authentication Failure");
-		alertDialog.setMessage("Authentication has failed. Please try again.");
+		alertDialog.setTitle("Error");
+		alertDialog.setMessage("Balance and Interest Rate must be numbers");
 		alertDialog.setNeutralButton("OK", new DialogInterface.OnClickListener() {
 			
 			@Override
@@ -90,6 +100,22 @@ public class AccountSetupActivity extends Activity implements AccountSetupView, 
 		});
 		alertDialog.show();
 		
+	}
+
+	@Override
+	public void cancelAccountCreation() {
+		Intent i = new Intent(this, AccountListViewActivity.class);
+		startActivity(i);
+	}
+
+	@Override
+	public String getRate() {
+		return rateText.getText().toString();
+	}
+
+	@Override
+	public String getBalance() {
+		return balanceText.getText().toString();
 	}
 
 	/*public void create(){
