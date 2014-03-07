@@ -23,10 +23,19 @@ public class AccountViewPresenter implements ClickListener {
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()){ 
+			case R.id.transactionButton:
+				view.addTransaction();
+				break;
 			case R.id.backButton:
-				//view.startAdd();
+				model.setCurrentUser(model.getCurrent());
+				view.leaveTransactionScreen();
 				break;
 		}
 	}
+
+	public void onItemClick(View v, int position) {
+		
+	}
+
 
 }

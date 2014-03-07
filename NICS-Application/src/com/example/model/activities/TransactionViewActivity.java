@@ -3,6 +3,8 @@ package com.example.model.activities;
 import java.util.Date;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -24,7 +26,9 @@ public class TransactionViewActivity extends Activity implements TransactionView
 	EditText amountEditText;
 	EditText commentEditText;
 	Button transactionButton;
-	
+	Button withdrawalButton;
+	Button depositButton;
+	Button cancelButton;
 	TransactionViewPresenter presenter;
 	
 	private ClickListener listener;
@@ -52,8 +56,15 @@ public class TransactionViewActivity extends Activity implements TransactionView
 	public void initiateButtonsAndViews() {
 		amountEditText = (EditText) findViewById(R.id.amountEditText);
 		commentEditText = (EditText) findViewById(R.id.commentEditText);
-		transactionButton = (Button) findViewById(R.id.transactionButton);
-		transactionButton.setOnClickListener(this);
+		
+		withdrawalButton = (Button) findViewById(R.id.goButton);
+		withdrawalButton.setOnClickListener(this);
+		
+		depositButton = (Button) findViewById(R.id.depositButton);
+		depositButton.setOnClickListener(this);
+		
+		cancelButton = (Button) findViewById(R.id.cancelTransactionButton);
+		cancelButton.setOnClickListener(this);
 	}
 
 	@Override
@@ -81,6 +92,21 @@ public class TransactionViewActivity extends Activity implements TransactionView
 	@Override
 	public void addSearchRequestNotifyCallback(ClickListener lsnr) {
 		listener = lsnr;
+	}
+	
+	@Override
+	public void displayAlertDialog() {
+		AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+		alertDialog.setTitle("Transaction Failure");
+		alertDialog.setMessage("Make sure to specify an amount before making a transaction.");
+		alertDialog.setNeutralButton("OK", new DialogInterface.OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				dialog.cancel();
+			}
+		});
+		alertDialog.show();
+		
 	}
 
 }

@@ -16,7 +16,7 @@ public class UserAccount{
 		this.name = display;
 		this.accountName = full;
 		this.balance = balance;
-		transactionList.add(new Transaction(balance, new Date(System.currentTimeMillis()), "Starting balance"));
+		transactionList.add(new Transaction(balance, new Date(System.currentTimeMillis()), "deposit", "Starting balance"));
 		this.rate = interest;
 	}
 	public String getName() {
@@ -39,14 +39,19 @@ public class UserAccount{
 		return transactionList;
 	}
 	
-	public void makeTransaction(double amount, Date date, String comments) {
-		Transaction t = new Transaction(amount, date, comments);
+	public void makeTransaction(double amount, Date date, String type, String comments) {
+		double finalAmount = Math.abs(amount);
+		Transaction t = new Transaction(finalAmount, date, type, comments);
 		transactionList.add(t);
-		balance = balance + amount;
+		if (type.equals("deposit")) {
+			balance = balance + finalAmount;
+		} else if (type.equals("withdrawal")) {
+			balance = balance - amount;
+		}
 	}
 	
 	public String toString() {
-		return "" + name + "\t\t" + balance;
+		return "" + name + "\nBalance: " + balance;
 	}
 	
 }

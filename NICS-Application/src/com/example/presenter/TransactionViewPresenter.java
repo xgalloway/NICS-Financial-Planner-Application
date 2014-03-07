@@ -26,12 +26,30 @@ public class TransactionViewPresenter implements ClickListener {
 		switch (v.getId()) {
 			case R.id.goButton:
 				String amount = view.getAmount();
-				double a = Integer.parseInt(amount);
-				Date date = view.getDate();
-				String comments = view.getComments();
-				model.getCurrent().getCurrent().makeTransaction(a, date, comments);
-				view.makeTransaction();
+				
+				if (amount.toString().length() < 1) {
+					view.displayAlertDialog();
+				} else {
+					double a = Integer.parseInt(amount);
+					Date date = view.getDate();
+					String comments = view.getComments();
+					model.getCurrent().getCurrent().makeTransaction(a, date, "withdrawal", comments);
+					view.makeTransaction();
+				}
 				break;
+			case R.id.depositButton:
+				String amount2 = view.getAmount();
+				if (amount2.toString().length() < 1) {
+					view.displayAlertDialog();
+				} else {
+					double a2 = Integer.parseInt(amount2);
+					Date date2 = view.getDate();
+					String comments2 = view.getComments();
+					model.getCurrent().getCurrent().makeTransaction(a2, date2, "deposit", comments2);
+					view.makeTransaction();
+				}
+			case R.id.cancelTransactionButton:
+				view.makeTransaction();
 		}
 
 	}

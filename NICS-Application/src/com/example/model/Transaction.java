@@ -7,12 +7,13 @@ public class Transaction {
 	private double amount;
 	private Date date;
 	private String comments;
+	private String type;
 	
-	
-	public Transaction(double amount, Date date, String comments) {
+	public Transaction(double amount, Date date, String type, String comments) {
 		this.amount = amount;
 		this.date = date;
 		this.comments = comments;
+		this.type = type;
 	}
 
 	public double getAmount() {
@@ -36,6 +37,6 @@ public class Transaction {
 	}
 	
 	public String toString() {
-		return "" + date.toString() + "\t\t" + amount;
+		return "" + date.toString() +"\nAmount: " + amount;
 	}
 }

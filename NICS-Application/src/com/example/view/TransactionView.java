@@ -8,4 +8,5 @@ public interface TransactionView {
 	Date getDate();
 	String getComments();
 	void addSearchRequestNotifyCallback(ClickListener listener);
+	void displayAlertDialog();
 }

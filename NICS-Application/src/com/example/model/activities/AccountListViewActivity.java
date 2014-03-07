@@ -30,8 +30,6 @@ public class AccountListViewActivity extends Activity implements AccountListView
 	private AccountListViewPresenter presenter;
 	private ClickListener listener;
 	private ListView list;
-
-	
 	
 	@Override 
 	protected void onCreate(Bundle savedInstanceState) {

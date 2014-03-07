@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
@@ -17,29 +17,10 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#ffffff" />
 
-    <EditText
-        android:id="@+id/amountEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#ffffff"
-        android:ems="10"
-        android:hint="Amount"
-        android:inputType="number|numberDecimal" />
-
     <TextView
         android:id="@+id/balanceTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
-
-    <EditText
-        android:id="@+id/commentEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.30"
-        android:background="#ffffff"
-        android:ems="10"
-        android:hint="Comments"
-        android:inputType="text|textPassword" />
 
     <TextView
         android:id="@+id/balanceTextView"
@@ -47,11 +28,60 @@
         android:layout_height="wrap_content"
         android:paddingBottom="50dp" />
 
+    <EditText
+        android:id="@+id/amountEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/balanceTextView"
+        android:layout_alignLeft="@+id/balanceTextView"
+        android:layout_below="@+id/textView4"
+        android:background="#ffffff"
+        android:ems="10"
+        android:hint="Amount"
+        android:inputType="number|numberDecimal" />
+
+    <EditText
+        android:id="@+id/commentEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/depositButton"
+        android:layout_alignLeft="@+id/balanceTextView"
+        android:layout_below="@+id/balanceTextView"
+        android:layout_marginTop="53dp"
+        android:layout_weight="0.30"
+        android:background="#ffffff"
+        android:ems="10"
+        android:hint="Comments"
+        android:inputType="textMultiLine"
+         />
+
     <Button
         android:id="@+id/goButton"
-        android:layout_width="wrap_content"
+        android:layout_width="155dp"
         android:layout_height="wrap_content"
-        android:text="Complete Transaction"
+        android:layout_alignLeft="@+id/depositButton"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="78dp"
+        android:layout_weight="0.01"
+        android:text="Withdrawal"
         android:textColor="#ffffff" />
 
-</LinearLayout>
+    <Button
+        android:id="@+id/depositButton"
+        android:layout_width="152dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/goButton"
+        android:layout_centerHorizontal="true"
+        android:text="Deposit"
+        android:textColor="#ffffff" />
+
+    <Button
+        android:id="@+id/cancelTransactionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:text="Cancel"
+        android:textColor="#ffffff" />
+
+</RelativeLayout>
