@@ -37,6 +37,10 @@ public class Transaction {
 	}
 	
 	public String toString() {
-		return "" + date.toString() +"\nAmount: " + amount;
+		if (type.equals("deposit")) {
+			return "+ " + date.toString() + "\nAmount: " + amount;
+		} else {
+			return "- " + date.toString() + "\nAmount: " + amount;
+		}
 	}
 }

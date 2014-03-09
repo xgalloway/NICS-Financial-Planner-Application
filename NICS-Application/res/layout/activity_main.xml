@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@drawable/bg"
@@ -15,24 +15,37 @@
         android:textSize="24sp"
         android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/loginButton"
-        android:layout_width="match_parent"
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:paddingLeft="50dp"
-        android:paddingRight="50dp"
-        android:text="Login"
-        android:textColor="#ffffff" />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="42dp"
+        android:src="@drawable/nics" />
 
     <Button
         android:id="@+id/goButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/imageView1"
+        android:layout_alignLeft="@+id/TextView2"
+        android:layout_marginBottom="54dp"
         android:freezesText="false"
         android:paddingLeft="50dp"
         android:paddingRight="50dp"
-        android:text="Register" 
-        android:textColor="#ffffff"/>
+        android:text="Register"
+        android:textColor="#ffffff" />
 
-</LinearLayout>
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/TextView2"
+        android:layout_below="@+id/TextView2"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:text="Login"
+        android:textColor="#ffffff" />
+
+</RelativeLayout>

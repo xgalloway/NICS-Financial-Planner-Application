@@ -23,26 +23,28 @@ public final class R {
     public static final class drawable {
         public static final int bg=0x7f020000;
         public static final int ic_launcher=0x7f020001;
+        public static final int nics=0x7f020002;
     }
     public static final class id {
         public static final int LinearLayout1=0x7f08000b;
         public static final int TextView01=0x7f08000c;
         public static final int TextView2=0x7f080011;
         public static final int accountNameText=0x7f080005;
-        public static final int action_settings=0x7f080016;
+        public static final int action_settings=0x7f080017;
         public static final int amountEditText=0x7f08000e;
         public static final int backButton=0x7f080001;
         public static final int balanceText=0x7f080006;
         public static final int balanceTextView=0x7f080000;
         public static final int cancelButton=0x7f080009;
-        public static final int cancelTransactionButton=0x7f080015;
-        public static final int commentEditText=0x7f080013;
+        public static final int cancelTransactionButton=0x7f080016;
+        public static final int commentEditText=0x7f080014;
         public static final int createButton=0x7f080008;
-        public static final int depositButton=0x7f080014;
+        public static final int depositButton=0x7f080015;
         public static final int displayNameText=0x7f080004;
         public static final int goButton=0x7f080010;
+        public static final int imageView1=0x7f080012;
         public static final int listViewMain=0x7f080002;
-        public static final int loginButton=0x7f080012;
+        public static final int loginButton=0x7f080013;
         public static final int passwordEditText=0x7f08000f;
         public static final int rateText=0x7f080007;
         public static final int textView3=0x7f080003;

@@ -28,6 +28,7 @@ import com.example.presenter.AccountViewPresenter;
 import com.example.view.AccountListView;
 import com.example.view.AccountView;
 import com.example.view.ClickListener;
+import com.example.view.TransactionAdapter;
 
 public class AccountViewActivity extends Activity implements AccountView, OnClickListener {
 	
@@ -91,7 +92,10 @@ public class AccountViewActivity extends Activity implements AccountView, OnClic
 			}
 		}
 		
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.item_view, items);
+		//ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.item_view, items);
+		//list.setAdapter(adapter);
+		
+		ArrayAdapter<String> adapter = new TransactionAdapter(this, R.layout.item_view, items);
 		list.setAdapter(adapter);
 		}
 

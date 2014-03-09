@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.example.nics_application.R;
 import com.example.presenter.WelcomeViewPresenter;
@@ -17,6 +18,7 @@ public class MainActivity extends Activity implements WelcomeView, OnClickListen
 
 	Button logInButton;
 	Button registerButton;
+	ImageView logo;
 	private WelcomeViewPresenter presenter;
 	private ClickListener listener;
 	
@@ -31,6 +33,7 @@ public class MainActivity extends Activity implements WelcomeView, OnClickListen
 		logInButton.setOnClickListener(this);
 		registerButton = (Button) findViewById(R.id.goButton);
 		registerButton.setOnClickListener(this);
+		logo = (ImageView) findViewById(R.id.imageView1);
 	}
 	
 	@Override
