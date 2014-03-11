@@ -30,6 +30,9 @@ public class AccountListViewPresenter implements ClickListener {
 			case R.id.backButton:
 				view.createAccount();
 				break;
+			case R.id.reportButton:
+				view.viewReport();
+				break;
 		}
 	}
 	

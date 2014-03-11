@@ -26,7 +26,7 @@ import com.example.view.ClickListener;
 
 public class AccountListViewActivity extends Activity implements AccountListView, OnClickListener {
 	
-	private Button addButton;
+	private Button addButton, reportButton;
 	private AccountListViewPresenter presenter;
 	private ClickListener listener;
 	private ListView list;
@@ -51,6 +51,9 @@ public class AccountListViewActivity extends Activity implements AccountListView
 	public void initiateViews() {
 		addButton = (Button) findViewById(R.id.backButton);
 		addButton.setOnClickListener(this);
+		
+		reportButton = (Button) findViewById(R.id.reportButton);
+		reportButton.setOnClickListener(this);
 		
 		list = (ListView)findViewById(R.id.listViewMain);
 		list.setOnItemClickListener(new OnItemClickListener() {
@@ -93,6 +96,12 @@ public class AccountListViewActivity extends Activity implements AccountListView
 	@Override
 	public void viewAccount() {
 		Intent i = new Intent(this, AccountViewActivity.class);
+		startActivity(i);
+	}
+
+	@Override
+	public void viewReport() {
+		Intent i = new Intent(this, ReportViewActivity.class);
 		startActivity(i);
 	}
 	

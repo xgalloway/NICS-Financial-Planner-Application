@@ -8,5 +8,7 @@
 	<string name="title_activity_registration">Registration</string>
 	<string name="title_activity_account_setup">AccountSetup</string>
 	<string name="title_activity_account_list_view">AccountListView</string>
-	<string name="title_transaction_view">TransactionView</string>
+	<string name="title_activity_transaction_view">TransactionView</string>
+	<string name="title_activity_report_view">ReportView</string>
+	<string name="title_activity_spending_report_view">SpendingReportView</string>
 </resources>
