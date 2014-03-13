@@ -1,5 +1,6 @@
 package com.example.model.activities;
 
+import support.ClickListener;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -14,7 +15,6 @@ import android.widget.EditText;
 import com.example.model.UserModel;
 import com.example.nics_application.R;
 import com.example.presenter.RegistrationViewPresenter;
-import com.example.view.ClickListener;
 import com.example.view.RegistrationView;
 
 

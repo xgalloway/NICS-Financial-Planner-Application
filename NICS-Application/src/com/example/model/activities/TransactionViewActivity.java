@@ -2,6 +2,8 @@ package com.example.model.activities;
 
 import java.util.Date;
 
+import support.ClickListener;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -18,7 +20,6 @@ import com.example.nics_application.R;
 import com.example.presenter.RegistrationViewPresenter;
 import com.example.presenter.TransactionViewPresenter;
 import com.example.view.AccountView;
-import com.example.view.ClickListener;
 import com.example.view.TransactionView;
 
 public class TransactionViewActivity extends Activity implements TransactionView, OnClickListener {
@@ -81,7 +82,8 @@ public class TransactionViewActivity extends Activity implements TransactionView
 	@Override
 	public Date getDate() {
 		Date date = new Date(System.currentTimeMillis());
-		return date;
+		Date newDate = new Date(date.getYear(), date.getMonth(), date.getDay());
+		return newDate;
 	}
 	
 	@Override

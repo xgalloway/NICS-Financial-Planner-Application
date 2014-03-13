@@ -1,5 +1,7 @@
 package com.example.view;
 
+import support.ClickListener;
+
 public interface LogInView {
 	void acceptLogin();
 	String getUsername();

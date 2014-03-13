@@ -2,6 +2,8 @@ package com.example.model.activities;
 import java.util.ArrayList;
 import java.util.List;
 
+import support.ClickListener;
+
 import android.app.Activity;
 import android.app.ListActivity;
 import android.content.Intent;
@@ -22,7 +24,6 @@ import com.example.presenter.AccountListViewPresenter;
 import com.example.presenter.AccountViewPresenter;
 import com.example.view.AccountListView;
 import com.example.view.AccountView;
-import com.example.view.ClickListener;
 
 public class AccountListViewActivity extends Activity implements AccountListView, OnClickListener {
 	

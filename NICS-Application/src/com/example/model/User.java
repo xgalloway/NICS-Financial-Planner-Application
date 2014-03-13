@@ -9,6 +9,7 @@ public class User {
 	//private String[] accounts;
 	private List<UserAccount> accounts;
 	private UserAccount current;
+	private Report currentReport;
 	
 	public User(String name, int password) {
 		this.username = name;
@@ -48,5 +49,13 @@ public class User {
 	
 	public void setCurrentAccount(UserAccount account) {
 		current = account;
+	}
+	
+	public void setCurrentReport(Report report) {
+		currentReport = report;
+	}
+	
+	public Report getCurrentReport() {
+		return currentReport;
 	}
 }

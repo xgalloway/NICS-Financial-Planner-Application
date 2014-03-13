@@ -1,4 +1,5 @@
 package com.example.model.activities;
+import support.ClickListener;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -15,7 +16,6 @@ import com.example.model.UserModel;
 import com.example.nics_application.R;
 import com.example.presenter.AccountSetupPresenter;
 import com.example.view.AccountSetupView;
-import com.example.view.ClickListener;
 
 public class AccountSetupActivity extends Activity implements AccountSetupView, OnClickListener {
 	

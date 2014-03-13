@@ -1,11 +1,11 @@
 package com.example.presenter;
 
+import support.ClickListener;
 import android.view.View;
 
 
 import com.example.model.Model;
 import com.example.nics_application.R;
-import com.example.view.ClickListener;
 import com.example.view.LogInView;
 
 public class LogInViewPresenter implements ClickListener {

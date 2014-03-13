@@ -1,4 +1,4 @@
-package com.example.view;
+package support;
 
 import com.example.nics_application.R;
 

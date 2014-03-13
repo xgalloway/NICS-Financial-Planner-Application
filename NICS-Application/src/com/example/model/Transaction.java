@@ -43,4 +43,8 @@ public class Transaction {
 			return "- " + date.toString() + "\nAmount: " + amount;
 		}
 	}
+	
+	public String getType() {
+		return type;
+	}
 }

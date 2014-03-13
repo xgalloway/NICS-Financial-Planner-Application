@@ -8,7 +8,7 @@
     tools:context="com.example.model.activities.RegistrationActivity" >
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/startDateTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingBottom="5dp"

@@ -2,6 +2,8 @@ package com.example.view;
 
 import java.util.Date;
 
+import support.ClickListener;
+
 public interface TransactionView {
 	void makeTransaction();
 	String getAmount();

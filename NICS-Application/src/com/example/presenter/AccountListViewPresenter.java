@@ -2,6 +2,8 @@ package com.example.presenter;
 
 import java.util.List;
 
+import support.ClickListener;
+
 import android.view.View;
 
 
@@ -10,7 +12,6 @@ import com.example.model.Model;
 import com.example.model.UserAccount;
 import com.example.nics_application.R;
 import com.example.view.AccountListView;
-import com.example.view.ClickListener;
 import com.example.view.AccountView;
 
 public class AccountListViewPresenter implements ClickListener {
@@ -31,6 +32,7 @@ public class AccountListViewPresenter implements ClickListener {
 				view.createAccount();
 				break;
 			case R.id.reportButton:
+				model.setCurrentUser(model.getCurrent());
 				view.viewReport();
 				break;
 		}

@@ -3,6 +3,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import support.ClickListener;
+import support.TransactionAdapter;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -27,8 +30,6 @@ import com.example.presenter.AccountViewPresenter;
 
 import com.example.view.AccountListView;
 import com.example.view.AccountView;
-import com.example.view.ClickListener;
-import com.example.view.TransactionAdapter;
 
 public class AccountViewActivity extends Activity implements AccountView, OnClickListener {
 	

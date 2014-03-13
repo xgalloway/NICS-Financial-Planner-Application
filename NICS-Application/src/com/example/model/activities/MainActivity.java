@@ -1,5 +1,6 @@
 package com.example.model.activities;
 
+import support.ClickListener;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,7 +12,6 @@ import android.widget.ImageView;
 
 import com.example.nics_application.R;
 import com.example.presenter.WelcomeViewPresenter;
-import com.example.view.ClickListener;
 import com.example.view.WelcomeView;
 
 public class MainActivity extends Activity implements WelcomeView, OnClickListener {

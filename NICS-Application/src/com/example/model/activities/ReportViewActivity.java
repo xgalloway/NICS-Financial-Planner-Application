@@ -1,5 +1,9 @@
 package com.example.model.activities;
 
+import java.util.Date;
+
+import support.ClickListener;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -8,18 +12,20 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.model.UserModel;
 import com.example.nics_application.R;
 import com.example.presenter.ReportViewPresenter;
-import com.example.view.ClickListener;
 import com.example.view.ReportView;
 
 public class ReportViewActivity extends Activity implements ReportView, OnClickListener{
 	
 	Button showButton;
-	EditText startDateText, endDateText;
+	TextView startDateTextView, endDateTextView;
+	DatePicker startDatePicker, endDatePicker;
 	
 	private ClickListener listener;
 	private ReportViewPresenter presenter;
@@ -36,8 +42,15 @@ public class ReportViewActivity extends Activity implements ReportView, OnClickL
 	public void initiateEditTextsAndButtons() {
 		showButton = (Button)findViewById(R.id.showButton);
 		showButton.setOnClickListener(this);
-		startDateText = (EditText) findViewById(R.id.startDateText);
-		endDateText = (EditText) findViewById(R.id.endDateText);
+		
+		startDateTextView = (TextView)findViewById(R.id.startDateTextView);
+		endDateTextView = (TextView)findViewById(R.id.endDateTextView);
+		
+		startDatePicker = (DatePicker)findViewById(R.id.startDatePicker);
+		startDatePicker.setOnClickListener(this);
+		
+		endDatePicker = (DatePicker)findViewById(R.id.endDatePicker);
+		endDatePicker.setOnClickListener(this);
 	}
 
 	@Override
@@ -52,20 +65,28 @@ public class ReportViewActivity extends Activity implements ReportView, OnClickL
 	}
 
 	@Override
-	public String getStartDate() {
-		return startDateText.getText().toString();
+	public Date getStartDate() {
+		int year = startDatePicker.getYear();
+		int month = startDatePicker.getMonth();
+		int day = startDatePicker.getDayOfMonth();
+		Date date = new Date(year, month, day);
+		return date;
 	}
 
 	@Override
-	public String getEndDate() {
-		return endDateText.getText().toString();
+	public Date getEndDate() {
+		int year = endDatePicker.getYear();
+		int month = endDatePicker.getMonth();
+		int day = endDatePicker.getDayOfMonth();
+		Date date = new Date(year, month, day);
+		return date;
 	}
 
 	@Override
 	public void displayAlertDialog() {
 		AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
-		alertDialog.setTitle("Authentication Failure");
-		alertDialog.setMessage("Authentication has failed. Please try again.");
+		alertDialog.setTitle("Error");
+		alertDialog.setMessage("End date must be after Start date.");
 		alertDialog.setNeutralButton("OK", new DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
@@ -76,8 +97,8 @@ public class ReportViewActivity extends Activity implements ReportView, OnClickL
 	}
 
 	@Override
-	public void addSearchRequestNotifyCallback(ClickListener lsr) {
-		listener = lsr;
+	public void addSearchRequestNotifyCallback(ClickListener lsnr) {
+		listener = lsnr;
 	}
 	
 }
