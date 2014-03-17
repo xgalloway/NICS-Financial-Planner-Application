@@ -5,7 +5,7 @@
     android:background="@drawable/bg"
     android:orientation="vertical"
     android:padding="45dp"
-    tools:context="com.example.model.activities.RegistrationActivity" >
+    tools:context="com.example.activities.RegistrationActivity" >
 
     <TextView
         android:id="@+id/startDateTextView"

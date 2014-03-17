@@ -2,13 +2,13 @@ package com.example.presenter;
 
 import java.util.Date;
 
-import support.ClickListener;
 
 import android.view.View;
 
 import com.example.model.Model;
 import com.example.model.Report;
 import com.example.nics_application.R;
+import com.example.support.ClickListener;
 import com.example.view.ReportView;
 
 public class ReportViewPresenter implements ClickListener{

@@ -1,10 +1,10 @@
 package com.example.presenter;
 
-import support.ClickListener;
 import android.view.View;
 
 import com.example.model.Model;
 import com.example.nics_application.R;
+import com.example.support.ClickListener;
 import com.example.view.SpendingReportView;
 
 public class SpendingReportViewPresenter implements ClickListener{

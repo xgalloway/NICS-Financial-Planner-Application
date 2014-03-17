@@ -1,4 +1,4 @@
-package support;
+package com.example.support;
 
 import com.example.nics_application.R;
 

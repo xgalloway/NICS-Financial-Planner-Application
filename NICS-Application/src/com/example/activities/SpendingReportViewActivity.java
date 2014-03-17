@@ -1,12 +1,10 @@
-package com.example.model.activities;
+package com.example.activities;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
-import support.ClickListener;
-import support.TransactionAdapter;
 
 
 
@@ -20,6 +18,8 @@ import com.example.model.UserModel;
 import com.example.nics_application.R;
 import com.example.presenter.ReportViewPresenter;
 import com.example.presenter.SpendingReportViewPresenter;
+import com.example.support.ClickListener;
+import com.example.support.TransactionAdapter;
 import com.example.view.SpendingReportView;
 
 import android.app.Activity;

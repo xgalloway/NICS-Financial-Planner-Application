@@ -1,6 +1,6 @@
 package com.example.view;
 
-import support.ClickListener;
+import com.example.support.ClickListener;
 
 public interface WelcomeView {
 	void startLogin();

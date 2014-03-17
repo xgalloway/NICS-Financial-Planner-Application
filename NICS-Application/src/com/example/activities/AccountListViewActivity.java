@@ -1,8 +1,7 @@
-package com.example.model.activities;
+package com.example.activities;
 import java.util.ArrayList;
 import java.util.List;
 
-import support.ClickListener;
 
 import android.app.Activity;
 import android.app.ListActivity;
@@ -22,6 +21,7 @@ import com.example.model.UserModel;
 import com.example.nics_application.R;
 import com.example.presenter.AccountListViewPresenter;
 import com.example.presenter.AccountViewPresenter;
+import com.example.support.ClickListener;
 import com.example.view.AccountListView;
 import com.example.view.AccountView;
 

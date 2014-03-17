@@ -2,7 +2,6 @@ package com.example.presenter;
 
 import java.util.List;
 
-import support.ClickListener;
 
 import android.view.View;
 
@@ -11,6 +10,7 @@ import android.view.View;
 import com.example.model.Model;
 import com.example.model.UserAccount;
 import com.example.nics_application.R;
+import com.example.support.ClickListener;
 import com.example.view.AccountListView;
 import com.example.view.AccountView;
 

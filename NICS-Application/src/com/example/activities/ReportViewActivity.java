@@ -1,8 +1,7 @@
-package com.example.model.activities;
+package com.example.activities;
 
 import java.util.Date;
 
-import support.ClickListener;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -19,6 +18,7 @@ import android.widget.TextView;
 import com.example.model.UserModel;
 import com.example.nics_application.R;
 import com.example.presenter.ReportViewPresenter;
+import com.example.support.ClickListener;
 import com.example.view.ReportView;
 
 public class ReportViewActivity extends Activity implements ReportView, OnClickListener{

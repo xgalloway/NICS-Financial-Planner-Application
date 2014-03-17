@@ -10,6 +10,10 @@
         
     </uses-permission>
     
+    <instrumentation android:name="android.test.InstrumentationTestRunner"
+    android:targetPackage="com.example.support"
+    android:label="@string/app_name" />
+    
     <uses-sdk
         android:minSdkVersion="19"
         android:targetSdkVersion="19" />
@@ -19,8 +23,11 @@
         android:icon="@drawable/nics"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+        
+        <uses-library android:name="android.test.runner" />
+        
         <activity
-            android:name="com.example.model.activities.MainActivity"
+            android:name="com.example.activities.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,35 +36,36 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.model.activities.LogInActivity"
+            android:name="com.example.activities.LogInActivity"
             android:label="@string/title_activity_log_in" >
         </activity>
+        
         <activity
-            android:name="com.example.model.activities.AccountListViewActivity"
+            android:name="com.example.activities.AccountListViewActivity"
             android:label="@string/title_activity_account_list_view" >
         </activity>
         <activity
-            android:name="com.example.model.activities.AccountViewActivity"
-            android:label="@string/title_activity_account_view" >
+            android:name="com.example.activities.AccountViewActivity"  
+            android:label="@string/title_activity_account_view" > 
         </activity>
         <activity
-            android:name="com.example.model.activities.RegistrationActivity"
+            android:name="com.example.activities.RegistrationActivity"
             android:label="@string/title_activity_registration" >
         </activity>
         <activity
-            android:name="com.example.model.activities.AccountSetupActivity"
+            android:name="com.example.activities.AccountSetupActivity"
             android:label="@string/title_activity_account_setup" >
         </activity>
         <activity
-            android:name="com.example.model.activities.TransactionViewActivity"
+            android:name="com.example.activities.TransactionViewActivity"
             android:label="@string/title_activity_transaction_view">
         </activity>
         <activity
-            android:name="com.example.model.activities.SpendingReportViewActivity"
+            android:name="com.example.activities.SpendingReportViewActivity"
             android:label="@string/title_activity_spending_report_view">
         </activity>
         <activity
-            android:name="com.example.model.activities.ReportViewActivity"
+            android:name="com.example.activities.ReportViewActivity"
             android:label="@string/title_activity_report_view">
         </activity>
     </application>

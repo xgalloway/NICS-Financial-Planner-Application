@@ -11,6 +11,8 @@ public class User {
 	private UserAccount current;
 	private Report currentReport;
 	
+	private long id;
+	
 	public User(String name, int password) {
 		this.username = name;
 		this.password = password;
@@ -57,5 +59,9 @@ public class User {
 	
 	public Report getCurrentReport() {
 		return currentReport;
+	}
+	
+	public void setId(long pid) {
+		this.id = pid;
 	}
 }

@@ -1,4 +1,5 @@
-package support;
+package com.example.support;
+
 
 import android.view.View;
 
