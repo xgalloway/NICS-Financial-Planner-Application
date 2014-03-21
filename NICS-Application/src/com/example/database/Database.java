@@ -312,6 +312,7 @@ public class Database implements DatabaseInterface {
 		}
 	}
 
+
 	@Override
 	public void deleteTransactions(String parent) {
 		SQLiteDatabase db = dbHelper.getWritableDatabase();
