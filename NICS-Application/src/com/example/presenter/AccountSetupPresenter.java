@@ -24,7 +24,7 @@ public class AccountSetupPresenter implements ClickListener {
 	public void onClick(View v) {
 		switch (v.getId()) {
 			case R.id.createButton:
-				String account_type = view.getDisplayName();
+				//String account_type = view.getDisplayName();
 				String account_name = view.getName();
 				String account_rate = view.getRate();
 				String account_balance = view.getBalance();
@@ -32,7 +32,9 @@ public class AccountSetupPresenter implements ClickListener {
 					int rate = Integer.parseInt(account_rate);
 					int balance = Integer.parseInt(account_balance);
 					
-					model.getCurrent().addAccount(new UserAccount(account_type, account_name, balance, rate));
+					//model.getCurrent().addAccount(new UserAccount(account_type, account_name, balance, rate));
+					String parent = model.getCurrent().getUsername();
+					model.addUserAccount(account_name, balance, rate, parent);
 					view.acceptAccount();
 				} catch (NumberFormatException e) {
 					view.displayAlertDialog();

@@ -9,6 +9,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.example.model.Application;
 import com.example.nics_application.R;
 import com.example.presenter.WelcomeViewPresenter;
 import com.example.support.ClickListener;
@@ -26,7 +27,7 @@ public class MainActivity extends Activity implements WelcomeView, OnClickListen
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
+		Application app = Application.INSTANCE;
 		presenter = new WelcomeViewPresenter(this);
 		
 		logInButton = (Button) findViewById(R.id.loginButton);

@@ -9,6 +9,7 @@ public class UserAccount{
 	private String accountName;
 	private double balance;
 	private double rate;
+	private String parent;
 	
 	List<Transaction> transactionList = new ArrayList<Transaction>();
 	
@@ -17,8 +18,16 @@ public class UserAccount{
 		this.accountName = full;
 		this.balance = balance;
 		Date date = new Date(System.currentTimeMillis());
-		transactionList.add(new Transaction(balance, date, "deposit", "Starting balance"));
+		//transactionList.add(new Transaction(balance, date, "deposit", "Starting balance"));
 		this.rate = interest;
+	}
+	
+	public UserAccount(String name, double balance, double interest, String parent) {
+		this.name = name;
+		this.balance = balance;
+		this.rate = interest;
+		this.parent = parent;
+		
 	}
 	public String getName() {
 		return name;
@@ -32,8 +41,16 @@ public class UserAccount{
 		return balance;
 	}
 	
+	public void setBalance(Double amount) {
+		balance = amount;
+	}
+	
 	public double getRate() {
 		return rate;
+	}
+	
+	public String getParent() {
+		return parent;
 	}
 	
 	public List<Transaction> getTransactions() {
@@ -63,8 +80,8 @@ public class UserAccount{
 	
 	public void makeTransaction(double amount, Date date, String type, String comments) {
 		double finalAmount = Math.abs(amount);
-		Transaction t = new Transaction(finalAmount, date, type, comments);
-		transactionList.add(t);
+		//Transaction t = new Transaction(finalAmount, date, type, comments);
+		//transactionList.add(t);
 		if (type.equals("deposit")) {
 			balance = balance + finalAmount;
 		} else if (type.equals("withdrawal")) {

@@ -6,6 +6,8 @@ import java.util.Date;
 import android.view.View;
 
 import com.example.model.Model;
+import com.example.model.Transaction;
+import com.example.model.UserAccount;
 import com.example.nics_application.R;
 import com.example.support.ClickListener;
 import com.example.view.RegistrationView;
@@ -34,7 +36,14 @@ public class TransactionViewPresenter implements ClickListener {
 					double a = Integer.parseInt(amount);
 					Date date = view.getDate();
 					String comments = view.getComments();
-					model.getCurrent().getCurrent().makeTransaction(a, date, "withdrawal", comments);
+					Transaction t = new Transaction(a, date, "withdrawal", comments, model.getCurrentAccount().getName());
+					model.makeTransaction(t);
+					
+					UserAccount old = model.getCurrentAccount();
+					old.setBalance(old.getBalance() - a);
+					model.updateUserAccount(old);
+					
+					
 					view.makeTransaction();
 				}
 				break;
@@ -46,7 +55,13 @@ public class TransactionViewPresenter implements ClickListener {
 					double a2 = Integer.parseInt(amount2);
 					Date date2 = view.getDate();
 					String comments2 = view.getComments();
-					model.getCurrent().getCurrent().makeTransaction(a2, date2, "deposit", comments2);
+					Transaction t = new Transaction(a2, date2, "deposit", comments2, model.getCurrentAccount().getName());
+					model.makeTransaction(t);
+					
+					UserAccount old = model.getCurrentAccount();
+					old.setBalance(old.getBalance() + a2);
+					model.updateUserAccount(old);
+					
 					view.makeTransaction();
 				}
 			case R.id.cancelTransactionButton:
@@ -54,5 +69,6 @@ public class TransactionViewPresenter implements ClickListener {
 		}
 
 	}
+	
 
 }

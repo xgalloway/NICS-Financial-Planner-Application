@@ -15,6 +15,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.model.Application;
 import com.example.model.UserModel;
 import com.example.nics_application.R;
 import com.example.presenter.ReportViewPresenter;
@@ -34,8 +35,8 @@ public class ReportViewActivity extends Activity implements ReportView, OnClickL
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_report_view);
-		
-		presenter = new ReportViewPresenter(this, new UserModel());
+		Application app = Application.INSTANCE;
+		presenter = new ReportViewPresenter(this, app.getModel());
 		initiateEditTextsAndButtons();
 	}
 	

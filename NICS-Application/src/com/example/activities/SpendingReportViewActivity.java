@@ -10,6 +10,7 @@ import java.util.List;
 
 
 
+import com.example.model.Application;
 import com.example.model.Report;
 import com.example.model.Transaction;
 import com.example.model.User;
@@ -44,8 +45,8 @@ public class SpendingReportViewActivity extends Activity implements SpendingRepo
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_spending_report_view);
-		
-		presenter = new SpendingReportViewPresenter(this, new UserModel());
+		Application app = Application.INSTANCE;
+		presenter = new SpendingReportViewPresenter(this, app.getModel());
 		initiateEditTextsAndButtons();
 		populateListView();
 	}

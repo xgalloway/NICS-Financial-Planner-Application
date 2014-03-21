@@ -9,19 +9,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 	public static final String TABLE_NAME_USER = "user";
 	public static final String TABLE_NAME_ACCOUNT = "account";
-	public static final String TABLE_NAME_TRANS = "transaction";
+	public static final String TABLE_NAME_TRANS = "trans";
+	
+	
+	
+	
 	
 	//USER
 	public static final String COLUMN_ID = "_id";
 	public static final String COLUMN_NAME = "name";
 	public static final String COLUMN_PASSWORD = "password";
-	public static final String COLUMN_ACCOUNTS = "accounts";
-	public static final String COLUMN_REPORT = "report";
+	//public static final String COLUMN_ACCOUNTS = "accounts";
+	//public static final String COLUMN_REPORT = "report";
 	
 	
 	//USER ACCOUNT
 	public static final String COLUMN_BALANCE = "balance";
 	public static final String COLUMN_INTEREST = "interest";
+	public static final String COLUMN_PARENT = "parent";
 	
 	//TRANSACTION
 	public static final String COLUMN_AMOUNT = "amount";
@@ -32,6 +37,32 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	//REPORT
 	public static final String COLUMN_START = "start";
 	public static final String COLUMN_END = "end";
+	
+	
+	public static final String CREATE_USER_TABLE = "CREATE TABLE " 
+			+ TABLE_NAME_USER + "(" 
+			+ COLUMN_ID  + " integer primary key autoincrement,"
+			+ COLUMN_NAME + " not null," 
+			+ COLUMN_PASSWORD + " not null) ;";
+	
+	public static final String CREATE_ACCOUNT_TABLE = "CREATE TABLE "
+			+ TABLE_NAME_ACCOUNT + "(" 
+			+ COLUMN_ID  + " integer primary key autoincrement,"
+			+ COLUMN_NAME + " not null,"
+			+ COLUMN_BALANCE + " not null,"
+			+ COLUMN_INTEREST + " not null,"
+			+ COLUMN_PARENT + " not null) ;";
+			
+	public static final String CREATE_TRANS_TABLE = "CREATE TABLE "
+			+ TABLE_NAME_TRANS + "(" 
+			+ COLUMN_ID  + " integer primary key autoincrement, "
+			+ COLUMN_AMOUNT + " not null, "
+			+ COLUMN_TYPE + " not null, "
+			+ COLUMN_COMMENTS + " not null, "
+			+ COLUMN_DATE + " not null, "
+			+ COLUMN_PARENT + " not null) ;";
+			
+	
 	
 	private static final String DATABASE_NAME = "planner.db";
 	private static final int DATABASE_VERSION = 1;
@@ -49,32 +80,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	
 	@Override
 	public void onCreate(SQLiteDatabase db) {
-		db.execSQL("CREATE TABLE " 
-				+ TABLE_NAME_USER + "(" 
-				+ COLUMN_ID  + " integer primary key autoincrement, "
-				+ COLUMN_NAME + " not null, " 
-				+ COLUMN_PASSWORD + " not null, "
-				+ COLUMN_ACCOUNTS + " null, "
-				+ COLUMN_REPORT + " not null) ;"
-				);
+		db.execSQL(CREATE_USER_TABLE);
 		
-		db.execSQL("CREATE TABLE "
-				+ TABLE_NAME_ACCOUNT + "(" 
-				+ COLUMN_ID  + " integer primary key autoincrement, "
-				+ COLUMN_NAME + " not null, "
-				+ COLUMN_BALANCE + " not null, "
-				+ COLUMN_INTEREST + " not null) ;"
-				);
+		db.execSQL(CREATE_ACCOUNT_TABLE);
 		
-		db.execSQL("CREATE TABLE "
-				+ TABLE_NAME_TRANS + "("
-				+ COLUMN_ID  + " integer primary key autoincrement, "
-				+ COLUMN_AMOUNT + " not null, " 
-				+ COLUMN_TYPE + " not null, "
-				+ COLUMN_COMMENTS + " not null, "
-				+ COLUMN_DATE + " not null) ;"
-				);
-		
+		db.execSQL(CREATE_TRANS_TABLE);		
 
 	}
 

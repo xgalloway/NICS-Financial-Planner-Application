@@ -39,7 +39,9 @@ public class AccountListViewPresenter implements ClickListener {
 	}
 	
 	public void onItemClick(View v, int position) {
-		model.getCurrent().setCurrentAccount(model.getCurrent().getAccounts().get(position));
+		String parent = model.getCurrent().getUsername();
+		UserAccount current = model.getUserAccounts(parent).get(position);
+		model.setCurrentAccount(current);
 		view.viewAccount();
 	}
 

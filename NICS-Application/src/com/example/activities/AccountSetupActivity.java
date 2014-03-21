@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 
+import com.example.model.Application;
 import com.example.model.User;
 import com.example.model.UserModel;
 import com.example.nics_application.R;
@@ -21,7 +22,7 @@ public class AccountSetupActivity extends Activity implements AccountSetupView, 
 	
 	private Button createButton;
 	private Button cancelButton;
-	private EditText accountNameText, displayNameText, balanceText, rateText;
+	private EditText accountNameText, balanceText, rateText;
 	private String name;
 	
 	private ClickListener listener;
@@ -30,8 +31,8 @@ public class AccountSetupActivity extends Activity implements AccountSetupView, 
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_account_setup);
-		
-		presenter = new AccountSetupPresenter(this, new UserModel());
+		Application app = Application.INSTANCE;
+		presenter = new AccountSetupPresenter(this, app.getModel());
 		
 		initiateButtonsAndEditTexts();
 	}
@@ -52,9 +53,6 @@ public class AccountSetupActivity extends Activity implements AccountSetupView, 
 		
 		accountNameText = (EditText) findViewById(R.id.accountNameText);
 		//accountNameText.setText(name);
-		
-		displayNameText = (EditText) findViewById(R.id.displayNameText);
-		//displayNameText.setText(name);
 		
 		balanceText = (EditText) findViewById(R.id.balanceText);
 		//balanceText.setText(name);
@@ -77,7 +75,7 @@ public class AccountSetupActivity extends Activity implements AccountSetupView, 
 	
 	@Override
 	public String getDisplayName() {
-		return displayNameText.getText().toString();
+		return null;
 	}
 	
 	@Override

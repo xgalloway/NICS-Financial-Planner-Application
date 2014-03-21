@@ -15,6 +15,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
+import com.example.model.Application;
 import com.example.model.User;
 import com.example.model.UserAccount;
 import com.example.model.UserModel;
@@ -38,8 +39,8 @@ public class AccountListViewActivity extends Activity implements AccountListView
 		setContentView(R.layout.activity_account_list_view);
 		initiateViews();
 		populateListView();
-		
-		presenter = new AccountListViewPresenter(this, new UserModel());
+		Application app = Application.INSTANCE;
+		presenter = new AccountListViewPresenter(this, app.getModel());
 		
 	}
 	
@@ -81,12 +82,10 @@ public class AccountListViewActivity extends Activity implements AccountListView
 	}
 	
 	private void populateListView() {
-		//ListView list = (ListView) findViewById(R.id.listViewMain);
-		
-		UserModel model = new UserModel();
-		List<UserAccount> accounts = model.getCurrent().getAccounts();
+		UserModel model = Application.INSTANCE.getModel();
+		List<UserAccount> accounts = (List<UserAccount>) model.getUserAccounts(model.getCurrent().getUsername());
 		String[] items = new String[accounts.size()];
-		//List<UserAccount> aList = new ArrayList<UserAccount>();
+		
 		for (int i = 0; i < accounts.size(); i++) {
 			items[i] = accounts.get(i).toString();
 		}

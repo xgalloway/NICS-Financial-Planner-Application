@@ -12,6 +12,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.model.Application;
 import com.example.model.UserModel;
 import com.example.nics_application.R;
 import com.example.presenter.LogInViewPresenter;
@@ -32,8 +33,9 @@ public class LogInActivity extends Activity implements LogInView, OnClickListene
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_log_in);
-		
-		presenter = new LogInViewPresenter(this, new UserModel());
+		Application app = Application.INSTANCE;
+		//presenter = new LogInViewPresenter(this, new UserModel());
+		presenter = new LogInViewPresenter(this, app.getModel());
 		initiateEditTextsAndButtons();
 	}
 	

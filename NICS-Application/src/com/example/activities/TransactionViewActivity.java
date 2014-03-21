@@ -14,6 +14,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.model.Application;
 import com.example.model.UserModel;
 import com.example.nics_application.R;
 import com.example.presenter.RegistrationViewPresenter;
@@ -38,8 +39,8 @@ public class TransactionViewActivity extends Activity implements TransactionView
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_transaction_view);
-		
-		presenter = new TransactionViewPresenter(this, new UserModel());
+		Application app = Application.INSTANCE;
+		presenter = new TransactionViewPresenter(this, app.getModel());
 		initiateButtonsAndViews();
 	}
 	
@@ -82,8 +83,7 @@ public class TransactionViewActivity extends Activity implements TransactionView
 	@Override
 	public Date getDate() {
 		Date date = new Date(System.currentTimeMillis());
-		Date newDate = new Date(date.getYear(), date.getMonth(), date.getDay());
-		return newDate;
+		return date;
 	}
 	
 	@Override

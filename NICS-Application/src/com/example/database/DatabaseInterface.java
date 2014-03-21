@@ -1,5 +1,6 @@
 package com.example.database;
 
+import java.text.ParseException;
 import java.util.Date;
 import java.util.List;
 
@@ -8,12 +9,22 @@ import com.example.model.User;
 import com.example.model.UserAccount;
 
 public interface DatabaseInterface {
-	User createUser(String name, String password, String accounts);
+	void createUser(User u);
+	User getUser(String name);
 	List<User> getUsers();
+	void updateUser(User u);
+	void deleteUser(User u);
 	
-	UserAccount createUserAccount(String name, double balance, double interestRate, String transactions);
-	List<UserAccount> getAccounts();
+	void createUserAccount(UserAccount account);
+	UserAccount getUserAccount(String name);
+	List<UserAccount> getAccounts(String name);
+	void updateUserAccount(UserAccount account);
+	void deleteAccount(UserAccount account);
+	void deleteAccounts(String parent);
 	
-	Transaction makeTransaction(double amount, Date date, String type, String comments);
-	List<Transaction> getTransactions();
+	void makeTransaction(Transaction t);
+	List<Transaction> getTransactions(String parent) throws ParseException;
+	List<Transaction> getDeposits();
+	List<Transaction> getWithdrawals();
+	void deleteTransactions(String parent);
 }
