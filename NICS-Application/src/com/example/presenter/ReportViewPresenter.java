@@ -1,5 +1,7 @@
 package com.example.presenter;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
@@ -24,21 +26,35 @@ public class ReportViewPresenter implements ClickListener{
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
+			case R.id.startDateButton:
+				view.displayDateDialog("start");
+				break;
+			case R.id.endDateButton:
+				view.displayDateDialog("end");
+				break;
 			case R.id.showButton:
-				Date start = view.getStartDate();
-				Date startNew = new Date(System.currentTimeMillis());
-				startNew.setDate(start.getDay());
-				startNew.setMonth(start.getMonth());
 				
-				Date end = view.getEndDate();
-				Date endNew = new Date(System.currentTimeMillis());
-				endNew.setDate(end.getDay());
-				endNew.setMonth(end.getMonth());
+				String startDate = view.getStartDate();
+				String endDate = view.getEndDate();
+				//SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+				SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+				
+			Date start = null;
+			Date end = null;
+			try {
+				start = sdf.parse(startDate);
+				end = sdf.parse(endDate);
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			//System.out.println("Date start compare To Date end" + start.compareTo(end));
 				if (end.before(start)) {
 					view.displayAlertDialog();
 				} else {
-					Report report = new Report(start, end);
-					model.getCurrent().setCurrentReport(report);
+					//Report report = new Report(start, end);
+					//model.getCurrent().setCurrentReport(report);
+					model.setStartAndEndDates(startDate, endDate);
 					view.acceptRange();
 				}
 				break;

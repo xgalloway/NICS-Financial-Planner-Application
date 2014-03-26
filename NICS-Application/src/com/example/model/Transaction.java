@@ -56,7 +56,8 @@ public class Transaction {
 	}
 	
 	public String getDateString() {
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		//SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
 		String dateString = sdf.format(date);
 		return dateString;
 	}

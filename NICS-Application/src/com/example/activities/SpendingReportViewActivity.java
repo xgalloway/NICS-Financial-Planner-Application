@@ -1,9 +1,12 @@
 package com.example.activities;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 
 
@@ -76,33 +79,38 @@ public class SpendingReportViewActivity extends Activity implements SpendingRepo
 	}
 	
 	public void populateListView(){
-		UserModel model = new UserModel();
+		Application app = Application.INSTANCE;
+		UserModel model = app.getModel();
 		User u = model.getCurrent();
-		Report r = u.getCurrentReport();
+		String parent = u.getUsername();
+		
+		List<Transaction> withdrawals = null;
+		try {
+			withdrawals = model.getWithdrawals();
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		HashSet set = new HashSet();
+		
 		double sum = 0;
 		ArrayList transactionList = new ArrayList();
-		for (int i = 0; i < u.getAccounts().size(); ++i) { 
-			UserAccount account = u.getAccounts().get(i);
-			List<Transaction> withdrawals = account.getWithdrawals();
-			for (int j = 0; j < withdrawals.size(); ++j) {
-				Transaction t = withdrawals.get(j);
-				
-				if (r.getEnd().getMonth() > t.getDate().getMonth()) {
-					if (r.getStart().getMonth() < t.getDate().getMonth()) {
-						transactionList.add(t.toString());
-						sum = sum + t.getAmount();
-					} else if (r.getStart().getMonth() == t.getDate().getMonth() && r.getStart().getDay() < t.getDate().getDay()) {
-						transactionList.add(t.toString());
-						sum = sum + t.getAmount();
-					}
-				} else if (r.getEnd().getMonth() == t.getDate().getMonth() && r.getEnd().getDay() > t.getDate().getDay()) {
-					transactionList.add(t.toString());
-					sum = sum + t.getAmount();
+		
+		for (int i = 0; i < withdrawals.size(); ++i ) {
+			Transaction t = withdrawals.get(i);
+			if (model.getStartDate().before(t.getDate())) {
+				if (model.getEndDate().after(t.getDate())) {
+					 if (!set.contains(t.getParent())) {
+						 set.add(t.getParent());
+						 transactionList.add(t.getParent() + ":");
+					 } 
+					 transactionList.add(t.toString());
+					 sum = sum + t.getAmount();
 				}
-				
-				
 			}
 		}
+		
+		
 		reportSumTextView.setText("Report Sum: " + sum);
 		
 		String[] transactions = Arrays.copyOf(transactionList.toArray(), transactionList.size(), String[].class);

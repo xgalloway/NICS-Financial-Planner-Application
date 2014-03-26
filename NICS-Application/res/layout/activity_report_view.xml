@@ -30,13 +30,34 @@
         android:text="End Date:"
         android:textColor="#ffffff" />
 
+    <Button
+        android:id="@+id/startDateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/showButton"
+        android:layout_below="@+id/reportSumTextView"
+        android:layout_marginTop="54dp"
+        android:text="07/11/1994"
+        android:textColor="#ffffff" />
+
     <TextView
         android:id="@+id/startDateTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/startDateButton"
+        android:layout_alignBottom="@+id/startDateButton"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
         android:text="Start Date:"
+        android:textColor="#ffffff" />
+
+    <Button
+        android:id="@+id/endDateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/endDateTextView"
+        android:layout_alignBottom="@+id/endDateTextView"
+        android:layout_alignLeft="@+id/startDateButton"
+        android:text="07/11/1994"
         android:textColor="#ffffff" />
 
     <Button
@@ -45,23 +66,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginBottom="63dp"
         android:text="Show Report"
         android:textColor="#ffffff" />
-
-    <DatePicker
-        android:id="@+id/startDatePicker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/endDateTextView"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/startDateTextView" />
-
-    <DatePicker
-        android:id="@+id/endDatePicker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/showButton"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/endDateTextView" />
 
 </RelativeLayout>

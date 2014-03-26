@@ -31,5 +31,7 @@ public interface Model {
 	List<Transaction> getWithdrawals() throws ParseException;
 	void deleteTransactions(String parent);
 	
+	void setStartAndEndDates(String start, String end);
+	
 	
 }

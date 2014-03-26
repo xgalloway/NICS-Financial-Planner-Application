@@ -40,7 +40,7 @@ public final class R {
         public static final int commentEditText=0x7f080014;
         public static final int createButton=0x7f080008;
         public static final int depositButton=0x7f08001d;
-        public static final int endDatePicker=0x7f080019;
+        public static final int endDateButton=0x7f080019;
         public static final int endDateTextView=0x7f08000c;
         public static final int goButton=0x7f080010;
         public static final int imageView1=0x7f080012;
@@ -50,9 +50,9 @@ public final class R {
         public static final int rateText=0x7f080007;
         public static final int reportButton=0x7f080002;
         public static final int reportSumTextView=0x7f080015;
-        public static final int showButton=0x7f080017;
+        public static final int showButton=0x7f080018;
         public static final int spendingListView=0x7f08001b;
-        public static final int startDatePicker=0x7f080018;
+        public static final int startDateButton=0x7f080017;
         public static final int startDateTextView=0x7f08000a;
         public static final int textView1=0x7f08001c;
         public static final int textView2=0x7f080016;

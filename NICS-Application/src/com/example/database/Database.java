@@ -231,7 +231,8 @@ public class Database implements DatabaseInterface {
 		if (cursor != null) {
 			if (cursor.moveToFirst()) {
 				while (cursor != null) {
-					SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+					//SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+					SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
 				
 					Date date = sdf.parse(cursor.getString(cursor.getColumnIndex(dbHelper.COLUMN_DATE)));
 					Transaction t = new Transaction( 

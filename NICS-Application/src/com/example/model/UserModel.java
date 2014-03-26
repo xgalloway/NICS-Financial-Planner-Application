@@ -1,6 +1,7 @@
 package com.example.model;
 
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
@@ -21,6 +22,8 @@ public class UserModel implements Model {
 	private static User current;
 	private static String currentUser;
 	private static String currentAccount;
+	private static String startDate;
+	private static String endDate;
 	private Database database;
 	
 	public UserModel() {
@@ -208,5 +211,34 @@ public class UserModel implements Model {
 	public void deleteTransactions(String parent) {
 		database.deleteTransactions(parent);
 		
+	}
+
+	@Override
+	public void setStartAndEndDates(String start, String end) {
+		startDate = start;
+		endDate = end;
+		
+	}
+	
+	public Date getStartDate() {
+		SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
+		try {
+			return sdf.parse(startDate);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	public Date getEndDate() {
+		SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
+		try {
+			return sdf.parse(endDate);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
 	}
 }

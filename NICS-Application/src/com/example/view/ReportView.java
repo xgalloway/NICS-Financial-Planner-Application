@@ -7,8 +7,9 @@ import com.example.support.ClickListener;
 
 public interface ReportView{
 	void acceptRange();
-	Date getStartDate();
-	Date getEndDate();
+	String getStartDate();
+	String getEndDate();
 	void displayAlertDialog();
+	void displayDateDialog(String startOrEnd);
 	void addSearchRequestNotifyCallback(ClickListener listener);
 }

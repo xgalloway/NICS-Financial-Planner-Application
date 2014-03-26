@@ -34,6 +34,8 @@ public class TransactionAdapter extends ArrayAdapter<String> {
 	    	textView.setTextColor(Color.GREEN);
 	    } else if (item.startsWith("-")) {
 	    	textView.setTextColor(Color.RED);
+	    } else {
+	    	textView.setTextColor(Color.WHITE);
 	    }
 			/*LayoutInflater inflater = (LayoutInflater) context
 		        .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
