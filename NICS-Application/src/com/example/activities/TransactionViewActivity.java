@@ -73,6 +73,7 @@ public class TransactionViewActivity extends Activity implements TransactionView
 	public void makeTransaction() {
 		Intent i = new Intent(this, AccountViewActivity.class);
 		startActivity(i);
+		finish();
 	}
 
 	@Override

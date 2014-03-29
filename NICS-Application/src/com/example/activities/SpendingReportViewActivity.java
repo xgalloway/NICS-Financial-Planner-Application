@@ -122,7 +122,7 @@ public class SpendingReportViewActivity extends Activity implements SpendingRepo
 	public void goBack() {
 		Intent i = new Intent(this, AccountListViewActivity.class);
 		startActivity(i);
-		
+		finish();
 	}
 	
 }

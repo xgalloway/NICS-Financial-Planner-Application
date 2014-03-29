@@ -72,6 +72,7 @@ public class ReportViewActivity extends Activity implements ReportView, OnClickL
 	public void acceptRange() {
 		Intent i = new Intent(this, SpendingReportViewActivity.class);
 		startActivity(i);
+		finish();
 	}
 
 	@Override

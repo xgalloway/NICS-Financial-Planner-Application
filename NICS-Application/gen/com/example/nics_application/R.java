@@ -46,6 +46,7 @@ public final class R {
         public static final int imageView1=0x7f080012;
         public static final int listViewMain=0x7f080003;
         public static final int loginButton=0x7f080013;
+        public static final int logout=0x7f080020;
         public static final int passwordEditText=0x7f08000f;
         public static final int rateText=0x7f080007;
         public static final int reportButton=0x7f080002;
@@ -75,6 +76,7 @@ public final class R {
     public static final class menu {
         public static final int log_in=0x7f070000;
         public static final int main=0x7f070001;
+        public static final int menu_options=0x7f070002;
     }
     public static final class string {
         public static final int action_settings=0x7f050001;

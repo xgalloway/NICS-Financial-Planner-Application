@@ -47,6 +47,7 @@ public class MainActivity extends Activity implements WelcomeView, OnClickListen
 	public void startLogin() {
 		Intent i = new Intent(this, LogInActivity.class);
 		startActivity(i);
+		finish();
 
 	}
 
@@ -54,6 +55,7 @@ public class MainActivity extends Activity implements WelcomeView, OnClickListen
 	public void startRegistration() {
 		Intent i = new Intent(this, RegistrationActivity.class);
 		startActivity(i);
+		finish();
 
 	}
 

@@ -61,6 +61,7 @@ public class RegistrationActivity extends Activity implements RegistrationView, 
 	public void acceptRegistration() {
 		Intent i = new Intent(this, LogInActivity.class);
 		startActivity(i);
+		finish();
 
 	}
 

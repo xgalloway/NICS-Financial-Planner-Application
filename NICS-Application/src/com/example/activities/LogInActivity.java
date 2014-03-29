@@ -68,6 +68,7 @@ public class LogInActivity extends Activity implements LogInView, OnClickListene
 	public void acceptLogin() {
 		Intent i = new Intent(this, AccountListViewActivity.class);
 		startActivity(i);
+		finish();
 		
 	}
 

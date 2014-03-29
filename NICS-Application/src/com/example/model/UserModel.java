@@ -102,7 +102,11 @@ public class UserModel implements Model {
 
 	public void setCurrentUser(User u) {
 		//current = u;
-		currentUser = u.getUsername();
+		if (u == null) {
+		    currentUser = "";
+		} else {
+		    currentUser = u.getUsername();
+		}
 	}
 	
 	public User getCurrent() {
@@ -179,6 +183,12 @@ public class UserModel implements Model {
 			transactions.addAll(database.getTransactions(p));
 		}
 		return transactions;
+	}
+	
+	public List<Transaction> getTransactionsForAccount(String parent) throws ParseException {
+	    List<Transaction> transactions = new ArrayList<Transaction>();
+	    transactions.addAll(database.getTransactions(parent));
+	    return transactions;
 	}
 
 	@Override

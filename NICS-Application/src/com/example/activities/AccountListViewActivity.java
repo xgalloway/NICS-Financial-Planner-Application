@@ -1,12 +1,15 @@
 package com.example.activities;
+
 import java.util.ArrayList;
 import java.util.List;
-
 
 import android.app.Activity;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -26,14 +29,15 @@ import com.example.support.ClickListener;
 import com.example.view.AccountListView;
 import com.example.view.AccountView;
 
-public class AccountListViewActivity extends Activity implements AccountListView, OnClickListener {
-	
+public class AccountListViewActivity extends Activity implements
+		AccountListView, OnClickListener {
+
 	private Button addButton, reportButton;
 	private AccountListViewPresenter presenter;
 	private ClickListener listener;
 	private ListView list;
-	
-	@Override 
+
+	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_account_list_view);
@@ -41,55 +45,77 @@ public class AccountListViewActivity extends Activity implements AccountListView
 		populateListView();
 		Application app = Application.INSTANCE;
 		presenter = new AccountListViewPresenter(this, app.getModel());
-		
+
 	}
-	
+
 	@Override
-	
 	public void onClick(View v) {
 		presenter.onClick(v);
 	}
-	
+
 	public void initiateViews() {
 		addButton = (Button) findViewById(R.id.backButton);
 		addButton.setOnClickListener(this);
-		
+
 		reportButton = (Button) findViewById(R.id.reportButton);
 		reportButton.setOnClickListener(this);
-		
-		list = (ListView)findViewById(R.id.listViewMain);
+
+		list = (ListView) findViewById(R.id.listViewMain);
 		list.setOnItemClickListener(new OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> lv, View v, int position,
 					long id) {
 				presenter.onItemClick(v, position);
-				
+
 			}
-			
+
 		});
+	}
+
+	public boolean onCreateOptionsMenu(Menu menu) {
+        
+	    MenuInflater inflater = getMenuInflater();
+	    inflater.inflate(R.menu.menu_options, menu);
+	    return true;
+	}
+	
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    switch (item.getItemId()) {
+	        case R.id.logout:
+	            Application app = Application.INSTANCE;
+	            UserModel model = app.getModel();
+	            model.setCurrentUser(null);
+	            Intent i = new Intent(this, MainActivity.class);
+	            startActivity(i);
+	            finish();
+	            return true;
+	    }
+        return super.onOptionsItemSelected(item);
 	}
 	
 	@Override
 	public void addSearchRequestNotifyCallback(ClickListener lsr) {
 		listener = lsr;
 	}
-	
+
 	@Override
-	
 	public void createAccount() {
 		Intent i = new Intent(this, AccountSetupActivity.class);
 		startActivity(i);
+		finish();
 	}
-	
+
 	private void populateListView() {
 		UserModel model = Application.INSTANCE.getModel();
-		List<UserAccount> accounts = (List<UserAccount>) model.getUserAccounts(model.getCurrent().getUsername());
+		List<UserAccount> accounts = (List<UserAccount>) model
+				.getUserAccounts(model.getCurrent().getUsername());
 		String[] items = new String[accounts.size()];
-		
+
 		for (int i = 0; i < accounts.size(); i++) {
 			items[i] = accounts.get(i).toString();
 		}
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.item_view, items);
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+				R.layout.item_view, items);
 		list.setAdapter(adapter);
 	}
 
@@ -97,13 +123,14 @@ public class AccountListViewActivity extends Activity implements AccountListView
 	public void viewAccount() {
 		Intent i = new Intent(this, AccountViewActivity.class);
 		startActivity(i);
+		finish();
 	}
 
 	@Override
 	public void viewReport() {
 		Intent i = new Intent(this, ReportViewActivity.class);
 		startActivity(i);
+		finish();
 	}
-	
-	
-}	
+
+}

@@ -86,7 +86,7 @@ public class AccountViewActivity extends Activity implements AccountView, OnClic
 		balanceTextView.setText("" + "Balance: " + account.getBalance());
 		List<Transaction> transactions;
 		try {
-			transactions = model.getTransactions(account.getName());
+			transactions = model.getTransactionsForAccount(account.getName());
 			String[] items = {""};
 			if (transactions.size() < 0) {
 				//items = {""};
@@ -115,6 +115,7 @@ public class AccountViewActivity extends Activity implements AccountView, OnClic
 	public void addTransaction() {
 		Intent i = new Intent(this, TransactionViewActivity.class);
 		startActivity(i);
+		finish();
 		
 	}
 
@@ -122,6 +123,7 @@ public class AccountViewActivity extends Activity implements AccountView, OnClic
 	public void leaveTransactionScreen() {
 		Intent i = new Intent(this, AccountListViewActivity.class);
 		startActivity(i);
+		finish();
 		
 	}
 }	

@@ -65,6 +65,7 @@ public class AccountSetupActivity extends Activity implements AccountSetupView, 
 	public void acceptAccount() {
 		Intent i = new Intent(this, AccountListViewActivity.class);
 		startActivity(i);
+		finish();
 	}
 
 	
@@ -104,6 +105,7 @@ public class AccountSetupActivity extends Activity implements AccountSetupView, 
 	public void cancelAccountCreation() {
 		Intent i = new Intent(this, AccountListViewActivity.class);
 		startActivity(i);
+		finish();
 	}
 
 	@Override
