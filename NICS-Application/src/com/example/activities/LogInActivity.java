@@ -36,8 +36,10 @@ public class LogInActivity extends Activity implements LogInView, OnClickListene
 	LogInViewPresenter presenter;
 	
 	/**
-	 * 
-	 */
+     * Creates the log in screen that will be viewed
+     * 
+     * @param savedInstanceState
+     */
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +54,10 @@ public class LogInActivity extends Activity implements LogInView, OnClickListene
 	/**
 	 * Depending on a user's account, different options
 	 * will be displayed in the menu
+	 * 
+	 * @param menu
 	 */
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
@@ -105,6 +110,8 @@ public class LogInActivity extends Activity implements LogInView, OnClickListene
 
 	/**
 	 * Provides a search button
+	 * 
+	 * @param lsnr
 	 */
 	
 	@Override
@@ -134,6 +141,8 @@ public class LogInActivity extends Activity implements LogInView, OnClickListene
 
 	/**
      * When the button is pushed, the information will be viewed
+     * 
+     * @param v
      */
 	
 	@Override

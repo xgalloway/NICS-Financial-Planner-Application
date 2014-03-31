@@ -34,8 +34,11 @@ public class RegistrationActivity extends Activity implements RegistrationView, 
 	RegistrationViewPresenter presenter;
 	
 	/**
-	 * 
-	 */
+     * Displays the log in and register buttons
+     * along with the logo on the main screen
+     * 
+     * @param savedInstanceState
+     */
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +49,12 @@ public class RegistrationActivity extends Activity implements RegistrationView, 
 		initiateEditTextsAndButtons();
 	}
 	
+	/**
+     * Creates menu with appropriate options
+     * 
+     * @param menu
+     */
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.log_in, menu);
@@ -54,6 +63,8 @@ public class RegistrationActivity extends Activity implements RegistrationView, 
 
 	/**
      * When the button is pushed, the information will be viewed
+     * 
+     * @param v
      */
 	
 	@Override
@@ -75,6 +86,10 @@ public class RegistrationActivity extends Activity implements RegistrationView, 
 		
 	}
 	
+	/**
+	 * Moves on to the screen after registration
+	 */
+	
 	@Override
 	public void acceptRegistration() {
 		Intent i = new Intent(this, LogInActivity.class);
@@ -83,8 +98,10 @@ public class RegistrationActivity extends Activity implements RegistrationView, 
 
 	}
 
-    /**
+	/**
      * Provides a search button
+     * 
+     * @param lsnr
      */
 	
 	@Override

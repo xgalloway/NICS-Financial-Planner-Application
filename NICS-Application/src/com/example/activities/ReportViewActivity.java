@@ -39,6 +39,13 @@ public class ReportViewActivity extends Activity implements ReportView, OnClickL
 	private ClickListener listener;
 	private ReportViewPresenter presenter;
 	
+	/**
+     * Displays the log in and register buttons
+     * along with the logo on the main screen
+     * 
+     * @param savedInstanceState
+     */
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -76,6 +83,8 @@ public class ReportViewActivity extends Activity implements ReportView, OnClickL
     
     /**
      * When the button is pushed, the information will be viewed
+     * 
+     * @param v
      */
 	
 	@Override
@@ -84,7 +93,7 @@ public class ReportViewActivity extends Activity implements ReportView, OnClickL
 	}
 
 	/**
-	 * 
+	 * Accepts report dates and moves on to the next screen
 	 */
 	
 	@Override
@@ -131,8 +140,10 @@ public class ReportViewActivity extends Activity implements ReportView, OnClickL
 		alertDialog.show();
 	}
 
-    /**
-     * Allows user to search through information
+	/**
+     * Provides a search button
+     * 
+     * @param lsnr
      */
 	
 	@Override
@@ -143,7 +154,10 @@ public class ReportViewActivity extends Activity implements ReportView, OnClickL
 	/**
 	 * Creates a way for the user to choose a start and an end
 	 * date; it shows in a date picker instead of a drop down.
+	 * 
+	 * @param startOrEnd
 	 */
+	
 	@Override
 	public void displayDateDialog(String startOrEnd) {
 		final Calendar c = Calendar.getInstance();

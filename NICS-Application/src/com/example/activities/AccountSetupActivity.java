@@ -46,7 +46,9 @@ public class AccountSetupActivity extends Activity implements AccountSetupView, 
 
 	/**
 	 * When the button is pushed, the account setup up option will display
+	 * @param v
 	 */
+	
 	@Override
 	public void onClick(View v) {
 		presenter.onClick(v);
@@ -76,7 +78,7 @@ public class AccountSetupActivity extends Activity implements AccountSetupView, 
 	}
 
 	/**
-	 * 
+	 * Goes to the next screen
 	 */
 	
 	@Override
@@ -105,8 +107,10 @@ public class AccountSetupActivity extends Activity implements AccountSetupView, 
 	}
 	
 	/**
-	 * 
-	 */
+     * Sets listener for the application
+     * 
+     * @param lsr
+     */
 	
 	@Override
 	public void addSearchRequestNotifyCallback(ClickListener lsr) {
@@ -117,6 +121,7 @@ public class AccountSetupActivity extends Activity implements AccountSetupView, 
 	 * Allows user to know if the information they inserted
 	 * is correct or incorrect
 	 */
+	
 	@Override
 	public void displayAlertDialog() {
 		AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
@@ -137,6 +142,7 @@ public class AccountSetupActivity extends Activity implements AccountSetupView, 
 	/**
 	 * Allows the user to not go through with registration
 	 */
+	
 	@Override
 	public void cancelAccountCreation() {
 		Intent i = new Intent(this, AccountListViewActivity.class);
@@ -145,7 +151,7 @@ public class AccountSetupActivity extends Activity implements AccountSetupView, 
 	}
 
 	/**
-	 * 
+	 * Gets interest rate
 	 */
 	
 	@Override

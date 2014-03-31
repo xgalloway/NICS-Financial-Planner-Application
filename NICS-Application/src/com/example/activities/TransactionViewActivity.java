@@ -42,8 +42,11 @@ public class TransactionViewActivity extends Activity implements TransactionView
 	private ClickListener listener;
 	
 	/**
-	 * 
-	 */
+     * Displays the log in and register buttons
+     * along with the logo on the main screen
+     * 
+     * @param savedInstanceState
+     */
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -55,8 +58,10 @@ public class TransactionViewActivity extends Activity implements TransactionView
 	}
 	
 	/**
-	 * 
-	 */
+     * Creates menu with appropriate options
+     * 
+     * @param menu
+     */
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -66,6 +71,8 @@ public class TransactionViewActivity extends Activity implements TransactionView
 	
 	/**
      * When the button is pushed, the information will be viewed
+     * 
+     * @param v
      */
 	
 	@Override
@@ -132,8 +139,10 @@ public class TransactionViewActivity extends Activity implements TransactionView
 		return commentEditText.getText().toString();
 	}
 
-    /**
-     * Allows user to search through information
+	/**
+     * Provides a search button
+     * 
+     * @param lsnr
      */
 	
 	@Override

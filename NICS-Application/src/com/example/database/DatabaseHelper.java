@@ -5,6 +5,14 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
 
+/**
+ * 
+ * @author Team 16
+ * 
+ * Creates tables to hold information
+ *
+ */
+
 public class DatabaseHelper extends SQLiteOpenHelper {
 
 	public static final String TABLE_NAME_USER = "user";
@@ -35,9 +43,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	public static final String COLUMN_START = "start";
 	public static final String COLUMN_END = "end";
 	
-	/**
-	 * Creates table with user registration/log in information
-	 */
 	
 	public static final String CREATE_USER_TABLE = "CREATE TABLE " 
 			+ TABLE_NAME_USER + "(" 
@@ -45,9 +50,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 			+ COLUMN_NAME + " not null," 
 			+ COLUMN_PASSWORD + " not null) ;";
 	
-	/**
-	 * Creates table with account information
-	 */
 	
 	public static final String CREATE_ACCOUNT_TABLE = "CREATE TABLE "
 			+ TABLE_NAME_ACCOUNT + "(" 
@@ -57,9 +59,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 			+ COLUMN_INTEREST + " not null,"
 			+ COLUMN_PARENT + " not null) ;";
 	
-	/**
-	 * Creates table with transactions summary
-	 */
 	
 	public static final String CREATE_TRANS_TABLE = "CREATE TABLE "
 			+ TABLE_NAME_TRANS + "(" 
@@ -98,7 +97,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	}
 
 	/**
-	 * 
+	 * Creates tables for user information, account and transactions
 	 */
 	
 	@Override
@@ -112,7 +111,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	}
 
 	/**
-	 * 
+	 * Replaces old table when new information is added
 	 */
 	
 	@Override

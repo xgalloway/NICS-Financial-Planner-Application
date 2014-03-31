@@ -50,7 +50,9 @@ public class AccountViewActivity extends Activity implements AccountView, OnClic
 	private ClickListener listener;
 	
 	/**
-	 * Creates the default view for the account activity
+	 * Creates the account list that will be viewed
+	 * 
+	 * @param savedInstanceState
 	 */
 	
 	@Override
@@ -84,6 +86,8 @@ public class AccountViewActivity extends Activity implements AccountView, OnClic
 	
 	/**
 	 * When the button is pushed, the information will be viewed
+	 * 
+	 * @param v
 	 */
 	
 	@Override
@@ -92,8 +96,10 @@ public class AccountViewActivity extends Activity implements AccountView, OnClic
 	}
 	
 	/**
-	 * Allows user to search through information
-	 */
+     * Sets listener for the application
+     * 
+     * @param lsr
+     */
 	
 	@Override
 	public void addSearchRequestNotifyCallback(ClickListener lsr) {
@@ -141,6 +147,7 @@ public class AccountViewActivity extends Activity implements AccountView, OnClic
 	/**
 	 * Allows user to add a transaction
 	 */
+	
 	@Override
 	public void addTransaction() {
 		Intent i = new Intent(this, TransactionViewActivity.class);
@@ -152,6 +159,7 @@ public class AccountViewActivity extends Activity implements AccountView, OnClic
 	/**
 	 * Allows user to exit transaction screen
 	 */
+	
 	@Override
 	public void leaveTransactionScreen() {
 		Intent i = new Intent(this, AccountListViewActivity.class);

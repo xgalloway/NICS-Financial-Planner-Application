@@ -45,6 +45,8 @@ public class AccountListViewActivity extends Activity implements
 
 	/**
 	 * Creates the account list that will be viewed
+	 * 
+	 * @param savedInstanceState
 	 */
 	
 	@Override
@@ -60,6 +62,8 @@ public class AccountListViewActivity extends Activity implements
 
 	/**
 	 * When the button is pressed on, the user can view it
+	 * 
+	 * @param v
 	 */
 	
 	@Override
@@ -93,6 +97,8 @@ public class AccountListViewActivity extends Activity implements
 
 	/**
 	 * Allows the user to see the options previously created
+	 * 
+	 * @param menu
 	 */
 	
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -104,7 +110,9 @@ public class AccountListViewActivity extends Activity implements
 
 	
 	/**
+	 * Takes user back to main menu screen
 	 * 
+	 * @param item
 	 */
 	
 	public boolean onOptionsItemSelected(MenuItem item) {
@@ -122,7 +130,9 @@ public class AccountListViewActivity extends Activity implements
 	}
 	
 	/**
+	 * Sets listener for the application
 	 * 
+	 * @param lsr
 	 */
 	
 	@Override
@@ -142,7 +152,7 @@ public class AccountListViewActivity extends Activity implements
 	}
 	
 	/**
-	 * 
+	 * Displays all of the accounts
 	 */
 
 	private void populateListView() {

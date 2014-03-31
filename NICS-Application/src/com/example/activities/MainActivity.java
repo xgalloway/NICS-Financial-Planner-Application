@@ -31,7 +31,9 @@ public class MainActivity extends Activity implements WelcomeView, OnClickListen
 	
 	/**
 	 * Displays the log in and register buttons
-	 * along with the logo.
+	 * along with the logo on the main screen
+	 * 
+	 * @param savedInstanceState
 	 */
 	
 	@Override
@@ -49,7 +51,9 @@ public class MainActivity extends Activity implements WelcomeView, OnClickListen
 	}
 	
 	/**
+	 * Creates menu with appropriate options
 	 * 
+	 * @param menu
 	 */
 	
 	@Override
@@ -86,6 +90,8 @@ public class MainActivity extends Activity implements WelcomeView, OnClickListen
 
 	/**
      * Provides a search button
+     * 
+     * @param lsnr
      */
 	
 	@Override
@@ -95,6 +101,8 @@ public class MainActivity extends Activity implements WelcomeView, OnClickListen
 
     /**
      * When the button is pushed, the information will be viewed
+     * 
+     * @param v
      */
 	
 	@Override

@@ -11,6 +11,8 @@ import com.example.model.UserAccount;
 /**
  * 
  * @author Team 16
+ * 
+ * Creates interface for user, account and transaction
  *
  */
 

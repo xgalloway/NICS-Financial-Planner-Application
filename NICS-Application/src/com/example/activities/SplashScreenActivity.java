@@ -16,7 +16,6 @@ import android.widget.ImageView;
  * 
  * @author Team 16
  *
- *
  */
 
 public class SplashScreenActivity extends Activity {
@@ -24,8 +23,11 @@ public class SplashScreenActivity extends Activity {
 	private static final int SPLASH_TIME_LIMIT = 2000;
 	
 	/**
-	 * 
-	 */
+     * Displays the log in and register buttons
+     * along with the logo on the main screen
+     * 
+     * @param savedInstanceState
+     */
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +45,10 @@ public class SplashScreenActivity extends Activity {
     }
 		
 	/**
-	 * 
-	 */
+     * Creates menu with appropriate options
+     * 
+     * @param menu
+     */
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -53,7 +57,7 @@ public class SplashScreenActivity extends Activity {
 	}
 	
 	/**
-	 * 
+	 * Closes opening screen
 	 */
 	
 	public void endSplash() {

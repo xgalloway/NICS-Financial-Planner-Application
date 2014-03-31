@@ -21,6 +21,7 @@ import com.example.model.UserAccount;
  *
  * The structure of the application
  */
+
 public class Database implements DatabaseInterface {
 
 	private SQLiteDatabase database;
@@ -39,6 +40,8 @@ public class Database implements DatabaseInterface {
 	/**
 	 * 
 	 * Creates a layout and table for information to be stored
+	 * 
+	 * @param context
 	 */
 	
 	public Database(Context context) {
@@ -66,6 +69,8 @@ public class Database implements DatabaseInterface {
 	/**
 	 * Adds user information to the database
 	 * includes username and password.
+	 * 
+	 * @param u
 	 */
 	
 	@Override
@@ -80,6 +85,8 @@ public class Database implements DatabaseInterface {
 	/**
 	 * Based on the saved database and text a user has entered,
 	 * the username will be retrieved.
+	 * 
+	 * @param name
 	 */
 	
 	@Override
@@ -128,6 +135,8 @@ public class Database implements DatabaseInterface {
 	/**
 	 * If a user changes their username or password,
 	 * the table where all the information is stored will be updated
+	 * 
+	 * @param u
 	 */
 	
 	@Override
@@ -143,6 +152,8 @@ public class Database implements DatabaseInterface {
 	
 	/**
 	 * Deletes information associated with a user account
+	 * 
+	 * @param u
 	 */
 	
 	@Override
@@ -156,6 +167,8 @@ public class Database implements DatabaseInterface {
 	/**
 	 * Puts values associated with a user account in its
 	 * respective column
+	 * 
+	 * @param account
 	 */
 	
 	@Override
@@ -172,6 +185,8 @@ public class Database implements DatabaseInterface {
 	
 	/**
 	 * Returns information associated with an account
+	 * 
+	 * @param name
 	 */
 	
 	@Override
@@ -194,7 +209,9 @@ public class Database implements DatabaseInterface {
 	}
 	
 	/**
+	 * Retrieves the accounts from the database
 	 * 
+	 * @param parent
 	 */
 
 	@Override
@@ -230,7 +247,10 @@ public class Database implements DatabaseInterface {
 	/**
 	 * Deletes old information and then rewrites it if
 	 * any changes have been made
+	 * 
+	 * @param account
 	 */
+	
 	@Override
 	public void updateUserAccount(UserAccount account) {
 		/*
@@ -252,6 +272,8 @@ public class Database implements DatabaseInterface {
 	
 	/**
 	 * Deletes transaction associated with an user account
+	 * 
+	 * @param account
 	 */
 	
 	@Override
@@ -263,7 +285,9 @@ public class Database implements DatabaseInterface {
 	}
 	
 	/**
-	 * Deletes account from list of all accounts
+	 * Deletes account from list of accounts
+	 * 
+	 * @param parent
 	 */
 	
 	@Override
@@ -277,7 +301,10 @@ public class Database implements DatabaseInterface {
 	
 	/**
 	 * Adds transaction to the database
+	 * 
+	 * @param t
 	 */
+	
 	@Override
 	public void makeTransaction(Transaction t) {
 		SQLiteDatabase db = dbHelper.getWritableDatabase();
@@ -293,6 +320,8 @@ public class Database implements DatabaseInterface {
 
 	/**
 	 * Creates a running list of transactions based on date
+	 * 
+	 * @param parent
 	 */
 	
 	@Override
@@ -397,6 +426,8 @@ public class Database implements DatabaseInterface {
 
 	/**
 	 * Deletes transactions associated with an account
+	 * 
+	 * @param parent
 	 */
 	
 	@Override
