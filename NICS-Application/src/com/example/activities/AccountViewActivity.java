@@ -32,7 +32,12 @@ import com.example.support.TransactionAdapter;
 
 import com.example.view.AccountListView;
 import com.example.view.AccountView;
-
+/**
+ * 
+ * @author Team 16
+ *
+ * Deals with the ability for a user to see their account activity
+ */
 public class AccountViewActivity extends Activity implements AccountView, OnClickListener {
 	
 	
@@ -44,6 +49,9 @@ public class AccountViewActivity extends Activity implements AccountView, OnClic
 	private AccountViewPresenter presenter;
 	private ClickListener listener;
 	
+	/**
+	 * Creates the default view for the account activity
+	 */
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +62,11 @@ public class AccountViewActivity extends Activity implements AccountView, OnClic
 		presenter = new AccountViewPresenter(this, app.getModel());
 		populateListView();
 	}
+	
+	/**
+	 * Allows user to go to previous page, view transactions
+	 * and view the balance.
+	 */
 	
 	public void initiateButtonsAndViews() {
 		backButton = (Button)findViewById(R.id.backButton);
@@ -68,15 +81,30 @@ public class AccountViewActivity extends Activity implements AccountView, OnClic
 		list = (ListView) findViewById(R.id.listViewMain);
 		
 	}
+	
+	/**
+	 * When the button is pushed, the information will be viewed
+	 */
+	
 	@Override
 	public void onClick(View v) {
 		presenter.onClick(v);
 	}
 	
+	/**
+	 * Allows user to search through information
+	 */
+	
 	@Override
 	public void addSearchRequestNotifyCallback(ClickListener lsr) {
 		listener = lsr;
 	}
+	
+	/**
+	 * Grabs the information from the user's account
+	 * so it can then be displayed in a list view format.
+	 * Changes the information to a string for easy viewing.
+	 */
 	
 	private void populateListView() {
 		
@@ -110,7 +138,9 @@ public class AccountViewActivity extends Activity implements AccountView, OnClic
 		//list.setAdapter(adapter);
 		
 		}
-
+	/**
+	 * Allows user to add a transaction
+	 */
 	@Override
 	public void addTransaction() {
 		Intent i = new Intent(this, TransactionViewActivity.class);
@@ -119,6 +149,9 @@ public class AccountViewActivity extends Activity implements AccountView, OnClic
 		
 	}
 
+	/**
+	 * Allows user to exit transaction screen
+	 */
 	@Override
 	public void leaveTransactionScreen() {
 		Intent i = new Intent(this, AccountListViewActivity.class);

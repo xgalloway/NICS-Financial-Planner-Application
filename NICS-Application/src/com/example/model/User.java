@@ -2,7 +2,13 @@ package com.example.model;
 
 import java.util.ArrayList;
 import java.util.List;
-	
+
+/**
+ * 
+ * @author Team 16
+ *
+ */
+
 public class User {
 	private String username;
 	private int password;

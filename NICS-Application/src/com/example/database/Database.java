@@ -15,6 +15,12 @@ import com.example.model.Transaction;
 import com.example.model.User;
 import com.example.model.UserAccount;
 
+/**
+ * 
+ * @author Team 16
+ *
+ * The structure of the application
+ */
 public class Database implements DatabaseInterface {
 
 	private SQLiteDatabase database;
@@ -30,19 +36,37 @@ public class Database implements DatabaseInterface {
 			dbHelper.COLUMN_TYPE, dbHelper.COLUMN_COMMENTS, dbHelper.COLUMN_PARENT, 
 			dbHelper.COLUMN_DATE };
 	
+	/**
+	 * 
+	 * Creates a layout and table for information to be stored
+	 */
 	
 	public Database(Context context) {
 		dbHelper = new DatabaseHelper(context);
 		open();
 	}
 	
+	/**
+	 * Allows the table to be written into
+	 */
+	
 	public void open() {
 		database = dbHelper.getWritableDatabase();
 	}
 	
+	/**
+	 * Closes the database once the information is no longer
+	 * being written into it
+	 */
+	
 	public void close() {
 		dbHelper.close();
 	}
+	
+	/**
+	 * Adds user information to the database
+	 * includes username and password.
+	 */
 	
 	@Override
 	public void createUser(User u) {
@@ -52,6 +76,11 @@ public class Database implements DatabaseInterface {
 		values.put(dbHelper.COLUMN_PASSWORD, u.getPassword());
 		db.insert(dbHelper.TABLE_NAME_USER, null, values);
 	}
+	
+	/**
+	 * Based on the saved database and text a user has entered,
+	 * the username will be retrieved.
+	 */
 	
 	@Override
 	public User getUser(String name) {
@@ -67,6 +96,10 @@ public class Database implements DatabaseInterface {
 			return null;
 		}
 	}
+	
+	/**
+	 * Returns a list of all the users
+	 */
 	
 	@Override
 	public List<User> getUsers() {
@@ -92,6 +125,11 @@ public class Database implements DatabaseInterface {
 		return users;
 	}
 	
+	/**
+	 * If a user changes their username or password,
+	 * the table where all the information is stored will be updated
+	 */
+	
 	@Override
 	public void updateUser(User u) {
 		SQLiteDatabase db = dbHelper.getWritableDatabase();
@@ -103,6 +141,10 @@ public class Database implements DatabaseInterface {
 				new String[] { String.valueOf(u.getPassword()) });
 	}
 	
+	/**
+	 * Deletes information associated with a user account
+	 */
+	
 	@Override
 	public void deleteUser(User u) {
 		SQLiteDatabase db = dbHelper.getWritableDatabase();
@@ -111,6 +153,11 @@ public class Database implements DatabaseInterface {
 		deleteAccounts(u.getUsername());
 	}
 
+	/**
+	 * Puts values associated with a user account in its
+	 * respective column
+	 */
+	
 	@Override
 	public void createUserAccount(UserAccount account) {
 		SQLiteDatabase db = dbHelper.getWritableDatabase();
@@ -122,6 +169,10 @@ public class Database implements DatabaseInterface {
 		database.insert(dbHelper.TABLE_NAME_ACCOUNT, null, values);
 		
 	}
+	
+	/**
+	 * Returns information associated with an account
+	 */
 	
 	@Override
 	public UserAccount getUserAccount(String name) {
@@ -141,6 +192,10 @@ public class Database implements DatabaseInterface {
 			return null;
 		}
 	}
+	
+	/**
+	 * 
+	 */
 
 	@Override
 	public List<UserAccount> getAccounts(String parent) {
@@ -172,6 +227,10 @@ public class Database implements DatabaseInterface {
 		return accounts;
 	}
 
+	/**
+	 * Deletes old information and then rewrites it if
+	 * any changes have been made
+	 */
 	@Override
 	public void updateUserAccount(UserAccount account) {
 		/*
@@ -191,6 +250,10 @@ public class Database implements DatabaseInterface {
 		createUserAccount(account);
 	}
 	
+	/**
+	 * Deletes transaction associated with an user account
+	 */
+	
 	@Override
 	public void deleteAccount(UserAccount account) {
 		SQLiteDatabase db = dbHelper.getWritableDatabase();
@@ -198,6 +261,10 @@ public class Database implements DatabaseInterface {
 				new String[] { String.valueOf(account.getName()) });
 		deleteTransactions(account.getName());
 	}
+	
+	/**
+	 * Deletes account from list of all accounts
+	 */
 	
 	@Override
 	public void deleteAccounts(String parent) {
@@ -208,6 +275,9 @@ public class Database implements DatabaseInterface {
 		}
 	}
 	
+	/**
+	 * Adds transaction to the database
+	 */
 	@Override
 	public void makeTransaction(Transaction t) {
 		SQLiteDatabase db = dbHelper.getWritableDatabase();
@@ -221,6 +291,10 @@ public class Database implements DatabaseInterface {
 		
 	}
 
+	/**
+	 * Creates a running list of transactions based on date
+	 */
+	
 	@Override
 	public List<Transaction> getTransactions(String parent) throws ParseException {
 		List<Transaction> transactions = new ArrayList<Transaction>();
@@ -253,6 +327,10 @@ public class Database implements DatabaseInterface {
 		}
 	}
 
+    /**
+     * Creates a running list of only deposits
+     */
+	
 	@Override
 	public List<Transaction> getDeposits() {
 		List<Transaction> transactions = new ArrayList<Transaction>();
@@ -283,6 +361,10 @@ public class Database implements DatabaseInterface {
 		}
 	}
 
+    /**
+     * Creates a running list of only withdrawals
+     */
+	
 	@Override
 	public List<Transaction> getWithdrawals() {
 		List<Transaction> transactions = new ArrayList<Transaction>();
@@ -313,7 +395,10 @@ public class Database implements DatabaseInterface {
 		}
 	}
 
-
+	/**
+	 * Deletes transactions associated with an account
+	 */
+	
 	@Override
 	public void deleteTransactions(String parent) {
 		SQLiteDatabase db = dbHelper.getWritableDatabase();

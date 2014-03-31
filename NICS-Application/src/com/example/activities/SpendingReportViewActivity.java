@@ -37,6 +37,12 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
+/**
+ * 
+ * @author Team 16
+ *
+ * Handles spending report viewing
+ */
 public class SpendingReportViewActivity extends Activity implements SpendingReportView, OnClickListener{
 	
 	private SpendingReportViewPresenter presenter;
@@ -44,6 +50,10 @@ public class SpendingReportViewActivity extends Activity implements SpendingRepo
 	private ClickListener listener;
 	private Button back;
 	private TextView reportSumTextView;
+
+	/**
+	 * 
+	 */
 	
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -54,6 +64,11 @@ public class SpendingReportViewActivity extends Activity implements SpendingRepo
 		populateListView();
 	}
 	
+	/**
+     * Allows user to exit this screen,
+     * have a plain or viewing or see the info in a list.
+     */
+	
 	public void initiateEditTextsAndButtons() {
 		back = (Button)findViewById(R.id.back);
 		back.setOnClickListener(this);
@@ -63,20 +78,37 @@ public class SpendingReportViewActivity extends Activity implements SpendingRepo
 		list = (ListView)findViewById(R.id.spendingListView);
 	}
 
+    /**
+     * When the button is pushed, the information will be viewed
+     */
+	
 	@Override
 	public void onClick(View v) {
 		presenter.onClick(v);
 	}
 
+	/**
+	 * Retrieves date
+	 */
+	
 	@Override
 	public Date getDate() {
 		return null;
 	}
 
+	/**
+     * Allows user to search through information
+     */
+	
 	@Override
 	public void addSearchRequestNotifyCallback(ClickListener lsnr) {
 		listener = lsnr;
 	}
+	
+	/**
+	 * Grabs all the withdrawals and puts them into a list
+	 * for easier viewing.
+	 */
 	
 	public void populateListView(){
 		Application app = Application.INSTANCE;
@@ -118,6 +150,10 @@ public class SpendingReportViewActivity extends Activity implements SpendingRepo
 		list.setAdapter(adapter);
 	}
 
+	/**
+	 * Allows user to go navigate back through application
+	 */
+	
 	@Override
 	public void goBack() {
 		Intent i = new Intent(this, AccountListViewActivity.class);

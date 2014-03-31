@@ -29,6 +29,12 @@ import com.example.support.ClickListener;
 import com.example.view.AccountListView;
 import com.example.view.AccountView;
 
+/**
+ * 
+ * @author Team 16
+ *
+ * Deals with the ability for a user to see their account activity in a list
+ */
 public class AccountListViewActivity extends Activity implements
 		AccountListView, OnClickListener {
 
@@ -37,6 +43,10 @@ public class AccountListViewActivity extends Activity implements
 	private ClickListener listener;
 	private ListView list;
 
+	/**
+	 * Creates the account list that will be viewed
+	 */
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -48,11 +58,20 @@ public class AccountListViewActivity extends Activity implements
 
 	}
 
+	/**
+	 * When the button is pressed on, the user can view it
+	 */
+	
 	@Override
 	public void onClick(View v) {
 		presenter.onClick(v);
 	}
 
+	/**
+	 * Adds a back button, a report button and a list option for
+	 * the account list
+	 */
+	
 	public void initiateViews() {
 		addButton = (Button) findViewById(R.id.backButton);
 		addButton.setOnClickListener(this);
@@ -72,12 +91,21 @@ public class AccountListViewActivity extends Activity implements
 		});
 	}
 
+	/**
+	 * Allows the user to see the options previously created
+	 */
+	
 	public boolean onCreateOptionsMenu(Menu menu) {
         
 	    MenuInflater inflater = getMenuInflater();
 	    inflater.inflate(R.menu.menu_options, menu);
 	    return true;
 	}
+
+	
+	/**
+	 * 
+	 */
 	
 	public boolean onOptionsItemSelected(MenuItem item) {
 	    switch (item.getItemId()) {
@@ -93,17 +121,29 @@ public class AccountListViewActivity extends Activity implements
         return super.onOptionsItemSelected(item);
 	}
 	
+	/**
+	 * 
+	 */
+	
 	@Override
 	public void addSearchRequestNotifyCallback(ClickListener lsr) {
 		listener = lsr;
 	}
 
+	/**
+	 * Sets up a user account
+	 */
+	
 	@Override
 	public void createAccount() {
 		Intent i = new Intent(this, AccountSetupActivity.class);
 		startActivity(i);
 		finish();
 	}
+	
+	/**
+	 * 
+	 */
 
 	private void populateListView() {
 		UserModel model = Application.INSTANCE.getModel();
@@ -118,6 +158,10 @@ public class AccountListViewActivity extends Activity implements
 				R.layout.item_view, items);
 		list.setAdapter(adapter);
 	}
+	
+	/**
+	 * Allows the user to look at their account
+	 */
 
 	@Override
 	public void viewAccount() {
@@ -125,6 +169,10 @@ public class AccountListViewActivity extends Activity implements
 		startActivity(i);
 		finish();
 	}
+	
+	/**
+	 * Allows the user to look at their account report
+	 */
 
 	@Override
 	public void viewReport() {

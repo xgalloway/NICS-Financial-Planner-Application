@@ -8,6 +8,12 @@ import com.example.model.Transaction;
 import com.example.model.User;
 import com.example.model.UserAccount;
 
+/**
+ * 
+ * @author Team 16
+ *
+ */
+
 public interface DatabaseInterface {
 	void createUser(User u);
 	User getUser(String name);

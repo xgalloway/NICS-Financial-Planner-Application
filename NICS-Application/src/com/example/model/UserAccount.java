@@ -4,6 +4,12 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * 
+ * @author Team 16
+ *
+ */
+
 public class UserAccount{
 	private String name;
 	private String accountName;
@@ -13,6 +19,14 @@ public class UserAccount{
 	
 	List<Transaction> transactionList = new ArrayList<Transaction>();
 	
+	/**
+	 * Instantiates name, accountName, balance and rate
+	 * @param display
+	 * @param full
+	 * @param balance
+	 * @param interest
+	 */
+	
 	public UserAccount(String display, String full, double balance, double interest){
 		this.name = display;
 		this.accountName = full;
@@ -21,6 +35,14 @@ public class UserAccount{
 		//transactionList.add(new Transaction(balance, date, "deposit", "Starting balance"));
 		this.rate = interest;
 	}
+	
+	/**
+	 * Instantiates name, balance, rate and parent
+	 * @param name
+	 * @param balance
+	 * @param interest
+	 * @param parent
+	 */
 	
 	public UserAccount(String name, double balance, double interest, String parent) {
 		this.name = name;
@@ -57,6 +79,10 @@ public class UserAccount{
 		return transactionList;
 	}
 	
+	/**
+	 * Puts deposits into a list
+	 */
+	
 	public List<Transaction> getDeposits() {
 		List<Transaction> deposits = new ArrayList();
 		for (int i = 0; i < transactionList.size(); ++i) {
@@ -66,6 +92,10 @@ public class UserAccount{
 		}
 		return deposits;
 	}
+	
+	/**
+	 * Puts withdrawals into a list
+	 */
 	
 	public List<Transaction> getWithdrawals() {
 		List<Transaction> withdrawals = new ArrayList();
@@ -78,6 +108,14 @@ public class UserAccount{
 		return withdrawals;
 	}
 	
+	/**
+	 * 
+	 * @param amount
+	 * @param date
+	 * @param type
+	 * @param comments
+	 */
+	
 	public void makeTransaction(double amount, Date date, String type, String comments) {
 		double finalAmount = Math.abs(amount);
 		//Transaction t = new Transaction(finalAmount, date, type, comments);
@@ -88,6 +126,10 @@ public class UserAccount{
 			balance = balance - amount;
 		}
 	}
+	
+	/**
+	 * Creates a string about an account's balance
+	 */
 	
 	public String toString() {
 		return "" + name + "\nBalance: " + balance;

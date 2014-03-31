@@ -12,9 +12,20 @@ import android.view.Menu;
 import android.widget.Button;
 import android.widget.ImageView;
 
+/**
+ * 
+ * @author Team 16
+ *
+ *
+ */
+
 public class SplashScreenActivity extends Activity {
 	
 	private static final int SPLASH_TIME_LIMIT = 2000;
+	
+	/**
+	 * 
+	 */
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -31,12 +42,19 @@ public class SplashScreenActivity extends Activity {
         }, SPLASH_TIME_LIMIT);
     }
 		
+	/**
+	 * 
+	 */
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
+	
+	/**
+	 * 
+	 */
 	
 	public void endSplash() {
 		Intent i = new Intent(this, MainActivity.class);

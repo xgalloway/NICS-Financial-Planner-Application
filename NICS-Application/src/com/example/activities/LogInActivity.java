@@ -19,6 +19,12 @@ import com.example.presenter.LogInViewPresenter;
 import com.example.support.ClickListener;
 import com.example.view.LogInView;
 
+/**
+ * 
+ * @author Team 16
+ *
+ * Handles user log in
+ */
 public class LogInActivity extends Activity implements LogInView, OnClickListener {
 
 	Button enterButton;
@@ -28,6 +34,10 @@ public class LogInActivity extends Activity implements LogInView, OnClickListene
 	
 	private ClickListener listener;
 	LogInViewPresenter presenter;
+	
+	/**
+	 * 
+	 */
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -39,12 +49,21 @@ public class LogInActivity extends Activity implements LogInView, OnClickListene
 		initiateEditTextsAndButtons();
 	}
 	
+	/**
+	 * Depending on a user's account, different options
+	 * will be displayed in the menu
+	 */
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.log_in, menu);
 		return true;
 	}
+	
+	/**
+	 * Allows a user to enter their username, password
+	 * and then enter it for log in
+	 */
 	
 	public void initiateEditTextsAndButtons() {
 		enterButton = (Button)findViewById(R.id.goButton);
@@ -54,15 +73,27 @@ public class LogInActivity extends Activity implements LogInView, OnClickListene
 		
 	}
 	
+	/**
+	 * Turns the username the user entered into a string
+	 */
+	
 	@Override
 	public String getUsername() {
 		return usernameEditText.getText().toString();
 	}
 	
+	/**
+     * Turns the password the user entered into a string
+     */
+	
 	@Override
 	public String getPassword() {
 		return passwordEditText.getText().toString();
 	}
+	
+	/**
+	 * If the information is correct, it will allow the user to proceed
+	 */
 	
 	@Override
 	public void acceptLogin() {
@@ -72,12 +103,20 @@ public class LogInActivity extends Activity implements LogInView, OnClickListene
 		
 	}
 
+	/**
+	 * Provides a search button
+	 */
+	
 	@Override
 	public void addSearchRequestNotifyCallback(final ClickListener lsnr) {
 		listener = lsnr;
 		
 	}
 
+	/**
+	 * Allows the user to know whether or not the credentials are correct
+	 */
+	
 	@Override
 	public void displayAlertDialog() {
 		AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
@@ -93,6 +132,10 @@ public class LogInActivity extends Activity implements LogInView, OnClickListene
 		
 	}
 
+	/**
+     * When the button is pushed, the information will be viewed
+     */
+	
 	@Override
 	public void onClick(View v) {
 		presenter.onClick(v);

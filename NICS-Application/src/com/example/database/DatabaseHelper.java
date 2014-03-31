@@ -12,9 +12,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	public static final String TABLE_NAME_TRANS = "trans";
 	
 	
-	
-	
-	
 	//USER
 	public static final String COLUMN_ID = "_id";
 	public static final String COLUMN_NAME = "name";
@@ -38,12 +35,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	public static final String COLUMN_START = "start";
 	public static final String COLUMN_END = "end";
 	
+	/**
+	 * Creates table with user registration/log in information
+	 */
 	
 	public static final String CREATE_USER_TABLE = "CREATE TABLE " 
 			+ TABLE_NAME_USER + "(" 
 			+ COLUMN_ID  + " integer primary key autoincrement,"
 			+ COLUMN_NAME + " not null," 
 			+ COLUMN_PASSWORD + " not null) ;";
+	
+	/**
+	 * Creates table with account information
+	 */
 	
 	public static final String CREATE_ACCOUNT_TABLE = "CREATE TABLE "
 			+ TABLE_NAME_ACCOUNT + "(" 
@@ -52,7 +56,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 			+ COLUMN_BALANCE + " not null,"
 			+ COLUMN_INTEREST + " not null,"
 			+ COLUMN_PARENT + " not null) ;";
-			
+	
+	/**
+	 * Creates table with transactions summary
+	 */
+	
 	public static final String CREATE_TRANS_TABLE = "CREATE TABLE "
 			+ TABLE_NAME_TRANS + "(" 
 			+ COLUMN_ID  + " integer primary key autoincrement, "
@@ -67,16 +75,31 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	private static final String DATABASE_NAME = "planner.db";
 	private static final int DATABASE_VERSION = 1;
 	
+	/**
+	 * 
+	 * @param context
+	 */
+	
 	public DatabaseHelper(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
 	}
 	
+	/**
+	 * 
+	 * @param context
+	 * @param name
+	 * @param factory
+	 * @param version
+	 */
 	
 	public DatabaseHelper(Context context, String name, CursorFactory factory,
 			int version) {
 		super(context, name, factory, version);
 	}
 
+	/**
+	 * 
+	 */
 	
 	@Override
 	public void onCreate(SQLiteDatabase db) {
@@ -88,6 +111,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 	}
 
+	/**
+	 * 
+	 */
+	
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 		db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME_USER);

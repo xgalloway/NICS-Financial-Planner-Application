@@ -2,6 +2,12 @@ package com.example.model;
 
 import java.util.Date;
 
+/**
+ * 
+ * @author Team 16
+ *
+ */
+
 public class Report {
 	
 	private Date start;

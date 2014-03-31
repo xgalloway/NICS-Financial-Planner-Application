@@ -23,6 +23,12 @@ import com.example.support.ClickListener;
 import com.example.view.AccountView;
 import com.example.view.TransactionView;
 
+/**
+ * 
+ * @author Team 16
+ * 
+ * Allows user to view all transactions at once
+ */
 public class TransactionViewActivity extends Activity implements TransactionView, OnClickListener {
 
 	EditText amountEditText;
@@ -35,6 +41,10 @@ public class TransactionViewActivity extends Activity implements TransactionView
 	
 	private ClickListener listener;
 	
+	/**
+	 * 
+	 */
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -44,16 +54,30 @@ public class TransactionViewActivity extends Activity implements TransactionView
 		initiateButtonsAndViews();
 	}
 	
+	/**
+	 * 
+	 */
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.log_in, menu);
 		return true;
 	}
+	
+	/**
+     * When the button is pushed, the information will be viewed
+     */
+	
 	@Override
 	public void onClick(View v) {
 		presenter.onClick(v);
 
 	}
+	
+	/**
+     * Allows user to deposit, withdrawal, cancel, enter amount and
+     * leave a comment for a transaction.
+     */
 	
 	public void initiateButtonsAndViews() {
 		amountEditText = (EditText) findViewById(R.id.amountEditText);
@@ -69,6 +93,10 @@ public class TransactionViewActivity extends Activity implements TransactionView
 		cancelButton.setOnClickListener(this);
 	}
 
+	/**
+	 * Allows transaction button to be used
+	 */
+	
 	@Override
 	public void makeTransaction() {
 		Intent i = new Intent(this, AccountViewActivity.class);
@@ -76,26 +104,47 @@ public class TransactionViewActivity extends Activity implements TransactionView
 		finish();
 	}
 
+	/**
+	 * Turns user amount text into a string
+	 */
+	
 	@Override
 	public String getAmount() {
 		return amountEditText.getText().toString();
 	}
 
+	/**
+     * Turns user date text into a string
+     */
+	
 	@Override
 	public Date getDate() {
 		Date date = new Date(System.currentTimeMillis());
 		return date;
 	}
 	
+	/**
+     * Turns user comment text into a string
+     */
+	
 	@Override
 	public String getComments() {
 		return commentEditText.getText().toString();
 	}
 
+    /**
+     * Allows user to search through information
+     */
+	
 	@Override
 	public void addSearchRequestNotifyCallback(ClickListener lsnr) {
 		listener = lsnr;
 	}
+	
+	/**
+	 * Tells user if the transaction was a success or if
+	 * they forgot to enter in an amount.
+	 */
 	
 	@Override
 	public void displayAlertDialog() {

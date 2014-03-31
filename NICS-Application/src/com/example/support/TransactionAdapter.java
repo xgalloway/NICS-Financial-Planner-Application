@@ -25,6 +25,10 @@ public class TransactionAdapter extends ArrayAdapter<String> {
 		this.data = list;
 	}
 	
+	/**
+	 * Sets color of text based on position
+	 */
+	
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		View v = super.getView(position, convertView, parent);

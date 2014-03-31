@@ -24,6 +24,12 @@ import com.example.presenter.ReportViewPresenter;
 import com.example.support.ClickListener;
 import com.example.view.ReportView;
 
+/**
+ * 
+ * @author Team 16
+ * 
+ * Handles the report viewing
+ */
 public class ReportViewActivity extends Activity implements ReportView, OnClickListener{
 	
 	Button showButton, startButton, endButton;
@@ -41,6 +47,11 @@ public class ReportViewActivity extends Activity implements ReportView, OnClickL
 		presenter = new ReportViewPresenter(this, app.getModel());
 		initiateEditTextsAndButtons();
 	}
+	
+	/**
+	 * Allows user to choose dates for reports
+	 * and then view them.
+	 */
 	
 	public void initiateEditTextsAndButtons() {
 		showButton = (Button)findViewById(R.id.showButton);
@@ -62,12 +73,20 @@ public class ReportViewActivity extends Activity implements ReportView, OnClickL
 		endDatePicker.setOnClickListener(this);
 		*/
 	}
-
+    
+    /**
+     * When the button is pushed, the information will be viewed
+     */
+	
 	@Override
 	public void onClick(View v) {
 		presenter.onClick(v);
 	}
 
+	/**
+	 * 
+	 */
+	
 	@Override
 	public void acceptRange() {
 		Intent i = new Intent(this, SpendingReportViewActivity.class);
@@ -75,16 +94,29 @@ public class ReportViewActivity extends Activity implements ReportView, OnClickL
 		finish();
 	}
 
+	/**
+	 * Changes start date chooser to a string
+	 */
+	
 	@Override
 	public String getStartDate() {
 		return startButton.getText().toString();
 	}
 
+    /**
+     * Changes end date chooser to a string
+     */
+	
 	@Override
 	public String getEndDate() {
 		return endButton.getText().toString();
 	}
 
+	/**
+	 * Tells user if they entered the date correctly
+	 * or if they need to correct their mistake.
+	 */
+	
 	@Override
 	public void displayAlertDialog() {
 		AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
@@ -99,11 +131,19 @@ public class ReportViewActivity extends Activity implements ReportView, OnClickL
 		alertDialog.show();
 	}
 
+    /**
+     * Allows user to search through information
+     */
+	
 	@Override
 	public void addSearchRequestNotifyCallback(ClickListener lsnr) {
 		listener = lsnr;
 	}
 
+	/**
+	 * Creates a way for the user to choose a start and an end
+	 * date; it shows in a date picker instead of a drop down.
+	 */
 	@Override
 	public void displayDateDialog(String startOrEnd) {
 		final Calendar c = Calendar.getInstance();

@@ -18,6 +18,13 @@ import com.example.presenter.AccountSetupPresenter;
 import com.example.support.ClickListener;
 import com.example.view.AccountSetupView;
 
+/**
+ * 
+ * @author Team 16
+ *
+ * Deals with a user setting up their account
+ */
+
 public class AccountSetupActivity extends Activity implements AccountSetupView, OnClickListener {
 	
 	private Button createButton;
@@ -37,11 +44,18 @@ public class AccountSetupActivity extends Activity implements AccountSetupView, 
 		initiateButtonsAndEditTexts();
 	}
 
+	/**
+	 * When the button is pushed, the accoutn setup up option will display
+	 */
 	@Override
 	public void onClick(View v) {
 		presenter.onClick(v);
 		
 	}
+	
+	/**
+	 * Allows the user to be able to use buttons and text fields
+	 */
 	
 	@Override
 	public void initiateButtonsAndEditTexts() {
@@ -61,6 +75,10 @@ public class AccountSetupActivity extends Activity implements AccountSetupView, 
 		//rateText.setText(name);
 	}
 
+	/**
+	 * 
+	 */
+	
 	@Override
 	public void acceptAccount() {
 		Intent i = new Intent(this, AccountListViewActivity.class);
@@ -68,22 +86,37 @@ public class AccountSetupActivity extends Activity implements AccountSetupView, 
 		finish();
 	}
 
+	/**
+	 * Changes name text field into a string	
+	 */
 	
 	@Override
 	public String getName() {
 		return accountNameText.getText().toString();
 	}
 	
+	/**
+	 * Changes display name text field into a string  
+	 */
+	
 	@Override
 	public String getDisplayName() {
 		return null;
 	}
+	
+	/**
+	 * 
+	 */
 	
 	@Override
 	public void addSearchRequestNotifyCallback(ClickListener lsr) {
 		listener = lsr;
 	}
 
+	/**
+	 * Allows user to know if the information they inserted
+	 * is correct or incorrect
+	 */
 	@Override
 	public void displayAlertDialog() {
 		AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
@@ -101,6 +134,9 @@ public class AccountSetupActivity extends Activity implements AccountSetupView, 
 		
 	}
 
+	/**
+	 * Allows the user to not go through with registration
+	 */
 	@Override
 	public void cancelAccountCreation() {
 		Intent i = new Intent(this, AccountListViewActivity.class);
@@ -108,11 +144,18 @@ public class AccountSetupActivity extends Activity implements AccountSetupView, 
 		finish();
 	}
 
+	/**
+	 * 
+	 */
+	
 	@Override
 	public String getRate() {
 		return rateText.getText().toString();
 	}
 
+	/**
+	 * 
+	 */
 	@Override
 	public String getBalance() {
 		return balanceText.getText().toString();

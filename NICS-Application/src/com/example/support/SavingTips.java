@@ -2,13 +2,31 @@ package com.example.support;
 
 import java.util.Random;
 
+/**
+ * 
+ * @author Team 16
+ * 
+ * Creates saving tips for the user to see while in use of the application
+ */
+
 public class SavingTips {
 	
 	private Random rand;
 	
+	/**
+	 * Randomizes the order of the tips each time
+	 * the application is used
+	 */
+	
 	public SavingTips() {
 		rand = new Random(tips.length);
 	}
+	
+	/**
+	 * A group of tips to be shown while the application
+	 * is being used
+	 */
+	
 	private static final String[] tips = { 
 		"Don't just throw away loose change. Make sure to put it into a jar. It adds up.",
 		"Try switching to generic brands instead of name brands.",
@@ -18,6 +36,10 @@ public class SavingTips {
 		"Get a library card instead of paying for books",
 		"Buy things in bulk."
 		};
+	
+	/**
+	 * Returns a tip based on the number
+	 */
 	
 	public String getTip() {
 		return tips[rand.nextInt()];

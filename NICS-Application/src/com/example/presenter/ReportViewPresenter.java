@@ -23,6 +23,12 @@ public class ReportViewPresenter implements ClickListener{
 		this.model = model;
 	}
 
+	/**
+	 * Shows option for user to choose dates to show spending reports.
+	 * If the user chooses invalid dates, an alert dialog is shown.
+	 * If not, the dates are accepted and the report is generated.
+	 */
+	
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {

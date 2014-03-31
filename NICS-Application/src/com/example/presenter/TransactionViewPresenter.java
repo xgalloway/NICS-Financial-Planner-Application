@@ -13,6 +13,12 @@ import com.example.support.ClickListener;
 import com.example.view.RegistrationView;
 import com.example.view.TransactionView;
 
+/**
+ * 
+ * @author Team 16
+ *
+ */
+
 public class TransactionViewPresenter implements ClickListener {
 
 	private TransactionView view;
@@ -24,6 +30,14 @@ public class TransactionViewPresenter implements ClickListener {
 		view.addSearchRequestNotifyCallback(this);
 	}
 
+	/**
+	 * If the user made a withdrawal, the corresponding alert dialog box shows
+	 * and the account balance is updated correctly.
+	 * If the user made a deposit, the corresponding alert dialog box show
+	 * and the account balance is updated correctly.
+	 * Both times the transaction is added the the list of transactions.
+	 */
+	
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {

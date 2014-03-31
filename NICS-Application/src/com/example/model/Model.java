@@ -4,6 +4,12 @@ import java.text.ParseException;
 import java.util.Collection;
 import java.util.List;
 
+/**
+ * 
+ * @author Team 16
+ *
+ */
+
 public interface Model {
 	void addUser(final String name, final int password);
 	boolean isValidUser(final String name);

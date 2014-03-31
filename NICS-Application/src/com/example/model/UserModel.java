@@ -13,6 +13,12 @@ import android.content.Context;
 
 import com.example.database.Database;
 
+/**
+ * 
+ * @author Team 16
+ *
+ */
+
 public class UserModel implements Model {
 	private final String TAG = "UserModel";
 	
@@ -30,9 +36,18 @@ public class UserModel implements Model {
 		
 	}
 	
+	/**
+	 * Instantiates database
+	 * @param context
+	 */
+	
 	public UserModel(Context context) {
 		this.database = new Database(context);
 	}
+	
+	/**
+	 * If there has been no user accounts set up, admin is the default
+	 */
 	
 	public void initialize() {
 		if (getUserByUsername("admin") == null) {
@@ -40,6 +55,10 @@ public class UserModel implements Model {
 		} 
 		
 	}
+	
+	/**
+	 * Checks to see if the user has an account already
+	 */
 	
 	@Override
 	public boolean isValidUser(String name) {
@@ -56,6 +75,11 @@ public class UserModel implements Model {
 			return false;
 		}
 	}
+	
+	/**
+	 * Accepts user's name and password on login
+	 */
+	
 	@Override
 	public boolean acceptCredentials(String name, int password) {
 		/*if (isValidUser(name)) {
@@ -79,6 +103,10 @@ public class UserModel implements Model {
 		return false;
 	}
 	
+	/**
+	 * Returns user's username
+	 */
+	
 	@Override
 	public User getUserByUsername(String username) {
 		//User u = users.get(username);
@@ -86,12 +114,21 @@ public class UserModel implements Model {
 		return u;
 	}
 
+	
+	/**
+	 * Returns the group of users stored in the application
+	 */
+	
 	@Override
 	public Collection<User> getUsers() {
 		//return users.values();
 		return database.getUsers();
 	}
 
+	/**
+	 * Adds new user to database
+	 */
+	
 	@Override
 	public void addUser(String name, int password) {
 		//users.put(name, new User(name, password));
@@ -100,6 +137,10 @@ public class UserModel implements Model {
 		
 	}
 
+	/**
+	 * Whoever is currently using the application is made the main focus
+	 */
+	
 	public void setCurrentUser(User u) {
 		//current = u;
 		if (u == null) {
@@ -109,15 +150,27 @@ public class UserModel implements Model {
 		}
 	}
 	
+	/**
+	 * Returns current user
+	 */
+	
 	public User getCurrent() {
 		return database.getUser(currentUser);
 		//return current;
 	}
 	
+	/**
+	 * If the user has changed, they are made the current user
+	 */
+	
 	@Override	
 	public void updateUser(User u) {
 		database.updateUser(u);
 	}
+	
+	/**
+	 * Removes user from being the focus
+	 */
 	
 	@Override
 	public void deleteUser(User u) {

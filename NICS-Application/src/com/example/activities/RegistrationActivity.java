@@ -18,7 +18,12 @@ import com.example.presenter.RegistrationViewPresenter;
 import com.example.support.ClickListener;
 import com.example.view.RegistrationView;
 
-
+/**
+ * 
+ * @author Team 16
+ *
+ * Handles new user registration
+ */
 public class RegistrationActivity extends Activity implements RegistrationView, OnClickListener {
 
 	Button enterButton;
@@ -27,6 +32,10 @@ public class RegistrationActivity extends Activity implements RegistrationView, 
 	
 	private ClickListener listener;
 	RegistrationViewPresenter presenter;
+	
+	/**
+	 * 
+	 */
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -43,12 +52,21 @@ public class RegistrationActivity extends Activity implements RegistrationView, 
 		return true;
 	}
 
+	/**
+     * When the button is pushed, the information will be viewed
+     */
+	
 	@Override
 	public void onClick(View v) {
 		presenter.onClick(v);
 
 	}
 
+   /**
+     * Allows a user to enter their username, password
+     * and then enter it for log in
+     */
+	
 	public void initiateEditTextsAndButtons() {
 		enterButton = (Button)findViewById(R.id.goButton);
 		enterButton.setOnClickListener(this);
@@ -65,18 +83,35 @@ public class RegistrationActivity extends Activity implements RegistrationView, 
 
 	}
 
+    /**
+     * Provides a search button
+     */
+	
 	@Override
 	public void addSearchRequestNotifyCallback(ClickListener lsnr) {
 		listener = lsnr;
 	}
 
+    /**
+     * Turns the username the user entered into a string
+     */
+	
 	public String getUsername() {
 		return usernameEditText.getText().toString();
 	}
 	
+    /**
+     * Turns the password the user entered into a string
+     */
+	
 	public String getPassword() {
 		return passwordEditText.getText().toString();
 	}
+
+    /**
+     * Allows the user to know if the registration went through
+     * or if they need to choose a different username.
+     */
 	
 	@Override
 	public void displayAlertDialog() {
@@ -92,6 +127,11 @@ public class RegistrationActivity extends Activity implements RegistrationView, 
 		alertDialog.show();
 		
 	}
+
+   /**
+     * Allows the user to know if the registration went through
+     * or if they need to modify their username or password.
+     */
 	
 	@Override 
 	public void displayAlertDialog2() {
