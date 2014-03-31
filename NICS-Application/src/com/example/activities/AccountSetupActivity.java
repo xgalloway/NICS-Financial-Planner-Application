@@ -45,7 +45,7 @@ public class AccountSetupActivity extends Activity implements AccountSetupView, 
 	}
 
 	/**
-	 * When the button is pushed, the accoutn setup up option will display
+	 * When the button is pushed, the account setup up option will display
 	 */
 	@Override
 	public void onClick(View v) {
