@@ -13,6 +13,12 @@ import com.example.nics_application.R;
 import com.example.support.ClickListener;
 import com.example.view.ReportView;
 
+/**
+ * 
+ * @author Team 16
+ *
+ */
+
 public class ReportViewPresenter implements ClickListener{
 	
 	private ReportView view;
@@ -27,6 +33,8 @@ public class ReportViewPresenter implements ClickListener{
 	 * Shows option for user to choose dates to show spending reports.
 	 * If the user chooses invalid dates, an alert dialog is shown.
 	 * If not, the dates are accepted and the report is generated.
+	 * 
+	 * @param v
 	 */
 	
 	@Override

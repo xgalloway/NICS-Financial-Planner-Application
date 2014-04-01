@@ -5,6 +5,8 @@ import android.content.Context;
 /**
  * 
  * @author Team 16
+ * 
+ * Creates application
  *
  */
 
@@ -20,6 +22,11 @@ public class Application {
 		this.model = new UserModel(context);
 		model.initialize();
 	}
+	
+	/**
+	 * Gets user model
+	 * @return
+	 */
 	public UserModel getModel() {
 		return model;
 	}

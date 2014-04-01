@@ -181,6 +181,10 @@ public class UserModel implements Model {
 		database.deleteUser(u);
 	}
 	
+	/**
+	 * Creates a user account and then adds a transaction
+	 */
+	
 	@Override
 	public void addUserAccount(String name, double balance, double interest, String parent) {
 		UserAccount account = new UserAccount(name, balance, interest, parent);
@@ -189,44 +193,75 @@ public class UserModel implements Model {
 		makeTransaction(t);
 	}
 	
+	/**
+	 * Gets an account from the main database
+	 */
+	
 	@Override
 	public UserAccount getAccount(String name) {
 		return database.getUserAccount(name);
 	}
+	
+	/**
+	 * Gets all accounts associated with a user
+	 */
 	
 	@Override
 	public List<UserAccount> getUserAccounts(String parent) {
 		return database.getAccounts(parent);
 	}
 	
+	/**
+	 * Gets account in use
+	 */
+	
 	@Override
 	public UserAccount getCurrentAccount() {
 		return getAccount(currentAccount);
 	}
+	
+	/**
+	 * Sets account in use to current account
+	 */
 	
 	@Override
 	public void setCurrentAccount(UserAccount account) {
 		currentAccount = account.getName();
 	}
 
+	/**
+	 * Performs updates on current account
+	 */
+	
 	@Override
 	public void updateUserAccount(UserAccount account) {
 		database.updateUserAccount(account);
 		
 	}
 
+	/**
+	 * Deletes current account from the database
+	 */
+	
 	@Override
 	public void deleteAccount(UserAccount account) {
 		database.deleteAccount(account);
 	}
 
-
+	/**
+	 * Makes a transaction
+	 */
+	
 	@Override
 	public void makeTransaction(Transaction t) {
 		database.makeTransaction(t);
 		
 	}
 
+	/**
+	 * Puts the transactions into a list
+	 */
+	
 	@Override
 	public List<Transaction> getTransactions(String parent) throws ParseException {
 		List<UserAccount> accounts = (List<UserAccount>) getUserAccounts(currentUser);
@@ -238,12 +273,23 @@ public class UserModel implements Model {
 		return transactions;
 	}
 	
+	/**
+	 * Gets transactions based on account holder
+	 * @param parent
+	 * @return
+	 * @throws ParseException
+	 */
+	
 	public List<Transaction> getTransactionsForAccount(String parent) throws ParseException {
 	    List<Transaction> transactions = new ArrayList<Transaction>();
 	    transactions.addAll(database.getTransactions(parent));
 	    return transactions;
 	}
 
+	/**
+	 * Gets transactions if it is a deposit
+	 */
+	
 	@Override
 	public List<Transaction> getDeposits() throws ParseException {
 		List<Transaction> transactions = getTransactions(currentUser);
@@ -256,7 +302,11 @@ public class UserModel implements Model {
 		}
 		return output;
 	}
-
+	
+	/**
+     * Gets transactions if it is a withdrawal
+     */
+	
 	@Override
 	public List<Transaction> getWithdrawals() throws ParseException {
 		List<Transaction> transactions = getTransactions(currentUser);
@@ -270,18 +320,31 @@ public class UserModel implements Model {
 		return output;
 	}
 
+	/**
+	 * Deletes transactions based on account holder
+	 */
+	
 	@Override
 	public void deleteTransactions(String parent) {
 		database.deleteTransactions(parent);
 		
 	}
 
+	/**
+	 * Sets the start and end dates for reports   
+	 */
+	
 	@Override
 	public void setStartAndEndDates(String start, String end) {
 		startDate = start;
 		endDate = end;
 		
 	}
+	
+	/**
+	 * Gets start date for reports
+	 * @return
+	 */
 	
 	public Date getStartDate() {
 		SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
@@ -293,6 +356,11 @@ public class UserModel implements Model {
 		}
 		return null;
 	}
+	
+	/**
+	 * Gets end date for reports
+	 * @return
+	 */
 	
 	public Date getEndDate() {
 		SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");

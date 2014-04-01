@@ -9,10 +9,22 @@ import com.example.nics_application.R;
 import com.example.support.ClickListener;
 import com.example.view.AccountSetupView;
 
+/**
+ * 
+ * @author Team 16
+ *
+ */
+
 public class AccountSetupPresenter implements ClickListener {
 
 	private AccountSetupView view;
 	private final Model model;
+	
+	/**
+	 * Instantiates variables
+	 * @param v
+	 * @param m
+	 */
 	
 	public AccountSetupPresenter(AccountSetupView v, Model m) {
 		this.view = v;
@@ -20,6 +32,11 @@ public class AccountSetupPresenter implements ClickListener {
 		view.addSearchRequestNotifyCallback(this);
 	}
 
+	/**
+	 *
+	 * @param v
+	 */
+	
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {

@@ -9,17 +9,34 @@ import com.example.nics_application.R;
 import com.example.support.ClickListener;
 import com.example.view.AccountView;
 
+/**
+ * 
+ * @author Team 16
+ *
+ */
+
 public class AccountViewPresenter implements ClickListener {
 	
 	private AccountView view;
 	private final Model model;
 
+	/**
+	 * Instantiates variables
+	 * @param v
+	 * @param m
+	 */
+	
 	public AccountViewPresenter(AccountView v, Model m) {
 		this.view = v;
 		this.model = m;
 		view.addSearchRequestNotifyCallback(this);
 	}
 
+	/**
+	 * Takes user to transaction or leaves transaction screen
+	 * depending on what button is pressed
+	 */
+	
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()){ 

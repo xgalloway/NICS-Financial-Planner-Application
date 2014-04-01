@@ -18,6 +18,15 @@ public class Transaction {
 	private String type;
 	private String parent;
 	
+	/**
+	 * Instantiates variables
+	 * @param amount
+	 * @param date
+	 * @param type
+	 * @param comments
+	 * @param parent
+	 */
+	
 	public Transaction(double amount, Date date, String type, String comments, String parent) {
 		this.amount = amount;
 		this.date = date;
@@ -27,6 +36,7 @@ public class Transaction {
 	}
 
 	/**
+	 * Gets amount
 	 * @return amount associated with transaction
 	 */
 	
@@ -44,6 +54,7 @@ public class Transaction {
 	}
 	
 	/**
+	 * Gets comments associated with transaction
 	 * @return comments associated with transaction
 	 */
 	
@@ -52,6 +63,7 @@ public class Transaction {
 	}
 	
 	/**
+	 * Gets date associated with transaction
 	 * @return date associated with transaction
 	 */
 	
@@ -60,6 +72,7 @@ public class Transaction {
 	}
 	
 	/** 
+	 * Gets parent account associated with transaction
 	 * @return
 	 */
 	
@@ -68,7 +81,7 @@ public class Transaction {
 	}
 	
 	/**
-	 * \
+	 * Sets date associated with transaction
 	 * @param day
 	 * @param month
 	 * @param year
@@ -79,7 +92,7 @@ public class Transaction {
 	}
 	
 	/**
-	 * 
+	 * Creates a string for transaction amount
 	 */
 	
 	public String toString() {
@@ -91,7 +104,7 @@ public class Transaction {
 	}
 	
 	/**
-	 * 
+	 * Gets type of account
 	 * @return
 	 */
 	
@@ -100,7 +113,7 @@ public class Transaction {
 	}
 	
 	/**
-	 * 
+	 * Creates a string for the date
 	 * @return
 	 */
 	

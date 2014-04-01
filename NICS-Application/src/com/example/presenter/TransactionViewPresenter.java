@@ -36,6 +36,8 @@ public class TransactionViewPresenter implements ClickListener {
 	 * If the user made a deposit, the corresponding alert dialog box show
 	 * and the account balance is updated correctly.
 	 * Both times the transaction is added the the list of transactions.
+	 * 
+	 * @param v
 	 */
 	
 	@Override

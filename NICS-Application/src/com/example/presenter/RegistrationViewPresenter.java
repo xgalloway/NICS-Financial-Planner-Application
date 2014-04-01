@@ -9,10 +9,22 @@ import com.example.nics_application.R;
 import com.example.support.ClickListener;
 import com.example.view.RegistrationView;
 
+/**
+ * 
+ * @author Team 16
+ *
+ */
+
 public class RegistrationViewPresenter implements ClickListener {
 
 	private RegistrationView view;
 	private final Model model;
+	
+	/**
+	 * Instantiates variables
+	 * @param v
+	 * @param m
+	 */
 	
 	public RegistrationViewPresenter(RegistrationView v, Model m) {
 		this.view = v;
@@ -20,6 +32,11 @@ public class RegistrationViewPresenter implements ClickListener {
 		view.addSearchRequestNotifyCallback(this);
 	}
 
+	/**
+	 * Tells user if registration has been accepted or not
+	 * @param v
+	 */
+	
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {

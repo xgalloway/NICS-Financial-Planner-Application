@@ -51,29 +51,65 @@ public class UserAccount{
 		this.parent = parent;
 		
 	}
+	
+	/**
+	 * Gets name of user
+	 * @return
+	 */
+	
 	public String getName() {
 		return name;
 	}
+	
+	/**
+	 * Gets name of account
+	 * @return
+	 */
 	
 	public String getAccountName() {
 		return accountName;
 	}
 	
+	/**
+	 * Gets balance from account
+	 * @return
+	 */
+	
 	public double getBalance() {
 		return balance;
 	}
+	
+	/**
+	 * Sets account balance
+	 * @param amount
+	 */
 	
 	public void setBalance(Double amount) {
 		balance = amount;
 	}
 	
+	/**
+	 * Gets interest rate
+	 * @return
+	 */
+	
 	public double getRate() {
 		return rate;
 	}
 	
+	/**
+	 * Gets name on main account
+	 * @return
+	 */
+	
 	public String getParent() {
 		return parent;
 	}
+	
+	/**
+	 * Gets list of all transactions
+	 * @return
+	 */
 	
 	public List<Transaction> getTransactions() {
 		return transactionList;
@@ -109,7 +145,7 @@ public class UserAccount{
 	}
 	
 	/**
-	 * 
+	 * Creates a transaction
 	 * @param amount
 	 * @param date
 	 * @param type

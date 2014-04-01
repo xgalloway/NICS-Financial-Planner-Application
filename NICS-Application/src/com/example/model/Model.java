@@ -7,6 +7,8 @@ import java.util.List;
 /**
  * 
  * @author Team 16
+ * 
+ * Creates interface for the model
  *
  */
 

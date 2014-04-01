@@ -12,11 +12,24 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+/**
+ * 
+ * @author Team 16
+ *
+ */
+
 public class TransactionAdapter extends ArrayAdapter<String> {
 
 	private Context context;
 	private int resource;
 	private String[] data;
+	
+	/**
+	 * Instantiates variables
+	 * @param context
+	 * @param resource
+	 * @param list
+	 */
 	
 	public TransactionAdapter(Context context, int resource, String[] list) {
 		super(context, resource, list);
@@ -27,6 +40,10 @@ public class TransactionAdapter extends ArrayAdapter<String> {
 	
 	/**
 	 * Sets color of text based on position
+	 * 
+	 * @param position
+	 * @param convertView
+	 * @param paren
 	 */
 	
 	@Override

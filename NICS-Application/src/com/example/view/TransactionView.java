@@ -4,6 +4,12 @@ import java.util.Date;
 
 import com.example.support.ClickListener;
 
+/**
+ * 
+ * @author Team 16
+ *
+ * Creates interface for transaction
+ */
 
 public interface TransactionView {
 	void makeTransaction();
