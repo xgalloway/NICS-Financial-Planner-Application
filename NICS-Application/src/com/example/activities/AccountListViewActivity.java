@@ -46,7 +46,7 @@ public class AccountListViewActivity extends Activity implements
 	/**
 	 * Creates the account list that will be viewed
 	 * 
-	 * @param savedInstanceState
+	 * @param savedInstanceState saves state of the application
 	 */
 	
 	@Override
