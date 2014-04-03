@@ -24,8 +24,8 @@ public class User {
 	/**
 	 * Creates a new user
 	 * 
-	 * @param name
-	 * @param password
+	 * @param name Name of user
+	 * @param password User password
 	 */
 	
 	public User(String name, int password) {
@@ -42,7 +42,8 @@ public class User {
 	
 	/**
 	 * Gets user password
-	 * @return
+	 * 
+	 * @return User password
 	 */
 	
 	public int getPassword() {
@@ -51,7 +52,8 @@ public class User {
 	
 	/**
 	 * Gets username
-	 * @return
+	 * 
+	 * @return Username
 	 */
 	
 	public String getUsername() {
@@ -60,7 +62,8 @@ public class User {
 	
 	/**
 	 * Gets all user accounts
-	 * @return
+	 * 
+	 * @return All users associated with the application
 	 */
 	
 	public List<UserAccount> getAccounts(){
@@ -69,7 +72,8 @@ public class User {
 	
 	/**
 	 * Adds accounts to list of accounts
-	 * @param account
+	 * 
+	 * @param account User account
 	 */
 	
 	public void addAccount(UserAccount account){
@@ -77,9 +81,8 @@ public class User {
 	}
 	
 	/**
-	 * 
-	 * @param s
-	 * @return
+	 * @param s String
+	 * @return Accounts
 	 */
 	
 	public UserAccount getAccount(String s) {
@@ -88,7 +91,8 @@ public class User {
 	
 	/**
 	 * Get current account
-	 * @return
+	 * 
+	 * @return Account in use
 	 */
 	
 	public UserAccount getCurrent() {
@@ -97,7 +101,8 @@ public class User {
 	
 	/**
 	 * Sets current account to user account in use
-	 * @param account
+	 * 
+	 * @param account Current account
 	 */
 	
 	public void setCurrentAccount(UserAccount account) {
@@ -106,7 +111,8 @@ public class User {
 	
 	/**
 	 * Sets current report based on the user
-	 * @param report
+	 * 
+	 * @param report Report being generated
 	 */
 	
 	public void setCurrentReport(Report report) {
@@ -115,7 +121,8 @@ public class User {
 	
 	/**
 	 * Gets current report based on the user
-	 * @return
+	 * 
+	 * @return Report generated
 	 */
 	
 	public Report getCurrentReport() {
@@ -123,7 +130,6 @@ public class User {
 	}
 	
 	/**
-	 * 
 	 * @param pid
 	 */
 	

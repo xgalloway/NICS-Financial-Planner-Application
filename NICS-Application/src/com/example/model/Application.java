@@ -18,6 +18,12 @@ public class Application {
 		
 	}
 	
+	/**
+	 * Takes database information and makes it the model
+	 * 
+	 * @param context Database information
+	 */
+	
 	public void setModel(Context context) {
 		this.model = new UserModel(context);
 		model.initialize();
@@ -25,7 +31,8 @@ public class Application {
 	
 	/**
 	 * Gets user model
-	 * @return
+	 * 
+	 * @return Model
 	 */
 	public UserModel getModel() {
 		return model;

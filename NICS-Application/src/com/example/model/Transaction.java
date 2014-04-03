@@ -20,11 +20,12 @@ public class Transaction {
 	
 	/**
 	 * Instantiates variables
-	 * @param amount
-	 * @param date
-	 * @param type
-	 * @param comments
-	 * @param parent
+	 * 
+	 * @param amount Transaction amount
+	 * @param date Transaction date
+	 * @param type Transaction type
+	 * @param comments Transaction comments
+	 * @param parent Transaction account holder
 	 */
 	
 	public Transaction(double amount, Date date, String type, String comments, String parent) {
@@ -37,7 +38,8 @@ public class Transaction {
 
 	/**
 	 * Gets amount
-	 * @return amount associated with transaction
+	 * 
+	 * @return Amount associated with transaction
 	 */
 	
 	public double getAmount() {
@@ -46,7 +48,8 @@ public class Transaction {
 	
 	/**
 	 * Sets amount associated with transaction
-	 * @param num
+	 * 
+	 * @param num Amount of transaction
 	 */
 	
 	public void setAmount(double num) {
@@ -55,7 +58,8 @@ public class Transaction {
 	
 	/**
 	 * Gets comments associated with transaction
-	 * @return comments associated with transaction
+	 * 
+	 * @return Comments associated with transaction
 	 */
 	
 	public String getComments() {
@@ -64,7 +68,8 @@ public class Transaction {
 	
 	/**
 	 * Gets date associated with transaction
-	 * @return date associated with transaction
+	 * 
+	 * @return Date associated with transaction
 	 */
 	
 	public Date getDate() {
@@ -73,7 +78,8 @@ public class Transaction {
 	
 	/** 
 	 * Gets parent account associated with transaction
-	 * @return
+	 * 
+	 * @return Main account holder
 	 */
 	
 	public String getParent() {
@@ -82,9 +88,10 @@ public class Transaction {
 	
 	/**
 	 * Sets date associated with transaction
-	 * @param day
-	 * @param month
-	 * @param year
+	 * 
+	 * @param day Day number of transaction
+	 * @param month Month of transaction
+	 * @param year Year of transaction
 	 */
 	
 	public void setDate(int day, int month, int year) {
@@ -93,6 +100,8 @@ public class Transaction {
 	
 	/**
 	 * Creates a string for transaction amount
+	 * 
+	 * @return String
 	 */
 	
 	public String toString() {
@@ -105,7 +114,8 @@ public class Transaction {
 	
 	/**
 	 * Gets type of account
-	 * @return
+	 * 
+	 * @return Account type
 	 */
 	
 	public String getType() {
@@ -114,7 +124,8 @@ public class Transaction {
 	
 	/**
 	 * Creates a string for the date
-	 * @return
+	 * 
+	 * @return Date in string format
 	 */
 	
 	public String getDateString() {

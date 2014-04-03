@@ -35,6 +35,12 @@ public class AccountSetupActivity extends Activity implements AccountSetupView, 
 	private ClickListener listener;
 	AccountSetupPresenter presenter;
 	
+	/**
+     * Creates the account setup that will be viewed
+     * 
+     * @param savedInstanceState saves state of the application
+     */
+	
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_account_setup);
@@ -46,7 +52,7 @@ public class AccountSetupActivity extends Activity implements AccountSetupView, 
 
 	/**
 	 * When the button is pushed, the account setup up option will display
-	 * @param v
+	 * @param v The view that was clicked
 	 */
 	
 	@Override
@@ -89,7 +95,9 @@ public class AccountSetupActivity extends Activity implements AccountSetupView, 
 	}
 
 	/**
-	 * Changes name text field into a string	
+	 * Changes name text field into a string
+	 * 
+	 * @return string
 	 */
 	
 	@Override
@@ -99,6 +107,8 @@ public class AccountSetupActivity extends Activity implements AccountSetupView, 
 	
 	/**
 	 * Changes display name text field into a string  
+	 * 
+	 * @return state
 	 */
 	
 	@Override
@@ -109,7 +119,7 @@ public class AccountSetupActivity extends Activity implements AccountSetupView, 
 	/**
      * Sets listener for the application
      * 
-     * @param lsr
+     * @param lsr Corresponds to the listener
      */
 	
 	@Override
@@ -152,6 +162,8 @@ public class AccountSetupActivity extends Activity implements AccountSetupView, 
 
 	/**
 	 * Gets interest rate
+	 * 
+	 * @return string
 	 */
 	
 	@Override
@@ -160,8 +172,11 @@ public class AccountSetupActivity extends Activity implements AccountSetupView, 
 	}
 
 	/**
+	 * Gets balance of account
 	 * 
+	 * @return string
 	 */
+	
 	@Override
 	public String getBalance() {
 		return balanceText.getText().toString();

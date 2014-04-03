@@ -26,9 +26,10 @@ public class AccountListViewPresenter implements ClickListener {
 	private final Model model;
 
 	/**
+	 * Instantiates variables
 	 * 
-	 * @param v
-	 * @param m
+	 * @param v View
+	 * @param m Model
 	 */
 	
 	public AccountListViewPresenter(AccountListView v, Model m) {
@@ -41,7 +42,7 @@ public class AccountListViewPresenter implements ClickListener {
 	 * If back button is pressed, user is taken to create account page
 	 * If report button is pressed, user is taken to report page
 	 * 
-	 * @param v
+	 * @param v Page to be viewed
 	 */
 	
 	@Override
@@ -58,9 +59,10 @@ public class AccountListViewPresenter implements ClickListener {
 	}
 	
 	/**
-	 * When putton is pressed, user is taken to view account
-	 * @param v
-	 * @param position
+	 * When button is pressed, user is taken to view account
+	 * 
+	 * @param v Page to be viewed
+	 * @param position Position of item
 	 */
 	
 	public void onItemClick(View v, int position) {

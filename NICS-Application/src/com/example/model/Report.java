@@ -15,6 +15,13 @@ public class Report {
 	private Date start;
 	private Date end;
 	
+	/**
+	 * Instantiates variables
+	 * 
+	 * @param start Begin Date
+	 * @param end Finish date
+	 */
+	
 	public Report(Date start, Date end) {
 		this.start = start;
 		this.end = end;
@@ -22,7 +29,8 @@ public class Report {
 	
 	/**
 	 * Gets start date
-	 * @return
+	 * 
+	 * @return Start date
 	 */
 	
 	public Date getStart() {
@@ -31,7 +39,8 @@ public class Report {
 	
 	/**
 	 * Gets end date
-	 * @return
+	 * 
+	 * @return End date
 	 */
 	
 	public Date getEnd() {

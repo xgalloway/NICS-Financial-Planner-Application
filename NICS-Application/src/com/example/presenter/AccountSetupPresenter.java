@@ -22,8 +22,9 @@ public class AccountSetupPresenter implements ClickListener {
 	
 	/**
 	 * Instantiates variables
-	 * @param v
-	 * @param m
+	 * 
+	 * @param v Page to be viewed
+	 * @param m Model
 	 */
 	
 	public AccountSetupPresenter(AccountSetupView v, Model m) {
@@ -33,8 +34,9 @@ public class AccountSetupPresenter implements ClickListener {
 	}
 
 	/**
+	 * When the button is pushed, the information will be viewed
 	 *
-	 * @param v
+	 * @param v Page to be viewed
 	 */
 	
 	@Override

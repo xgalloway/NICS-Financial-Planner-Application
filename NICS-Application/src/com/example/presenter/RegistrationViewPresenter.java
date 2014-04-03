@@ -22,8 +22,9 @@ public class RegistrationViewPresenter implements ClickListener {
 	
 	/**
 	 * Instantiates variables
-	 * @param v
-	 * @param m
+	 * 
+	 * @param v Page to be viewed
+	 * @param m Model
 	 */
 	
 	public RegistrationViewPresenter(RegistrationView v, Model m) {
@@ -34,7 +35,8 @@ public class RegistrationViewPresenter implements ClickListener {
 
 	/**
 	 * Tells user if registration has been accepted or not
-	 * @param v
+	 * 
+	 * @param v Page to be viewed
 	 */
 	
 	@Override

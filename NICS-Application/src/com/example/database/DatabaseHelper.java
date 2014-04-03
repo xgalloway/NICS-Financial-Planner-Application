@@ -75,8 +75,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	private static final int DATABASE_VERSION = 1;
 	
 	/**
-	 * 
-	 * @param context
+	 * @param context Information from the database
 	 */
 	
 	public DatabaseHelper(Context context) {
@@ -84,8 +83,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	}
 	
 	/**
-	 * 
-	 * @param context
+	 * @param context Information from the data base
 	 * @param name
 	 * @param factory
 	 * @param version

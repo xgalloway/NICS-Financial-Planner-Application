@@ -41,7 +41,7 @@ public class Database implements DatabaseInterface {
 	 * 
 	 * Creates a layout and table for information to be stored
 	 * 
-	 * @param context
+	 * @param context Information being held
 	 */
 	
 	public Database(Context context) {
@@ -70,7 +70,7 @@ public class Database implements DatabaseInterface {
 	 * Adds user information to the database
 	 * includes username and password.
 	 * 
-	 * @param u
+	 * @param u User information
 	 */
 	
 	@Override
@@ -86,7 +86,7 @@ public class Database implements DatabaseInterface {
 	 * Based on the saved database and text a user has entered,
 	 * the username will be retrieved.
 	 * 
-	 * @param name
+	 * @param name Name of user
 	 */
 	
 	@Override
@@ -106,6 +106,8 @@ public class Database implements DatabaseInterface {
 	
 	/**
 	 * Returns a list of all the users
+	 * 
+	 * @return The system's users
 	 */
 	
 	@Override
@@ -136,7 +138,7 @@ public class Database implements DatabaseInterface {
 	 * If a user changes their username or password,
 	 * the table where all the information is stored will be updated
 	 * 
-	 * @param u
+	 * @param u User information
 	 */
 	
 	@Override
@@ -153,7 +155,7 @@ public class Database implements DatabaseInterface {
 	/**
 	 * Deletes information associated with a user account
 	 * 
-	 * @param u
+	 * @param u User information
 	 */
 	
 	@Override
@@ -168,7 +170,7 @@ public class Database implements DatabaseInterface {
 	 * Puts values associated with a user account in its
 	 * respective column
 	 * 
-	 * @param account
+	 * @param account A user's account
 	 */
 	
 	@Override
@@ -186,7 +188,8 @@ public class Database implements DatabaseInterface {
 	/**
 	 * Returns information associated with an account
 	 * 
-	 * @param name
+	 * @param name Name of user
+	 * @return Account information or nothing if invalid
 	 */
 	
 	@Override
@@ -211,7 +214,8 @@ public class Database implements DatabaseInterface {
 	/**
 	 * Retrieves the accounts from the database
 	 * 
-	 * @param parent
+	 * @param parent Main account information
+	 * @return accounts associated with parent
 	 */
 
 	@Override
@@ -248,7 +252,7 @@ public class Database implements DatabaseInterface {
 	 * Deletes old information and then rewrites it if
 	 * any changes have been made
 	 * 
-	 * @param account
+	 * @param account User account
 	 */
 	
 	@Override
@@ -273,7 +277,7 @@ public class Database implements DatabaseInterface {
 	/**
 	 * Deletes transaction associated with an user account
 	 * 
-	 * @param account
+	 * @param account User account
 	 */
 	
 	@Override
@@ -287,7 +291,7 @@ public class Database implements DatabaseInterface {
 	/**
 	 * Deletes account from list of accounts
 	 * 
-	 * @param parent
+	 * @param parent Main account holder
 	 */
 	
 	@Override
@@ -302,7 +306,7 @@ public class Database implements DatabaseInterface {
 	/**
 	 * Adds transaction to the database
 	 * 
-	 * @param t
+	 * @param t Transaction information
 	 */
 	
 	@Override
@@ -321,7 +325,8 @@ public class Database implements DatabaseInterface {
 	/**
 	 * Creates a running list of transactions based on date
 	 * 
-	 * @param parent
+	 * @param parent Main account holder
+	 * @return transactions associated or nothing if invalid
 	 */
 	
 	@Override
@@ -358,6 +363,8 @@ public class Database implements DatabaseInterface {
 
     /**
      * Creates a running list of only deposits
+     * 
+     * @return All deposits or nothing if invalid
      */
 	
 	@Override
@@ -392,6 +399,8 @@ public class Database implements DatabaseInterface {
 
     /**
      * Creates a running list of only withdrawals
+     * 
+     * @return All withdrawals or nothing if invalid
      */
 	
 	@Override
@@ -427,7 +436,7 @@ public class Database implements DatabaseInterface {
 	/**
 	 * Deletes transactions associated with an account
 	 * 
-	 * @param parent
+	 * @param parent Main account holder
 	 */
 	
 	@Override

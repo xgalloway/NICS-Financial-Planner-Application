@@ -34,10 +34,9 @@ public class RegistrationActivity extends Activity implements RegistrationView, 
 	RegistrationViewPresenter presenter;
 	
 	/**
-     * Displays the log in and register buttons
-     * along with the logo on the main screen
+     * Displays the registration screen
      * 
-     * @param savedInstanceState
+     * @param savedInstanceState saves state of the application
      */
 	
 	@Override
@@ -52,7 +51,8 @@ public class RegistrationActivity extends Activity implements RegistrationView, 
 	/**
      * Creates menu with appropriate options
      * 
-     * @param menu
+     * @param menu Container for menu items
+     * @return state
      */
 	
 	@Override
@@ -64,7 +64,7 @@ public class RegistrationActivity extends Activity implements RegistrationView, 
 	/**
      * When the button is pushed, the information will be viewed
      * 
-     * @param v
+     * @param v The view that was clicked
      */
 	
 	@Override
@@ -99,9 +99,9 @@ public class RegistrationActivity extends Activity implements RegistrationView, 
 	}
 
 	/**
-     * Provides a search button
+     * Sets listener for the application
      * 
-     * @param lsnr
+     * @param lsnr Corresponds to the listener
      */
 	
 	@Override
@@ -111,6 +111,8 @@ public class RegistrationActivity extends Activity implements RegistrationView, 
 
     /**
      * Turns the username the user entered into a string
+     * 
+     * @return string
      */
 	
 	public String getUsername() {
@@ -119,6 +121,8 @@ public class RegistrationActivity extends Activity implements RegistrationView, 
 	
     /**
      * Turns the password the user entered into a string
+     * 
+     * @return string
      */
 	
 	public String getPassword() {

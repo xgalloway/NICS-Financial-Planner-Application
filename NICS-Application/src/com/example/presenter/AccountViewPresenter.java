@@ -22,8 +22,9 @@ public class AccountViewPresenter implements ClickListener {
 
 	/**
 	 * Instantiates variables
-	 * @param v
-	 * @param m
+	 * 
+	 * @param v Page to be viewed
+	 * @param m Model
 	 */
 	
 	public AccountViewPresenter(AccountView v, Model m) {
@@ -35,6 +36,8 @@ public class AccountViewPresenter implements ClickListener {
 	/**
 	 * Takes user to transaction or leaves transaction screen
 	 * depending on what button is pressed
+	 * 
+	 * @param v Page to be viewed
 	 */
 	
 	@Override

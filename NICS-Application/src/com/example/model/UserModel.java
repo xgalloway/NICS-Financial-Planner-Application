@@ -38,7 +38,8 @@ public class UserModel implements Model {
 	
 	/**
 	 * Instantiates database
-	 * @param context
+	 * 
+	 * @param context Database information
 	 */
 	
 	public UserModel(Context context) {
@@ -58,6 +59,8 @@ public class UserModel implements Model {
 	
 	/**
 	 * Checks to see if the user has an account already
+	 * 
+	 * @return If user exists
 	 */
 	
 	@Override
@@ -78,6 +81,8 @@ public class UserModel implements Model {
 	
 	/**
 	 * Accepts user's name and password on login
+	 * 
+	 * @return If login information is correct
 	 */
 	
 	@Override
@@ -105,6 +110,8 @@ public class UserModel implements Model {
 	
 	/**
 	 * Returns user's username
+	 * 
+	 * @return Username
 	 */
 	
 	@Override
@@ -117,6 +124,8 @@ public class UserModel implements Model {
 	
 	/**
 	 * Returns the group of users stored in the application
+	 * 
+	 * @return Users of application
 	 */
 	
 	@Override
@@ -152,6 +161,8 @@ public class UserModel implements Model {
 	
 	/**
 	 * Returns current user
+	 * 
+	 * @return Account in use
 	 */
 	
 	public User getCurrent() {
@@ -195,6 +206,8 @@ public class UserModel implements Model {
 	
 	/**
 	 * Gets an account from the main database
+	 * 
+	 * @return Account associated with name
 	 */
 	
 	@Override
@@ -204,6 +217,8 @@ public class UserModel implements Model {
 	
 	/**
 	 * Gets all accounts associated with a user
+	 * 
+	 * @return Accounts associated with main account holder
 	 */
 	
 	@Override
@@ -213,6 +228,8 @@ public class UserModel implements Model {
 	
 	/**
 	 * Gets account in use
+	 * 
+	 * @return Account in use
 	 */
 	
 	@Override
@@ -260,6 +277,10 @@ public class UserModel implements Model {
 
 	/**
 	 * Puts the transactions into a list
+	 * 
+	 * @param parent Main account holder
+	 * @return Transaction list
+	 * @throws ParseException
 	 */
 	
 	@Override
@@ -275,8 +296,9 @@ public class UserModel implements Model {
 	
 	/**
 	 * Gets transactions based on account holder
-	 * @param parent
-	 * @return
+	 * 
+	 * @param parent Main account holder
+	 * @return Transactions associated with main account holder
 	 * @throws ParseException
 	 */
 	
@@ -288,6 +310,9 @@ public class UserModel implements Model {
 
 	/**
 	 * Gets transactions if it is a deposit
+	 * 
+	 * @return Deposits
+	 * @throws ParseException
 	 */
 	
 	@Override
@@ -305,6 +330,9 @@ public class UserModel implements Model {
 	
 	/**
      * Gets transactions if it is a withdrawal
+     * 
+     * @return Withdrawals
+     * @throws ParseException
      */
 	
 	@Override
@@ -343,7 +371,8 @@ public class UserModel implements Model {
 	
 	/**
 	 * Gets start date for reports
-	 * @return
+	 * 
+	 * @return Start date or nothing
 	 */
 	
 	public Date getStartDate() {
@@ -359,7 +388,8 @@ public class UserModel implements Model {
 	
 	/**
 	 * Gets end date for reports
-	 * @return
+	 * 
+	 * @return End date or nothing
 	 */
 	
 	public Date getEndDate() {

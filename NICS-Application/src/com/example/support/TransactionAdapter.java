@@ -26,7 +26,8 @@ public class TransactionAdapter extends ArrayAdapter<String> {
 	
 	/**
 	 * Instantiates variables
-	 * @param context
+	 * 
+	 * @param context Database information
 	 * @param resource
 	 * @param list
 	 */
@@ -41,9 +42,10 @@ public class TransactionAdapter extends ArrayAdapter<String> {
 	/**
 	 * Sets color of text based on position
 	 * 
-	 * @param position
+	 * @param position Position of view
 	 * @param convertView
 	 * @param paren
+	 * @return The view
 	 */
 	
 	@Override

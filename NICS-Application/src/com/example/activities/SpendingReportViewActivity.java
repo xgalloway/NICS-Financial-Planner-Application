@@ -52,10 +52,9 @@ public class SpendingReportViewActivity extends Activity implements SpendingRepo
 	private TextView reportSumTextView;
 
 	/**
-     * Displays the log in and register buttons
-     * along with the logo on the main screen
+     * Displays the spending report
      * 
-     * @param savedInstanceState
+     * @param savedInstanceState saves state of the application
      */
 	
 	protected void onCreate(Bundle savedInstanceState) {
@@ -84,7 +83,7 @@ public class SpendingReportViewActivity extends Activity implements SpendingRepo
     /**
      * When the button is pushed, the information will be viewed
      * 
-     * @param v
+     * @param v The view that was clicked
      */
 	
 	@Override
@@ -94,6 +93,8 @@ public class SpendingReportViewActivity extends Activity implements SpendingRepo
 
 	/**
 	 * Retrieves date
+	 * 
+	 * @return state
 	 */
 	
 	@Override
@@ -102,9 +103,9 @@ public class SpendingReportViewActivity extends Activity implements SpendingRepo
 	}
 
 	/**
-     * Provides a search button
+     * Sets listener for the application
      * 
-     * @param lsnr
+     * @param lsnr Corresponds to the listener
      */
 	
 	@Override

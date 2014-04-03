@@ -19,8 +19,9 @@ public class SpendingReportViewPresenter implements ClickListener{
 	
 	/**
 	 * Instantiates variables
-	 * @param view
-	 * @param model
+	 * 
+	 * @param view Page to be viewed
+	 * @param model Model
 	 */
 	
 	public SpendingReportViewPresenter(SpendingReportView view, Model model){
@@ -30,7 +31,8 @@ public class SpendingReportViewPresenter implements ClickListener{
 	
 	/**
 	 * Allows user to navigate backwards through application
-	 * @param v
+	 * 
+	 * @param v Page to be viewed
 	 */
 	
 	@Override

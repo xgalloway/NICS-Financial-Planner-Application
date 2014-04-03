@@ -38,7 +38,7 @@ public class LogInActivity extends Activity implements LogInView, OnClickListene
 	/**
      * Creates the log in screen that will be viewed
      * 
-     * @param savedInstanceState
+     * @param savedInstanceState saves state of the application
      */
 	
 	@Override
@@ -55,7 +55,8 @@ public class LogInActivity extends Activity implements LogInView, OnClickListene
 	 * Depending on a user's account, different options
 	 * will be displayed in the menu
 	 * 
-	 * @param menu
+	 * @param menu Container for menu items
+	 * @return state
 	 */
 	
 	@Override
@@ -80,6 +81,8 @@ public class LogInActivity extends Activity implements LogInView, OnClickListene
 	
 	/**
 	 * Turns the username the user entered into a string
+	 * 
+	 * @return string
 	 */
 	
 	@Override
@@ -89,6 +92,8 @@ public class LogInActivity extends Activity implements LogInView, OnClickListene
 	
 	/**
      * Turns the password the user entered into a string
+     * 
+     * @return string
      */
 	
 	@Override
@@ -109,9 +114,9 @@ public class LogInActivity extends Activity implements LogInView, OnClickListene
 	}
 
 	/**
-	 * Provides a search button
+	 * Sets listener for the application
 	 * 
-	 * @param lsnr
+	 * @param lsnr Corresponds to the listener
 	 */
 	
 	@Override
@@ -142,7 +147,7 @@ public class LogInActivity extends Activity implements LogInView, OnClickListene
 	/**
      * When the button is pushed, the information will be viewed
      * 
-     * @param v
+     * @param v The view that was clicked
      */
 	
 	@Override

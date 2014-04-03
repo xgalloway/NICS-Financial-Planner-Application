@@ -24,6 +24,13 @@ public class ReportViewPresenter implements ClickListener{
 	private ReportView view;
 	private final Model model;
 	
+	/**
+	 * Instantiates variables
+	 * 
+	 * @param view Page to be viewed
+	 * @param model Model
+	 */
+	
 	public ReportViewPresenter(ReportView view, Model model){
 		this.view = view;
 		this.model = model;
@@ -34,7 +41,7 @@ public class ReportViewPresenter implements ClickListener{
 	 * If the user chooses invalid dates, an alert dialog is shown.
 	 * If not, the dates are accepted and the report is generated.
 	 * 
-	 * @param v
+	 * @param v Page to be viewed
 	 */
 	
 	@Override

@@ -24,8 +24,9 @@ public class WelcomeViewPresenter implements ClickListener {
 	//private Model model;
 	
 	/**
+	 * Instantiates variables
 	 * 
-	 * @param v
+	 * @param v Page to be viewed
 	 */
 	
 	public WelcomeViewPresenter(WelcomeView v) {
@@ -38,7 +39,7 @@ public class WelcomeViewPresenter implements ClickListener {
 	 * Directs user to the login in screen if login button is pressed
 	 * Directs user to the registration screen if go button is pressed
 	 * 
-	 * @param v
+	 * @param v Page to be viewed
 	 */
 	public void onClick(View v) {
 		switch (v.getId()) {

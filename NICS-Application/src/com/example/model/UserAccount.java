@@ -21,10 +21,11 @@ public class UserAccount{
 	
 	/**
 	 * Instantiates name, accountName, balance and rate
-	 * @param display
-	 * @param full
-	 * @param balance
-	 * @param interest
+	 * 
+	 * @param display Display name
+	 * @param full Full name
+	 * @param balance Balance of account
+	 * @param interest Interest Rate
 	 */
 	
 	public UserAccount(String display, String full, double balance, double interest){
@@ -38,10 +39,11 @@ public class UserAccount{
 	
 	/**
 	 * Instantiates name, balance, rate and parent
-	 * @param name
-	 * @param balance
-	 * @param interest
-	 * @param parent
+	 * 
+	 * @param name Name of user
+	 * @param balance Account Balance
+	 * @param interest Interest Rate
+	 * @param parent Main account holder
 	 */
 	
 	public UserAccount(String name, double balance, double interest, String parent) {
@@ -54,7 +56,8 @@ public class UserAccount{
 	
 	/**
 	 * Gets name of user
-	 * @return
+	 * 
+	 * @return Name of user
 	 */
 	
 	public String getName() {
@@ -63,7 +66,8 @@ public class UserAccount{
 	
 	/**
 	 * Gets name of account
-	 * @return
+	 * 
+	 * @return Name on account
 	 */
 	
 	public String getAccountName() {
@@ -72,7 +76,8 @@ public class UserAccount{
 	
 	/**
 	 * Gets balance from account
-	 * @return
+	 * 
+	 * @return Balance
 	 */
 	
 	public double getBalance() {
@@ -81,7 +86,8 @@ public class UserAccount{
 	
 	/**
 	 * Sets account balance
-	 * @param amount
+	 * 
+	 * @param amount Amount in account
 	 */
 	
 	public void setBalance(Double amount) {
@@ -90,7 +96,8 @@ public class UserAccount{
 	
 	/**
 	 * Gets interest rate
-	 * @return
+	 * 
+	 * @return Interest rate
 	 */
 	
 	public double getRate() {
@@ -99,7 +106,8 @@ public class UserAccount{
 	
 	/**
 	 * Gets name on main account
-	 * @return
+	 * 
+	 * @return Main account holder
 	 */
 	
 	public String getParent() {
@@ -108,7 +116,8 @@ public class UserAccount{
 	
 	/**
 	 * Gets list of all transactions
-	 * @return
+	 * 
+	 * @return Transactions associated with account
 	 */
 	
 	public List<Transaction> getTransactions() {
@@ -117,6 +126,8 @@ public class UserAccount{
 	
 	/**
 	 * Puts deposits into a list
+	 * 
+	 * @return Deposits associated with account
 	 */
 	
 	public List<Transaction> getDeposits() {
@@ -131,6 +142,8 @@ public class UserAccount{
 	
 	/**
 	 * Puts withdrawals into a list
+	 * 
+	 * @return Withdrawals associated with account
 	 */
 	
 	public List<Transaction> getWithdrawals() {
@@ -146,10 +159,11 @@ public class UserAccount{
 	
 	/**
 	 * Creates a transaction
-	 * @param amount
-	 * @param date
-	 * @param type
-	 * @param comments
+	 * 
+	 * @param amount Transaction amount
+	 * @param date Transaction date
+	 * @param type Transaction type
+	 * @param comments Transaction comments
 	 */
 	
 	public void makeTransaction(double amount, Date date, String type, String comments) {
@@ -165,6 +179,8 @@ public class UserAccount{
 	
 	/**
 	 * Creates a string about an account's balance
+	 * 
+	 * @return Balance in string format
 	 */
 	
 	public String toString() {

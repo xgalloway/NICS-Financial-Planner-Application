@@ -24,6 +24,12 @@ public class TransactionViewPresenter implements ClickListener {
 	private TransactionView view;
 	private final Model model;
 	
+	/**
+	 * Instantiates variables
+	 * @param v Page to be viewed
+	 * @param m Model
+	 */
+	
 	public TransactionViewPresenter(TransactionView v, Model m) {
 		this.view = v;
 		this.model = m;
@@ -37,7 +43,7 @@ public class TransactionViewPresenter implements ClickListener {
 	 * and the account balance is updated correctly.
 	 * Both times the transaction is added the the list of transactions.
 	 * 
-	 * @param v
+	 * @param v Page to be viewed
 	 */
 	
 	@Override

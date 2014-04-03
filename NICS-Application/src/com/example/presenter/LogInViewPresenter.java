@@ -21,8 +21,9 @@ public class LogInViewPresenter implements ClickListener {
 
 	/**
 	 * Instantiates variables
-	 * @param v
-	 * @param m
+	 * 
+	 * @param v Page to be viewed
+	 * @param m Model
 	 */
 	
 	public LogInViewPresenter(LogInView v, Model m) {
@@ -33,6 +34,8 @@ public class LogInViewPresenter implements ClickListener {
 
 	/**
 	 * Tells the user if the login has been accepted or not
+	 * 
+	 * @param v Page to be viewed
 	 */
 	
 	@Override

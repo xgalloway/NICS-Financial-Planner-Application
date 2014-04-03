@@ -39,6 +39,8 @@ public class SavingTips {
 	
 	/**
 	 * Returns a tip based on the number
+	 * 
+	 * @return Random tip
 	 */
 	
 	public String getTip() {

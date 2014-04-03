@@ -50,9 +50,9 @@ public class AccountViewActivity extends Activity implements AccountView, OnClic
 	private ClickListener listener;
 	
 	/**
-	 * Creates the account list that will be viewed
+	 * Creates the account that will be viewed
 	 * 
-	 * @param savedInstanceState
+	 * @param savedInstanceState saves state of the application
 	 */
 	
 	@Override
@@ -87,7 +87,7 @@ public class AccountViewActivity extends Activity implements AccountView, OnClic
 	/**
 	 * When the button is pushed, the information will be viewed
 	 * 
-	 * @param v
+	 * @param v The view that was clicked
 	 */
 	
 	@Override
@@ -98,7 +98,7 @@ public class AccountViewActivity extends Activity implements AccountView, OnClic
 	/**
      * Sets listener for the application
      * 
-     * @param lsr
+     * @param lsr Corresponds to the listener
      */
 	
 	@Override
@@ -113,8 +113,6 @@ public class AccountViewActivity extends Activity implements AccountView, OnClic
 	 */
 	
 	private void populateListView() {
-		
-		
 		UserModel model = Application.INSTANCE.getModel();
 		UserAccount account = model.getCurrentAccount();
 		balanceTextView.setText("" + "Balance: " + account.getBalance());

@@ -40,10 +40,9 @@ public class ReportViewActivity extends Activity implements ReportView, OnClickL
 	private ReportViewPresenter presenter;
 	
 	/**
-     * Displays the log in and register buttons
-     * along with the logo on the main screen
+     * Displays the report view
      * 
-     * @param savedInstanceState
+     * @param savedInstanceState saves state of the application
      */
 	
 	@Override
@@ -84,7 +83,7 @@ public class ReportViewActivity extends Activity implements ReportView, OnClickL
     /**
      * When the button is pushed, the information will be viewed
      * 
-     * @param v
+     * @param v The view that was clicked
      */
 	
 	@Override
@@ -105,6 +104,8 @@ public class ReportViewActivity extends Activity implements ReportView, OnClickL
 
 	/**
 	 * Changes start date chooser to a string
+	 * 
+	 * @return string
 	 */
 	
 	@Override
@@ -114,6 +115,8 @@ public class ReportViewActivity extends Activity implements ReportView, OnClickL
 
     /**
      * Changes end date chooser to a string
+     * 
+     * @return string
      */
 	
 	@Override
@@ -141,9 +144,9 @@ public class ReportViewActivity extends Activity implements ReportView, OnClickL
 	}
 
 	/**
-     * Provides a search button
+     * Sets listener for the application
      * 
-     * @param lsnr
+     * @param lsnr Corresponds to the listener
      */
 	
 	@Override
