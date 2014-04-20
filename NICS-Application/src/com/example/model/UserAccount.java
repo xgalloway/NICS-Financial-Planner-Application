@@ -131,7 +131,7 @@ public class UserAccount{
 	 */
 	
 	public List<Transaction> getDeposits() {
-		List<Transaction> deposits = new ArrayList();
+		List<Transaction> deposits = new ArrayList<Transaction>();
 		for (int i = 0; i < transactionList.size(); ++i) {
 			if (transactionList.get(i).getType().equals("deposit")) {
 				deposits.add(transactionList.get(i));
@@ -147,7 +147,7 @@ public class UserAccount{
 	 */
 	
 	public List<Transaction> getWithdrawals() {
-		List<Transaction> withdrawals = new ArrayList();
+		List<Transaction> withdrawals = new ArrayList<Transaction>();
 		for (int i = 0; i < transactionList.size(); ++i) {
 			if (transactionList.get(i).getType().equals("withdrawal")) {
 				withdrawals.add(transactionList.get(i));

@@ -1,6 +1,8 @@
 package com.example.activities;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -13,6 +15,7 @@ import com.example.model.Application;
 import com.example.nics_application.R;
 import com.example.presenter.WelcomeViewPresenter;
 import com.example.support.ClickListener;
+import com.example.support.SavingTips;
 import com.example.view.WelcomeView;
 
 /**
@@ -48,6 +51,7 @@ public class MainActivity extends Activity implements WelcomeView, OnClickListen
 		registerButton = (Button) findViewById(R.id.goButton);
 		registerButton.setOnClickListener(this);
 		logo = (ImageView) findViewById(R.id.imageView1);
+		displayAlertDialog();
 	}
 	
 	/**
@@ -110,4 +114,19 @@ public class MainActivity extends Activity implements WelcomeView, OnClickListen
 	public void onClick(View v) {
 		presenter.onClick(v);
 	}
+	
+	public void displayAlertDialog() {
+	    SavingTips st = new SavingTips();
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+        alertDialog.setTitle("Savings Tip Of The Day!");
+        alertDialog.setMessage(st.getTip());
+        alertDialog.setNeutralButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+        alertDialog.show();
+        
+    }
 }

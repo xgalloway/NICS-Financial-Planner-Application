@@ -19,7 +19,7 @@ public class SavingTips {
 	 */
 	
 	public SavingTips() {
-		rand = new Random(tips.length);
+		rand = new Random();
 	}
 	
 	/**
@@ -44,6 +44,6 @@ public class SavingTips {
 	 */
 	
 	public String getTip() {
-		return tips[rand.nextInt()];
+		return tips[rand.nextInt(tips.length)];
 	}
 }

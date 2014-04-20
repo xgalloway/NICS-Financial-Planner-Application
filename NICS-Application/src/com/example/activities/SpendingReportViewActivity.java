@@ -131,10 +131,10 @@ public class SpendingReportViewActivity extends Activity implements SpendingRepo
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		HashSet set = new HashSet();
+		HashSet<String> set = new HashSet<String>();
 		
 		double sum = 0;
-		ArrayList transactionList = new ArrayList();
+		ArrayList<String> transactionList = new ArrayList<String>();
 		
 		for (int i = 0; i < withdrawals.size(); ++i ) {
 			Transaction t = withdrawals.get(i);

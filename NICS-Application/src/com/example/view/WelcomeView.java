@@ -14,4 +14,5 @@ public interface WelcomeView {
 	void startLogin();
 	void startRegistration();
 	void addSearchRequestNotifyCallback(ClickListener listener);
+    void displayAlertDialog();
 }
