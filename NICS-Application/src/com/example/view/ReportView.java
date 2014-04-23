@@ -18,4 +18,5 @@ public interface ReportView{
 	void displayAlertDialog();
 	void displayDateDialog(String startOrEnd);
 	void addSearchRequestNotifyCallback(ClickListener listener);
+    void acceptIncomeRange();
 }

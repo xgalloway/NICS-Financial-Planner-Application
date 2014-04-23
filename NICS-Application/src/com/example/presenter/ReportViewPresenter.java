@@ -53,18 +53,44 @@ public class ReportViewPresenter implements ClickListener{
 			case R.id.endDateButton:
 				view.displayDateDialog("end");
 				break;
+			case R.id.incomeButton:
+			    String startD = view.getStartDate();
+                String endD = view.getEndDate();
+                //SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+                
+                Date start_date = null;
+                Date end_date = null;
+                try {
+                    start_date = sdf.parse(startD);
+                    end_date = sdf.parse(endD);
+                } catch (ParseException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+                //System.out.println("Date start compare To Date end" + start.compareTo(end));
+                
+                if (end_date.before(start_date)) {
+                    view.displayAlertDialog();
+                } else {
+                    //Report report = new Report(start, end);
+                    //model.getCurrent().setCurrentReport(report);
+                    model.setStartAndEndDates(startD, endD);
+                    view.acceptIncomeRange();
+                }
+                break;
 			case R.id.showButton:
 				
 				String startDate = view.getStartDate();
 				String endDate = view.getEndDate();
 				//SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-				SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+				SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 				
 			Date start = null;
 			Date end = null;
 			try {
-				start = sdf.parse(startDate);
-				end = sdf.parse(endDate);
+				start = formatter.parse(startDate);
+				end = formatter.parse(endDate);
 			} catch (ParseException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

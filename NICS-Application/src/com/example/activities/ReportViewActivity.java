@@ -32,7 +32,7 @@ import com.example.view.ReportView;
  */
 public class ReportViewActivity extends Activity implements ReportView, OnClickListener{
 	
-	Button showButton, startButton, endButton;
+	Button showButton, startButton, endButton, incomeButton;
 	TextView startDateTextView, endDateTextView;
 	//DatePicker startDatePicker, endDatePicker;
 	
@@ -62,6 +62,9 @@ public class ReportViewActivity extends Activity implements ReportView, OnClickL
 	public void initiateEditTextsAndButtons() {
 		showButton = (Button)findViewById(R.id.showButton);
 		showButton.setOnClickListener(this);
+		
+		incomeButton = (Button)findViewById(R.id.incomeButton);
+		incomeButton.setOnClickListener(this);
 		
 		startButton = (Button)findViewById(R.id.startDateButton);
 		startButton.setOnClickListener(this);
@@ -100,6 +103,13 @@ public class ReportViewActivity extends Activity implements ReportView, OnClickL
 		Intent i = new Intent(this, SpendingReportViewActivity.class);
 		startActivity(i);
 		finish();
+	}
+	
+	@Override
+	public void acceptIncomeRange() {
+	    Intent i = new Intent(this, IncomeReportViewActivity.class);
+	    startActivity(i);
+	    finish();
 	}
 
 	/**

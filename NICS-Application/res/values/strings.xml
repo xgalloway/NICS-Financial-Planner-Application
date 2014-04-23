@@ -12,4 +12,5 @@
 	<string name="title_activity_report_view">ReportView</string>
 	<string name="title_activity_spending_report_view">SpendingReportView</string>
 	<string name="title_activity_main">MainActivityView</string>
+	<string name="title_activity_income_report_view">IncomeReportView</string>
 </resources>

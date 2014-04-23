@@ -30,16 +30,6 @@
         android:text="End Date:"
         android:textColor="#ffffff" />
 
-    <Button
-        android:id="@+id/startDateButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/showButton"
-        android:layout_below="@+id/reportSumTextView"
-        android:layout_marginTop="54dp"
-        android:text="07/11/1994"
-        android:textColor="#ffffff" />
-
     <TextView
         android:id="@+id/startDateTextView"
         android:layout_width="wrap_content"
@@ -65,9 +55,30 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="66dp"
+        android:layout_marginRight="30dp"
+        android:text="Spending"
+        android:textColor="#ffffff" />
+
+    <Button
+        android:id="@+id/incomeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/showButton"
+        android:layout_alignBottom="@+id/showButton"
+        android:layout_toRightOf="@+id/reportSumTextView"
+        android:text="Income"
+        android:textColor="#ffffff" />
+
+    <Button
+        android:id="@+id/startDateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/reportSumTextView"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="63dp"
-        android:text="Show Report"
+        android:layout_marginTop="56dp"
+        android:text="07/11/1994"
         android:textColor="#ffffff" />
 
 </RelativeLayout>

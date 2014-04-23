@@ -67,6 +67,10 @@
             android:name="com.example.activities.MainActivity"
             android:label="@string/title_activity_main">
         </activity>
+        <activity
+            android:name="com.example.activities.IncomeReportViewActivity"
+            android:label="@string/title_activity_income_report_view">
+        </activity>
     </application>
 
 </manifest>
