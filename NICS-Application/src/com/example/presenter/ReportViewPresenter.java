@@ -53,6 +53,9 @@ public class ReportViewPresenter implements ClickListener{
 			case R.id.endDateButton:
 				view.displayDateDialog("end");
 				break;
+			case R.id.chartButton:
+			    view.viewChart();
+			    break;
 			case R.id.incomeButton:
 			    String startD = view.getStartDate();
                 String endD = view.getEndDate();

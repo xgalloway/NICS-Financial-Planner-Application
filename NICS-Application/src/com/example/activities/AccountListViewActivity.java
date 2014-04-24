@@ -38,7 +38,7 @@ import com.example.view.AccountView;
 public class AccountListViewActivity extends Activity implements
 		AccountListView, OnClickListener {
 
-	private Button addButton, reportButton;
+	private Button addButton, reportButton, chartButton;
 	private AccountListViewPresenter presenter;
 	private ClickListener listener;
 	private ListView list;
@@ -192,5 +192,8 @@ public class AccountListViewActivity extends Activity implements
 		startActivity(i);
 		finish();
 	}
+
+   
+	
 
 }

@@ -42,6 +42,7 @@ public class AccountViewActivity extends Activity implements AccountView, OnClic
 	
 	private Button backButton;
 	private Button transactionButton;
+	private Button chartButton;
 	private TextView balanceTextView;
 	private ListView list;
 	
@@ -75,6 +76,8 @@ public class AccountViewActivity extends Activity implements AccountView, OnClic
 		
 		transactionButton = (Button)findViewById(R.id.transactionButton);
 		transactionButton.setOnClickListener(this);
+		
+		
 		
 		balanceTextView = (TextView)findViewById(R.id.balanceTextView);
 		//balanceTextView.setText("text");

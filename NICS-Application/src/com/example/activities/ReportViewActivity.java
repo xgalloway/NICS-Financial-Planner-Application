@@ -32,7 +32,7 @@ import com.example.view.ReportView;
  */
 public class ReportViewActivity extends Activity implements ReportView, OnClickListener{
 	
-	Button showButton, startButton, endButton, incomeButton;
+	Button showButton, startButton, endButton, incomeButton, chartButton;
 	TextView startDateTextView, endDateTextView;
 	//DatePicker startDatePicker, endDatePicker;
 	
@@ -68,6 +68,11 @@ public class ReportViewActivity extends Activity implements ReportView, OnClickL
 		
 		startButton = (Button)findViewById(R.id.startDateButton);
 		startButton.setOnClickListener(this);
+		
+
+        chartButton = (Button)findViewById(R.id.chartButton);
+        chartButton.setOnClickListener(this);
+        
 		
 		endButton = (Button)findViewById(R.id.endDateButton);
 		endButton.setOnClickListener(this);
@@ -112,6 +117,14 @@ public class ReportViewActivity extends Activity implements ReportView, OnClickL
 	    finish();
 	}
 
+	
+	public void viewChart() {
+	    Intent i = new Intent(this, GraphViewActivity.class);
+	    startActivity(i);
+	    finish();
+	}
+	    
+	
 	/**
 	 * Changes start date chooser to a string
 	 * 

@@ -50,6 +50,7 @@ public class AccountViewPresenter implements ClickListener {
 				model.setCurrentUser(model.getCurrent());
 				view.leaveTransactionScreen();
 				break;
+			    
 		}
 	}
 

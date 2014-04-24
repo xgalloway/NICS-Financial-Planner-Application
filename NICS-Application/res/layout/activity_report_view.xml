@@ -81,4 +81,13 @@
         android:text="07/11/1994"
         android:textColor="#ffffff" />
 
+    <Button
+        android:id="@+id/chartButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="Chart"
+        android:textColor="#ffffff" />
+
 </RelativeLayout>

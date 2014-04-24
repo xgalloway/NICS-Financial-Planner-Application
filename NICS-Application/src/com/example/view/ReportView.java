@@ -15,6 +15,7 @@ public interface ReportView{
 	void acceptRange();
 	String getStartDate();
 	String getEndDate();
+	void viewChart();
 	void displayAlertDialog();
 	void displayDateDialog(String startOrEnd);
 	void addSearchRequestNotifyCallback(ClickListener listener);
